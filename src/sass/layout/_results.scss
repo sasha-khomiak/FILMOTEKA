@@ -1,0 +1,32 @@
+.gallery {
+  margin: 20px;
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+
+  @media screen and (min-width: 768px) {
+    flex-direction: row;
+    gap: 32px;
+    margin: 32px;
+  }
+
+  //для десктопа від 1280
+  @media screen and (min-width: 1280px) {
+    gap: 16px;
+  }
+}
+
+.film-card {
+  width: 280px;
+  outline: 2px solid tomato;
+
+  //для планшету 768-1279
+  @media screen and (min-width: 768px) {
+    width: 336px;
+  }
+
+  //для десктопа від 1280
+  @media screen and (min-width: 1280px) {
+    width: 395px;
+  }
+}

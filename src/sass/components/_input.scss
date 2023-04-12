@@ -3,6 +3,7 @@
   padding-top: 10px;
   padding-left: 10px;
   padding-bottom: 10px;
+  height: 34px;
 
   background: #ffffff;
   border-radius: 100px;
@@ -20,10 +21,11 @@
   //для планшету 768-1279
   @media screen and (min-width: 768px) {
     width: 165px;
+    height: 38px;
   }
 
-      //для десктопа від 1280
+  //для десктопа від 1280
   @media screen and (min-width: 1280px) {
-     width: 187px;
+    width: 187px;
   }
 }

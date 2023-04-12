@@ -1,32 +1,61 @@
 ////// ВЕРХНЄ МЕНЮ //////
 
 // Секція хедер
-
 .section-header {
-  //для мобіли 320-767
+  //   //для мобіли 320-767
   width: 100%;
-  background-color: yellow;
-  border-color: red;
-  border-width: 1px;
+  // background-color: yellow;
   margin-top: 20px;
-  height: 460px;
 
-  //для планшету 768-1279
+  //для планшету 768-1279 і десктопа від 1280
   @media screen and (min-width: 768px) {
-  }
-
-  //для десктопа від 1280
-  @media screen and (min-width: 1280px) {
+    margin-top: 32px;
   }
 }
 
 .header {
+  margin: 20px;
   display: flex;
   flex-direction: column;
+  height: 460px;
+  // width: 280px;
 
-  //для планшету 768-1279
+  background-color: red;
+  background-image: linear-gradient(
+      180deg,
+      rgba(0, 0, 0, 0) 0%,
+      rgba(0, 0, 0, 0.4) 65.37%
+    ),
+    url('../images/bg-mobile.jpg');
+  border-radius: 10px;
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover; //треба?
+  padding: 14px;
+
   @media screen and (min-width: 768px) {
+    height: 222px;
+    background-image: linear-gradient(
+        273.67deg,
+        rgba(0, 0, 0, 0.49) -2.09%,
+        rgba(0, 0, 0, 0) 99.83%
+      ),
+      url('../images/bg-tablet.jpg');
+    border-radius: 15px;
+    padding: 16px;
     flex-direction: row-reverse;
+  }
+
+  @media screen and (min-width: 1280px) {
+    height: 316px;
+    background-image: linear-gradient(
+        273.67deg,
+        rgba(0, 0, 0, 0.49) -2.09%,
+        rgba(0, 0, 0, 0) 99.83%
+      ),
+      url('../images/bg-desktop.jpg');
+    border-radius: 15px;
+    padding: 16px 32px 32px 32px;
   }
 }
 
@@ -36,7 +65,7 @@
   gap: 4px;
   margin-bottom: 8px;
 
-  //для планшету 768-1279
-  @media screen and (min-width: 768px) {
-  }
+  //   //   //для планшету 768-1279
+  //   //   @media screen and (min-width: 768px) {
+  //   //   }
 }

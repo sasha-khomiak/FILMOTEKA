@@ -1,0 +1,82 @@
+@import '~node_modules/modern-normalize/modern-normalize.css'; /*----BODY----*/
+body {
+  font-family: "Roboto", sans-serif;
+  background: #f0f0f0;
+  color: black;
+}
+
+/*----RESET----*/
+.link {
+  text-decoration: none;
+}
+
+.list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+img {
+  display: block;
+  width: 100%;
+  height: auto;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+ul {
+  margin-top: 0;
+  margin-bottom: 0;
+}
+
+/*----VISUALLY-HIDDEN----*/
+.visually-hidden {
+  position: absolute;
+  white-space: nowrap;
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+  border: 0;
+  padding: 0;
+  clip: rect(0 0 0 0);
+  -webkit-clip-path: inset(50%);
+          clip-path: inset(50%);
+  margin: -1px;
+}
+
+/*----POSITIONS FOR CONTAINERS----*/
+.container {
+  max-width: 1200px;
+  width: 100%;
+  margin: 0 auto;
+  padding: 14px 14px 20px 14px;
+  outline: 2px solid tomato;
+}
+
+.btn {
+  padding: 10px 26px;
+  background: #000000;
+  border-radius: 100px;
+  font-weight: 500;
+  font-size: 12px;
+  line-height: 1.1666666667;
+  text-transform: uppercase;
+  color: #ffffff;
+}
+.btn--current {
+  background: #ffffff;
+  color: #000000;
+}
+
+.section-header {
+  width: 100%;
+  background-color: yellow;
+  border-color: red;
+  border-width: 1px;
+  margin-top: 20px;
+}/*# sourceMappingURL=main.css.map */

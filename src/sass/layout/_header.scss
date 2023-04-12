@@ -1,0 +1,42 @@
+////// ВЕРХНЄ МЕНЮ //////
+
+// Секція хедер
+
+.section-header {
+  //для мобіли 320-767
+  width: 100%;
+  background-color: yellow;
+  border-color: red;
+  border-width: 1px;
+  margin-top: 20px;
+  height: 460px;
+
+  //для планшету 768-1279
+  @media screen and (min-width: 768px) {
+  }
+
+  //для десктопа від 1280
+  @media screen and (min-width: 1280px) {
+  }
+}
+
+.header {
+  display: flex;
+  flex-direction: column;
+
+  //для планшету 768-1279
+  @media screen and (min-width: 768px) {
+    flex-direction: row-reverse;
+  }
+}
+
+.header-nav {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 4px;
+  margin-bottom: 8px;
+
+  //для планшету 768-1279
+  @media screen and (min-width: 768px) {
+  }
+}

@@ -1,0 +1,12 @@
+
+.footer{
+    &_text{
+        @include adaptive-font(16, 14);
+        text-align: center;
+        color: #545454;
+    }
+    &_link{
+        
+        color: #545454;
+    }
+}

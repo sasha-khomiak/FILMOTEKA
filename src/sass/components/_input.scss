@@ -1,0 +1,29 @@
+.query-input {
+  width: 100%;
+  padding-top: 10px;
+  padding-left: 10px;
+  padding-bottom: 10px;
+
+  background: #ffffff;
+  border-radius: 100px;
+  border-width: 0;
+
+  font-weight: 400;
+  font-size: 12px;
+  line-height: calc(14 / 12);
+  /* identical to box height */
+  color: #000000;
+
+  &::placeholder {
+  }
+
+  //для планшету 768-1279
+  @media screen and (min-width: 768px) {
+    width: 165px;
+  }
+
+      //для десктопа від 1280
+  @media screen and (min-width: 1280px) {
+     width: 187px;
+  }
+}

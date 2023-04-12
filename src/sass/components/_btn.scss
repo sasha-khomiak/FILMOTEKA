@@ -1,0 +1,19 @@
+.btn {
+  padding: 10px 26px;
+  background: #ffffff;
+  border-radius: 100px;
+
+  font-weight: 500;
+  font-size: 12px;
+  line-height: calc(14 / 12);
+  //   display: flex;
+  //   align-items: center;
+  //   text-align: center;
+  text-transform: uppercase;
+  color: #000000;
+
+  &--current {
+    background: #000000;
+    color: #ffffff;
+  }
+}

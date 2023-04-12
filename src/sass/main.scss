@@ -1,0 +1,14 @@
+// BASE
+@import './base/modern-normalize';
+@import './base/reset';
+@import './utils/visually-hidden';
+@import './utils/container';
+
+// COMPONENTS
+@import './components/btn';
+@import './components/input';
+
+// LAYOUT
+@import './layout/header';
+
+@import './layout/footer';

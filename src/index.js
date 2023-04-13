@@ -1,12 +1,15 @@
 //------ВИВОДИМО ТРЕНДОВІ ФІЛЬМИ ПРИ СТАРТІ------//
 import getTrendingFilms from './js/getTrendingFilms';
 import layOutListOfFilms from './js/layOutListOfFilms';
+import getDataFromAPI from './js/fetch_by_keyword';
+
 import debounce from 'lodash.debounce';
 const DEBOUNCE_DELAY = 300;
 let page = 1;
 window.addEventListener('scroll', debounce(onScrollDocument, DEBOUNCE_DELAY));
-async function showTrendingFilms() {
+export async function showTrendingFilms() {
   let trendingFilms = await getTrendingFilms(page);
+
   layOutListOfFilms(trendingFilms);
 }
 showTrendingFilms();

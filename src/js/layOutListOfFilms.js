@@ -1,24 +1,37 @@
+import { genres } from './genres.js';
+
 export default async function layOutListOfFilms(arrayOfFilms) {
+  // console.log('genres', genres);
+
   const gallery = document.querySelector('.gallery'); // галерея
-  let date = ``;
+
   let markup = arrayOfFilms
     .map(item => {
-      const { poster_path, title, first_air_date, release_data } = item;
-        
-      // checkDate(first_air_date, release_data)
-     
-      if (first_air_date !== undefined) {
-        date = first_air_date;
-        console.log('f',date);
+      const { poster_path, title, name, first_air_date, release_date } = item;
+
+      let a = '';
+      if (title !== undefined) {
+        a = title;
       }
-      if (release_data !== undefined) {
-        date = release_data;
-        console.log('r', date);
+      if (name !== undefined) {
+        a = name;
+      }
+
+      let date = '';
+
+      if (first_air_date !== undefined) {
+        // checkDate(first_air_date, release_data)
+        date = first_air_date;
+        // console.log('f', date);
+      }
+      if (release_date !== undefined) {
+        date = release_date;
+        // console.log('r', date);
       }
       // if(date === ``){
       //   return;
       // }
-      date = date.substring(0,4);
+      date = date.substring(0, 4);
       return `
       <div class="film-card">
       <a href="#">
@@ -27,22 +40,12 @@ export default async function layOutListOfFilms(arrayOfFilms) {
         </div>
       </a>
       <div class="info">
-        <p class="film-name">${title}</p>
+        <p class="film-name">${a}</p>
         <p class="film-info">Drama, Action | ${date}</p>
       </div>
-    </div>`}
-    )
+    </div>`;
+    })
     .join('');
 
   gallery.insertAdjacentHTML('beforeend', markup);
 }
-//  function checkDate(first_air_date, release_data){
-//    if (first_air_date !== undefined) {
-//     date = first_air_date;
-//     console.log('f',date);
-//   }
-//   if (release_data !== undefined) {
-//     date =  release_data;
-//     console.log('r',date);
-//   }
-// }

@@ -1,0 +1,67 @@
+.backdrop {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: $backdrop-bgr;
+    opacity: 1;
+    z-index: 50;
+
+    transition: visibility $transition-time $function-time,
+        opacity $transition-time $function-time;
+}
+
+.backdrop.is-hidden {
+    opacity: 0;
+    pointer-events: none;
+    visibility: hidden;
+    overflow: visible;
+}
+
+.modal-window {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%) scale(1);
+
+    min-height: 581px;
+    min-width: 528px;
+    padding: 40px;
+
+    background: $white-color;
+    box-shadow: $modal-box-shedow;
+    border-radius: 4px;
+
+    transition: transform $transition-time $function-time;
+}
+
+.close-button {
+    position: absolute;
+    top: 0;
+    right: 0;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    width: 30px;
+    height: 30px;
+    background: $icon-footer-bgr;
+    border: 1px solid rgba(0, 0, 0, 0.1);
+    border-radius: 50%;
+    margin-top: 8px;
+    margin-right: 8px;
+    cursor: pointer;
+
+    &:hover {
+        .close-button__icon {
+            fill: $acsent-color;
+        }
+    }
+}
+
+.close-button__icon {
+    fill: $black-color;
+    transition: transform $transition-time $function-time;
+}

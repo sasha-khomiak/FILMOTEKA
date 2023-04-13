@@ -3,7 +3,7 @@ import getTrendingFilms from './js/getTrendingFilms';
 import layOutListOfFilms from './js/layOutListOfFilms';
 import getDataFromAPI from './js/fetch_by_keyword';
 
-async function showTrendingFilms() {
+export async function showTrendingFilms() {
   let trendingFilms = await getTrendingFilms();
 
   // console.log(trendingFilms);

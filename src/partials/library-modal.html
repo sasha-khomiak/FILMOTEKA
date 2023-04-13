@@ -1,19 +1,61 @@
-<!-- Modal Window -->
-<div data-modal class="backdrop is-hidden">
+<div data-modal class="backdrop">
     <div class="modal-window">
-        <form class="modal-form js-speaker-form">
-            <h2 class="modal-form__title">
-                Helloy from library
-            </h2>
+        <div class="modal-header">
             <button type="button" data-modal-close class="close-button">
-                <svg class="close-button__icon" width="18px" height="18px">
-                    <use href="./images/icons.svg#icon-modal-close-black"></use>
+                <svg class="close-button__icon" width="30px" height="30px">
+                    <use href="./images/icons.svg#icon-close"></use>
                 </svg>
             </button>
+        </div>
+        <div class="modal-body">
+            <img src="/src/images/film1.jpg" alt="" height="375px" weight="240px" class="modal-picture">
 
-<div class="modal-form__field">
-    
+            <ul class="modal-information-list list">
+                <li class="modal-item item">
+                    <h2 class="modal-information-title">A FISTFUL OF LEAD</h2>
+                </li>
+                <li class="modal-item item">
+                    <p class="modal-discription">Vote / Votes<span class="data-discription">7.3 / 1260</span></p>
+                    <p class="modal-discription">Popularity<span class="data-discription">100.2</span></p>
+                    <p class="modal-discription">Original Title<span class="data-discription">A FISTFUL OF
+                            LEAD</span></p>
+                    <p class="modal-discription">Genre<span class="data-discription">Western</span></p>
+                </li>
+                <li class="modal-item item">
+                    <h3 class="modal-description-title">About</h3>
+                </li>
+                <li class="modal-item item">
+                    <p class="modal-description-text">
+                        Four of the West’s most infamous outlaws assemble to steal a huge stash of gold from the
+                        most corrupt settlement of the
+                        gold rush towns. But not all goes to plan one is killed and the other three escapes with
+                        bags of gold hide out in the
+                        abandoned gold mine where they happen across another gang of three – who themselves were
+                        planning to hit the very same
+                        bank! As tensions rise, things go from bad to worse as they realise the bags of gold are
+                        filled with lead... they’ve
+                        been double crossed – but by who and how?
+                    </p>
+                </li>
+            </ul>
+            <div class="modal-btn-cointeiner">
+                <button type="button" class="modal-description-btn">add to Watched</button>
+                <button type="button" class="modal-description-btn">add to queue</button>
+            </div>
+        </div>
+
+        <div class="modal-footer">
+            <iframe width="560" height="315" src="https://www.youtube.com/embed/tHjUvdbKKuY"
+                title="YouTube video player" frameborder="0"
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                allowfullscreen></iframe>
+        </div>
+    </div>
 </div>
+
+
+
+
 
 <!-- (() => {
 const refs = {

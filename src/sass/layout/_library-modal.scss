@@ -1,23 +1,25 @@
 .backdrop {
     position: fixed;
     top: 0;
+    right: 0;
     left: 0;
+    bottom: 0;
     width: 100%;
     height: 100%;
-    background-color: $backdrop-bgr;
+    background-color: rgba(0, 0, 0, 0.2);;
     opacity: 1;
     z-index: 50;
 
-    transition: visibility $transition-time $function-time,
-        opacity $transition-time $function-time;
+    // transition: visibility $transition-time $function-time,
+    //     opacity $transition-time $function-time;
 }
 
-.backdrop.is-hidden {
-    opacity: 0;
-    pointer-events: none;
-    visibility: hidden;
-    overflow: visible;
-}
+// .backdrop.is-hidden {
+//     opacity: 0;
+//     pointer-events: none;
+//     visibility: hidden;
+//     overflow: visible;
+// }
 
 .modal-window {
     position: absolute;
@@ -25,15 +27,29 @@
     left: 50%;
     transform: translate(-50%, -50%) scale(1);
 
-    min-height: 581px;
-    min-width: 528px;
+    max-width: 450px;
     padding: 40px;
 
-    background: $white-color;
-    box-shadow: $modal-box-shedow;
-    border-radius: 4px;
+    max-height: 100%;
+    overflow-y: auto;
 
-    transition: transform $transition-time $function-time;
+    background: #FFFFFF;;
+   
+
+    // transition: transform $transition-time $function-time;
+
+    // @media screen and (max-width:479px) {
+    //     width: 100%;
+    // }
+
+    // @media screen and (min-width:768px) {
+    //     width: 704px;
+    // }
+
+    // @media screen and (min-width:1280px) {
+    //     // min-height: 558px;
+    //     min-width: 806px;
+    // }
 }
 
 .close-button {
@@ -47,21 +63,118 @@
 
     width: 30px;
     height: 30px;
-    background: $icon-footer-bgr;
     border: 1px solid rgba(0, 0, 0, 0.1);
-    border-radius: 50%;
     margin-top: 8px;
     margin-right: 8px;
     cursor: pointer;
+    margin-bottom: 10px;
 
     &:hover {
         .close-button__icon {
-            fill: $acsent-color;
+            fill: #d44242;
         }
     }
 }
 
 .close-button__icon {
-    fill: $black-color;
-    transition: transform $transition-time $function-time;
+    fill: #000000;
+    // transition: transform $transition-time $function-time;
+}
+
+.madal-header {
+    padding: 8px;
+
+    @media screen and (min-width: 768px) {
+            padding: 8px;
+        }
+}
+
+.modal-body{
+    padding-right: 20px;
+    padding-left: 20px;
+}
+
+.modal-picture{
+    margin-bottom: 20px;
+}
+.modal-item{
+    margin-bottom: 20px;
+}
+.modal-title {
+       font-family: 'Roboto';
+        font-weight: 500;
+        font-size: 20px;
+        line-height: 1.15;
+}
+.modal-discription {
+    font-family: 'Roboto';
+        font-style: normal;
+        font-weight: 500;
+        font-size: 12px;
+        line-height: 1.33;
+
+        color: #8C8C8C;
+}
+.data-discription {
+    font-family: 'Roboto';
+        font-style: normal;
+        font-weight: 500;
+        font-size: 12px;
+        line-height: 1.33;
+        color: #000000;
+}
+.modal-discription-title {
+    font-family: 'Roboto';
+        font-style: normal;
+        font-weight: 500;
+        font-size: 12px;
+        line-height: 1.33;;
+        text-transform: uppercase;
+        color: #000000;
+}
+.modal-discription-text {
+font-family: 'Roboto';
+    font-style: normal;
+    font-weight: 500;
+    font-size: 12px;
+    line-height: 1.67;
+    color: #000000;
+}
+.modal-btn-cointeiner {
+    display: flex;
+    gap: 4px;
+}
+.modal-description-btn{
+min-width: 111px;
+height: 34px;
+background-color: transparent;
+border: 1px solid #000000;
+border-radius: 100px;
+text-transform: uppercase;
+text-align: center;
+padding-top:10px;
+padding-bottom: 10px;
+
+font-family: 'Roboto';
+    font-style: normal;
+    font-weight: 500;
+    font-size: 12px;
+    line-height: 1.67px;
+    text-transform: uppercase;
+    color: #B92F2C;
+}
+.modal-description-btn:hover {
+    background: #B92F2C;
+    color: #FFFFFF;
+}
+
+.modal-footer {
+    margin-top: 20px;
+    padding: 10px;
+    background-color: #d44242;
+    display: flex;
+   text-align: center;
+}
+.video-frame {
+    justify-content: center;
 }

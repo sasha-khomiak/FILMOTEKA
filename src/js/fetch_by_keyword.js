@@ -14,7 +14,6 @@ export default async function getDataFromAPI(queryName) {
     const data = await axios
       .get(`${BASE_URL}3/search/movie?api_key=${API_KEY}&query='${queryName}'`)
       .then(response => {
-        console.log(response.data.results);
         return response.data.results;
       });
     return data;
@@ -22,7 +21,6 @@ export default async function getDataFromAPI(queryName) {
     console.log(error);
   }
 }
-//  console.log(response.data.results);
 
 function onSubmitGetAndRender(evt) {
   evt.preventDefault();

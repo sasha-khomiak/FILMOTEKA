@@ -1,9 +1,13 @@
-import getTrendingFilms from './js/fetchAPI';
-import getDataFromAPI from './js/fetch_by_keyword';
+//------ВИВОДИМО ТРЕНДОВІ ФІЛЬМИ ПРИ СТАРТІ------//
+import getTrendingFilms from './js/getTrendingFilms';
+import layOutListOfFilms from './js/layOutListOfFilms';
 
-// виводимо трендові фільми
 async function showTrendingFilms() {
   let trendingFilms = await getTrendingFilms();
-  // console.log(trendingFilms);
+
+  console.log(trendingFilms);
+  layOutListOfFilms(trendingFilms);
 }
 showTrendingFilms();
+
+//------ПОШУК ФІЛЬМІВ ЗА ПОШУКОВИМ ЗАПИТОМ------//

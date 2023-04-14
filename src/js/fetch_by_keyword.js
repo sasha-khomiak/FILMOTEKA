@@ -55,4 +55,6 @@ function onSubmitGetAndRender(evt) {
 
 function clearPage() {
   gallery.innerHTML = '';
+  const movieCardList = document.querySelector('.movie-card__list');
+  movieCardList.innerHTML = '';
 }

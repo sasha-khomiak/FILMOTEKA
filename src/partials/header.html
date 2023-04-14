@@ -2,10 +2,10 @@
   <div class="container">
     <div class="header">
       <nav class="header-nav">
-        <a href="./index.html" class="link btn btn--current">Home</a>
-        <a href="#" class="link btn">My Library</a>
+        <button type="button" class="btn btn--current js-home">Home</button>
+        <button type="button" class="btn js-library">My Library</button>
       </nav>
-      <form class="search-field-js" action="">
+      <form class="search-field-js js-input-query" action="">
         <div class="input-wrap">
           <input
             type="text"
@@ -23,6 +23,10 @@
               </svg> -->
         </div>
       </form>
+      <div class="js-library-buttons is-hidden">
+        <button type="button" class="btn">Watched</button>
+        <button type="button" class="btn">Queue</button>
+      </div>
     </div>
   </div>
 </header>

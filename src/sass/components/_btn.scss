@@ -33,13 +33,15 @@
   border: none !important;
   font-size: 0;
   padding: 0;
-  top: -27px;
+  top: -25px;
   left: 224px;
   @media screen and(min-width:768px) {
     left: 138px;
+    top: -27px;
   }
   @media screen and(min-width:1280px) {
     left: 157px;
+    top: -27px;
   }
 }
 .button-nav {

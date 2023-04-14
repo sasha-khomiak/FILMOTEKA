@@ -1,8 +1,4 @@
 .btn {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-
   padding: 10px 26px;
   background: #ffffff;
   border-radius: 100px;
@@ -19,12 +15,22 @@
   &--current {
     background: #000000;
     color: #ffffff;
+    padding: 10px 22px;
+  }
+  &--red-color{
+    background: #B92F2C;
+    color: #ffffff;
+    padding: 10px 23px;
+  }
+  &--white-color{
+    background: white;
+    color:#B92F2C;
+    padding: 10px 24px;
   }
 
   @media screen and (min-width: 768px) {
     height: 38px;
   }
-  //coment
 }
 
 .form__button {
@@ -52,4 +58,15 @@
 }
 .button-nav__library {
   margin-left: 4px;
+}
+.js-library-buttons .is-hiiden {
+  display: none;
+}
+.button-active{
+  display: flex;
+  justify-content: center;
+  gap: 4px;
+  @media screen and(max-width:767px){
+    margin-top: 16px;
+  }
 }

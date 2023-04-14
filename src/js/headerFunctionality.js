@@ -5,6 +5,7 @@ export default async function headerFunctionality() {
   const btnHome = document.querySelector('.js-home');
   const btnLibrary = document.querySelector('.js-library');
   const inputQuery = document.querySelector('.js-input-query');
+  const libraryButtons = document.querySelector('.js-library-buttons');
 
   // чіпляємо слухачів на кнопки
   btnHome.addEventListener('click', handleClickBtnHome);
@@ -20,6 +21,8 @@ export default async function headerFunctionality() {
 
     //показуємо форму пошуку
     inputQuery.classList.remove('is-hidden');
+    //ховаємо блок кнопок медіатеки
+    libraryButtons.classList.add('is-hidden');
   }
 
   // обробники натискання кнопки Library
@@ -32,6 +35,9 @@ export default async function headerFunctionality() {
 
     //ховаємо форму пошуку
     inputQuery.classList.add('is-hidden');
+
+    //ховаємо блок кнопок медіатеки
+    libraryButtons.classList.remove('is-hidden');
   }
 }
 

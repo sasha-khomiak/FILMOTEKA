@@ -1,5 +1,5 @@
 import axios from 'axios';
-import { Notify }from 'notiflix';
+import { Notify } from 'notiflix';
 import layOutListOfFilms from './layOutListOfFilms';
 import { showTrendingFilms } from '../index';
 import myLibraryBg from './myLibraryBg';
@@ -11,11 +11,31 @@ const gallery = document.querySelector('.gallery');
 let keyword = ``;
 let page = 1;
 
-export { getDataFromAPI, keyword };
+
+export { getDataFromAPI, keyword, getMoreDataFromAPI, page };
+
 searchInput.addEventListener('submit', onSubmitGetAndRender);
 
-async function getDataFromAPI(keyword, page) {
+async function getDataFromAPI(keyword) {
   try {
+    page = 1;
+    const data = await axios
+
+      .get(`${BASE_URL}3/search/movie?api_key=${API_KEY}&query='${keyword}`)
+
+      .then(response => {
+        return response.data;
+      });
+    // console.log(data);
+    return data;
+  } catch (error) {
+    console.log(error);
+  }
+}
+
+async function getMoreDataFromAPI() {
+  try {
+    page += 1;
     const data = await axios
       .get(
         `${BASE_URL}3/search/movie?api_key=${API_KEY}&query='${keyword}&page=${page}'`
@@ -23,7 +43,7 @@ async function getDataFromAPI(keyword, page) {
       .then(response => {
         return response.data;
       });
-      // console.log(data);
+    // console.log(data);
     return data;
   } catch (error) {
     console.log(error);
@@ -34,10 +54,8 @@ function onSubmitGetAndRender(evt) {
   evt.preventDefault();
   keyword = evt.currentTarget.elements.query.value;
 
- 
-
   // console.log(keyword);
-  getDataFromAPI(keyword, page).then(data => {
+  getDataFromAPI(keyword).then(data => {
     if (data.results.length === 0) {
       Notify.failure(
         'Whoops... We did not found any movie, watch a movie from trends'
@@ -54,7 +72,7 @@ function onSubmitGetAndRender(evt) {
     // console.log(data);
     clearPage();
     layOutListOfFilms(data.results);
-    searchInput.reset()
+    searchInput.reset();
   });
 }
 

@@ -1,6 +1,6 @@
 const movieCardList = document.querySelector('.movie-card__list');
 
-export function myLibraryBg() {
+export default async function myLibraryBg() {
   movieCardList.innerHTML = `<div class="library">
        <div class="library-bg">
         <div class="library-bg__image"></div>
@@ -10,6 +10,3 @@ export function myLibraryBg() {
       </div>`;
   movieCardList.classList.add('library');
 }
-
-
-

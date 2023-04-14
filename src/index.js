@@ -9,6 +9,7 @@ import debounce from 'lodash.debounce';
 const DEBOUNCE_DELAY = 300;
 let page = 1;
 let response = '';
+let tempValue = '';
 
 
 
@@ -26,14 +27,20 @@ showTrendingFilms();
 async function onScrollDocument() {
   const scroll = document.documentElement.getBoundingClientRect();
   if (scroll.bottom < document.documentElement.clientHeight + 150) {
+    
     page += 1;
     if(keyword === ''){
       response = await getTrendingFilms(page);
     
-    }else{
-    response = await  getDataFromAPI(keyword, page).then(data => data.results)
-      
     }
+    tempValue = keyword;
+      if( keyword !== tempValue){
+        page = 1;
+      }
+      
+    response = await  getDataFromAPI(tempValue, page).then(data => data.results)
+      
+    
     
     layOutListOfFilms(response);
   }

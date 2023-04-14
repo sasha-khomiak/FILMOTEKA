@@ -1,8 +1,4 @@
 .btn {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-
   padding: 10px 26px;
   background: #ffffff;
   border-radius: 100px;
@@ -13,19 +9,64 @@
   font-weight: 500;
   font-size: 12px;
   line-height: calc(14 / 12);
-  //   display: flex;
-  //   align-items: center;
-  //   text-align: center;
   text-transform: uppercase;
   color: #000000;
 
   &--current {
     background: #000000;
     color: #ffffff;
+    padding: 10px 22px;
+  }
+  &--red-color{
+    background: #B92F2C;
+    color: #ffffff;
+    padding: 10px 23px;
+  }
+  &--white-color{
+    background: white;
+    color:#B92F2C;
+    padding: 10px 24px;
   }
 
   @media screen and (min-width: 768px) {
     height: 38px;
   }
-  //coment
+}
+
+.form__button {
+  position: relative;
+  background: transparent;
+  border: none !important;
+  font-size: 0;
+  padding: 0;
+  top: -25px;
+  left: 224px;
+  @media screen and(min-width:768px) {
+    left: 138px;
+    top: -27px;
+  }
+  @media screen and(min-width:1280px) {
+    left: 157px;
+    top: -27px;
+  }
+}
+.button-nav {
+  display: flex;
+  @media screen and (max-width: 767px) {
+    margin-bottom: 8px;
+  }
+}
+.button-nav__library {
+  margin-left: 4px;
+}
+.js-library-buttons .is-hiiden {
+  display: none;
+}
+.button-active{
+  display: flex;
+  justify-content: center;
+  gap: 4px;
+  @media screen and(max-width:767px){
+    margin-top: 16px;
+  }
 }

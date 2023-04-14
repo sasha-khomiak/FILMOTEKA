@@ -23,6 +23,8 @@ export default async function headerFunctionality() {
     inputQuery.classList.remove('is-hidden');
     //ховаємо блок кнопок медіатеки
     libraryButtons.classList.add('is-hidden');
+    libraryButtons.classList.remove('button-active');
+
   }
 
   // обробники натискання кнопки Library
@@ -38,6 +40,7 @@ export default async function headerFunctionality() {
 
     //ховаємо блок кнопок медіатеки
     libraryButtons.classList.remove('is-hidden');
+    libraryButtons.classList.add('button-active');
   }
 }
 

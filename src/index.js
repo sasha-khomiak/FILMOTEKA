@@ -1,3 +1,5 @@
+import headerFunctionality from './js/headerFunctionality';
+
 // підключаємо функцію запиту на API трендових фільмів
 import getTrendingFilms from './js/getTrendingFilms';
 
@@ -9,12 +11,10 @@ import { keyword } from './js/fetch_by_keyword';
 //import getDataFromAPI from './js/fetch_by_keyword';
 //import { keyword } from './js/fetch_by_keyword';
 
-
 import debounce from 'lodash.debounce';
 const DEBOUNCE_DELAY = 300;
 let page = 1;
 let response = '';
-
 
 window.addEventListener('scroll', debounce(onScrollDocument, DEBOUNCE_DELAY));
 export async function showTrendingFilms() {
@@ -24,8 +24,6 @@ export async function showTrendingFilms() {
 }
 showTrendingFilms();
 
-
-
 //------ПОШУК ФІЛЬМІВ ЗА ПОШУКОВИМ ЗАПИТОМ------//
 async function onScrollDocument() {
   const scroll = document.documentElement.getBoundingClientRect();
@@ -33,17 +31,11 @@ async function onScrollDocument() {
     page += 1;
     if (keyword === '') {
       response = await getTrendingFilms(page);
-
-    
-    }else{
-    response = await  getDataFromAPI(keyword, page).then(data => data.results)
-    //response = await getDataFromAPI(keyword, page);
-      
-
+    } else {
+      response = await getDataFromAPI(keyword, page).then(data => data.results);
+      //response = await getDataFromAPI(keyword, page);
     }
 
     layOutListOfFilms(response);
   }
 }
-
-

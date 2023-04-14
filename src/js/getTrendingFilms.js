@@ -9,10 +9,10 @@ const BASE_URL = 'https://api.themoviedb.org/';
 
 // developers.themoviedb.org/3/trending/get-trending
 
-export default async function getTrendingFilms() {
+export default async function getTrendingFilms(page) {
   try {
     const response = await axios.get(
-      `${BASE_URL}3/trending/all/day?api_key=${API_KEY}`
+      `${BASE_URL}3/trending/all/day?api_key=${API_KEY}&page=${page}`
     );
 
     // console.log(response.data.results);

@@ -5,14 +5,12 @@ const BASE_URL = 'https://api.themoviedb.org/';
 
 //https://api.themoviedb.org/3/movie/{movie_id}/videos?api_key=<<api_key>>&language=en-US
 
-export default async function getLinkTrailerByID(movie_id) {
+export default async function getKeyTrailerByID(movie_id) {
   try {
     const response = await axios.get(
       `${BASE_URL}3/movie/${movie_id}/videos?api_key=${API_KEY}&language=en-US`
     );
-
-    // console.log(response.data);
-    return response.data;
+    return response.data.results[0].key;
   } catch (error) {
     console.log(error);
   }

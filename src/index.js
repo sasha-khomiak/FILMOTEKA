@@ -18,12 +18,12 @@ import { keyword } from './js/fetch_by_keyword';
 
 import debounce from 'lodash.debounce';
 const DEBOUNCE_DELAY = 300;
-// let page = 1;
+let currentPage = 1;
 let response = '';
 
 window.addEventListener('scroll', debounce(onScrollDocument, DEBOUNCE_DELAY));
 export async function showTrendingFilms() {
-  let trendingFilms = await getTrendingFilms(page);
+  let trendingFilms = await getTrendingFilms(currentPage);
   // console.log(trendingFilms);
   layOutListOfFilms(trendingFilms);
 }
@@ -34,13 +34,14 @@ async function onScrollDocument() {
   const scroll = document.documentElement.getBoundingClientRect();
   if (scroll.bottom < document.documentElement.clientHeight + 150) {
 
-
+    currentPage += 1
     if (keyword === '') {
-      response = await getTrendingFilms(page);
+      response = await getTrendingFilms(currentPage);
+    }else{
+      
+    response = await getMoreDataFromAPI().then(data => data.results);
     }
 
-
-    response = await getMoreDataFromAPI().then(data => data.results);
 
 
     layOutListOfFilms(response);

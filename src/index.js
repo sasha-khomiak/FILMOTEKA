@@ -8,7 +8,7 @@ import layOutListOfFilms from './js/layOutListOfFilms';
 import getDataFromAPI from './js/fetch_by_keyword';
 import { keyword } from './js/fetch_by_keyword';
 
-//------ВИВОДИМО ТРЕНДОВІ ФІЛЬМИ ПРИ СТАРТІ------//
+//------ВИВОДИМО ТРЕНДОВІ ФІЛЬМИ ПРИ СТАРТІ   ------//
 
 // підключаємо бібліотеку debounce, яка потрібна для коректної роботи нескінченного скролу
 // затримка в мс для debounce, початкова сторінка для запиту

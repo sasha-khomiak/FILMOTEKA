@@ -14,6 +14,7 @@ import {
   getMoreDataFromAPI,
   page,
 } from './js/fetch_by_keyword';
+import { getDataFromAPI } from './js/fetch_by_keyword';
 import { keyword } from './js/fetch_by_keyword';
 
 import debounce from 'lodash.debounce';
@@ -33,16 +34,12 @@ showTrendingFilms();
 async function onScrollDocument() {
   const scroll = document.documentElement.getBoundingClientRect();
   if (scroll.bottom < document.documentElement.clientHeight + 150) {
-
-    currentPage += 1
+    currentPage += 1;
     if (keyword === '') {
       response = await getTrendingFilms(currentPage);
-    }else{
-      
-    response = await getMoreDataFromAPI().then(data => data.results);
+    } else {
+      response = await getMoreDataFromAPI().then(data => data.results);
     }
-
-
 
     layOutListOfFilms(response);
   }

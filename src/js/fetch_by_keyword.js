@@ -2,6 +2,7 @@ import axios from 'axios';
 import { Notify }from 'notiflix';
 import layOutListOfFilms from './layOutListOfFilms';
 import { showTrendingFilms } from '../index';
+import myLibraryBg from './myLibraryBg';
 
 const API_KEY = 'f051ac50d3bfe0c3fd75f02c1ff7b688';
 const BASE_URL = 'https://api.themoviedb.org/';
@@ -10,13 +11,15 @@ const gallery = document.querySelector('.gallery');
 let keyword = ``;
 let page = 1;
 
-export {getDataFromAPI, keyword}
+export { getDataFromAPI, keyword };
 searchInput.addEventListener('submit', onSubmitGetAndRender);
 
 async function getDataFromAPI(keyword, page) {
   try {
     const data = await axios
-      .get(`${BASE_URL}3/search/movie?api_key=${API_KEY}&query='${keyword}&page=${page}'`)
+      .get(
+        `${BASE_URL}3/search/movie?api_key=${API_KEY}&query='${keyword}&page=${page}'`
+      )
       .then(response => {
         return response.data;
       });
@@ -40,6 +43,8 @@ function onSubmitGetAndRender(evt) {
         'Whoops... We did not found any movie, watch a movie from trends'
       );
       clearPage();
+
+      myLibraryBg();
       showTrendingFilms();
       return;
     }
@@ -55,4 +60,6 @@ function onSubmitGetAndRender(evt) {
 
 function clearPage() {
   gallery.innerHTML = '';
+  const movieCardList = document.querySelector('.movie-card__list');
+  movieCardList.innerHTML = '';
 }

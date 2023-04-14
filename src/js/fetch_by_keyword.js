@@ -1,5 +1,5 @@
 import axios from 'axios';
-import Notiflix from 'notiflix';
+import { Notify }from 'notiflix';
 import layOutListOfFilms from './layOutListOfFilms';
 import { showTrendingFilms } from '../index';
 import myLibraryBg from './myLibraryBg';
@@ -23,6 +23,7 @@ async function getDataFromAPI(keyword, page) {
       .then(response => {
         return response.data;
       });
+      // console.log(data);
     return data;
   } catch (error) {
     console.log(error);
@@ -32,10 +33,13 @@ async function getDataFromAPI(keyword, page) {
 function onSubmitGetAndRender(evt) {
   evt.preventDefault();
   keyword = evt.currentTarget.elements.query.value;
-  console.log(keyword);
+
+ 
+
+  // console.log(keyword);
   getDataFromAPI(keyword, page).then(data => {
     if (data.results.length === 0) {
-      Notiflix.Notify.failure(
+      Notify.failure(
         'Whoops... We did not found any movie, watch a movie from trends'
       );
       clearPage();
@@ -44,12 +48,13 @@ function onSubmitGetAndRender(evt) {
       showTrendingFilms();
       return;
     }
-    Notiflix.Notify.success(
+    Notify.success(
       `Congrats! We have found ${data.total_results} movies according to your request `
     );
-    console.log(data);
+    // console.log(data);
     clearPage();
     layOutListOfFilms(data.results);
+    searchInput.reset()
   });
 }
 

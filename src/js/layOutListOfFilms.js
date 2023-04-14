@@ -18,7 +18,7 @@ export default async function layOutListOfFilms(arrayOfFilms) {
         genres.forEach(({ id, name }) => { 
           if(id === genre){
             tempGenres.push(name);
-            console.log(tempGenres);
+            // console.log(tempGenres);
           }
         })
       })

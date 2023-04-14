@@ -3,20 +3,41 @@ import { genres } from './genres.js';
 export default async function layOutListOfFilms(arrayOfFilms) {
   // console.log('genres', genres);
 
+
   const gallery = document.querySelector('.gallery'); // галерея
 
   let markup = arrayOfFilms
     .map(item => {
-      const { poster_path, title, name, first_air_date, release_date } = item;
+      const { poster_path, title, name, first_air_date, release_date, genre_ids } = item;
 
-      let a = '';
+      // -----------------------// 
+      // із нумерованого масиву жанрів отримуємо масив назв жанрів і формуємо стрінг
+      let tempGenres = [];
+      
+      genre_ids.forEach(genre => {
+        genres.forEach(({ id, name }) => { 
+          if(id === genre){
+            tempGenres.push(name);
+            console.log(tempGenres);
+          }
+        })
+      })
+      let tempGenresString = tempGenres.join(', ');
+
+
+      // визначаємо назву нашого фільма і вносимо змінну
+      // --------------///
+      
+      let correctFilmName = '';
       if (title !== undefined) {
-        a = title;
+        correctFilmName = title;
       }
       if (name !== undefined) {
-        a = name;
+        correctFilmName = name;
       }
 
+
+      // визначаємо дату виходу нашого фільма і лишаємо тільки рік
       let date = '';
 
       if (first_air_date !== undefined) {
@@ -24,14 +45,14 @@ export default async function layOutListOfFilms(arrayOfFilms) {
         date = first_air_date;
         // console.log('f', date);
       }
+
       if (release_date !== undefined) {
         date = release_date;
-        // console.log('r', date);
       }
-      // if(date === ``){
-      //   return;
-      // }
+      
       date = date.substring(0, 4);
+
+      // рендеремо розмітку 
       return `
       <div class="film-card">
       <a href="#">
@@ -40,12 +61,14 @@ export default async function layOutListOfFilms(arrayOfFilms) {
         </div>
       </a>
       <div class="info">
-        <p class="film-name">${a}</p>
-        <p class="film-info">Drama, Action | ${date}</p>
+        <p class="film-name">${correctFilmName}</p>
+        <p class="film-info">${tempGenresString} | ${date}</p>
       </div>
     </div>`;
     })
     .join('');
 
+
+//  Вставляємо в головний блок верстки
   gallery.insertAdjacentHTML('beforeend', markup);
 }

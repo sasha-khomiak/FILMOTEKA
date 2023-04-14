@@ -13,9 +13,6 @@
   font-weight: 500;
   font-size: 12px;
   line-height: calc(14 / 12);
-  //   display: flex;
-  //   align-items: center;
-  //   text-align: center;
   text-transform: uppercase;
   color: #000000;
 
@@ -28,4 +25,29 @@
     height: 38px;
   }
   //coment
+}
+
+.form__button {
+  position: relative;
+  background: transparent;
+  border: none !important;
+  font-size: 0;
+  padding: 0;
+  top: -27px;
+  left: 224px;
+  @media screen and(min-width:768px) {
+    left: 138px;
+  }
+  @media screen and(min-width:1280px) {
+    left: 157px;
+  }
+}
+.button-nav {
+  display: flex;
+  @media screen and (max-width: 767px) {
+    margin-bottom: 8px;
+  }
+}
+.button-nav__library {
+  margin-left: 4px;
 }

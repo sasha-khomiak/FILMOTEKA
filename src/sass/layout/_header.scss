@@ -31,7 +31,7 @@
   background-repeat: no-repeat;
   background-position: center;
   background-size: cover; //треба?
-  padding: 14px;
+  padding: 14px 14px 0px 14px;
 
   @media screen and (min-width: 768px) {
     height: 222px;
@@ -56,7 +56,7 @@
       ),
       url('../images/bg-desktop.jpg');
     border-radius: 15px;
-    padding: 16px 32px 32px 32px;
+    padding: 16px 32px 0px 32px;
   }
 }
 
@@ -64,9 +64,68 @@
   display: flex;
   flex-wrap: wrap;
   gap: 4px;
-  margin-bottom: 8px;
+  @media screen and (max-width: 767px) {
+    flex-direction: column-reverse;
+  }
+  @media screen and(min-width:768px) {
+    height: 38px;
+    margin-right: auto;
+  }
+}
 
-  //   //   //для планшету 768-1279
-  //   //   @media screen and (min-width: 768px) {
-  //   //   }
+.form {
+  @media screen and(min-width:768px) {
+    width: 165px;
+  }
+  @media screen and(min-width:1280px) {
+    width: 187px;
+  }
+}
+.header-logo__icon {
+  width: 32px;
+  height: 32px;
+  @media screen and(min-width:768px) {
+    width: 40px;
+    height: 40px;
+  }
+  @media screen and(min-width:1280px) {
+    width: 59px;
+    height: 59px;
+  }
+}
+.header-logo__text {
+  color: #fff;
+  font-size: 32px;
+  line-height: 38px;
+  font-weight: 500;
+  @media screen and(min-width:768px) {
+    font-size: 40px;
+    line-height: 47px;
+  }
+  @media screen and(min-width:1280px) {
+    font-size: 64px;
+    line-height: 75px;
+  }
+}
+.header-logo {
+  display: flex;
+  gap: 8px;
+  align-items: center;
+  @media screen and(max-width:767px) {
+    width: 190px;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 288px;
+  }
+  @media screen and(min-width:768px) {
+    height: 47px;
+    margin-top: 105px;
+  }
+  @media screen and(min-width:1280px) {
+    height: 75px;
+    margin-top: 150px;
+  }
+}
+.header-digression {
+  margin-right: auto;
 }

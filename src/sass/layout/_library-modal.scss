@@ -1,3 +1,6 @@
+body{
+    overflow: hidden;
+}
 .backdrop {
     position: fixed;
     top: 0;
@@ -159,9 +162,15 @@
     line-height: 1.16;
 }
 
+.text-field-total{
+    background-color: #F7F7F7;
+    border-radius: 5px;
+    padding: 1px 10px;
+    line-height: 1.16;
+}
+
 .text-title {
     text-transform: uppercase;
-    margin-bottom: 8px;
     font-size: 12px;
     line-height: 1.33;
 }

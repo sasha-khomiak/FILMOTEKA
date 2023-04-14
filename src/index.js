@@ -3,6 +3,9 @@ import headerFunctionality from './js/headerFunctionality';
 // підключаємо функцію запиту на API трендових фільмів
 import getTrendingFilms from './js/getTrendingFilms';
 
+// функція перевірки натискання по фільму
+import handleClickFilms from './js/handleClickFilms';
+
 // підключаємо функцію формування верстки галереї і вставкв в макет
 import layOutListOfFilms from './js/layOutListOfFilms';
 

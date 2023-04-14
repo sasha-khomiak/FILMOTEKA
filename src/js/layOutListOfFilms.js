@@ -1,13 +1,14 @@
 import { genres } from './genres.js';
 export default async function layOutListOfFilms(arrayOfFilms) {
   // console.log('genres', genres);
-
+  console.log(arrayOfFilms);
   const gallery = document.querySelector('.gallery'); // галерея
 
   let markup = arrayOfFilms
     .map(item => {
       const {
         poster_path,
+        id,
         title,
         name,
         first_air_date,
@@ -62,10 +63,10 @@ export default async function layOutListOfFilms(arrayOfFilms) {
 
       // рендеремо розмітку
       return `
-      <div class="film-card">
+      <div class="film-card" >
       <a href="#">
         <div class="thumb">
-          <img src="${image_src}" alt="film1" loading="lazy" />
+          <img src="${image_src}" alt="film1" loading="lazy" data-id="${id}" />
         </div>
       </a>
       <div class="info">

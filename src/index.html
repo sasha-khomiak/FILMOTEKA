@@ -1,34 +1,35 @@
 <!DOCTYPE html>
 <html lang="ru">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!-- підключення шрифтів -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500&display=swap"
+      rel="stylesheet"
+    />
 
-  <!-- підключення шрифтів -->
-  <link rel="preconnect" href="https://fonts.googleapis.com" />
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500&display=swap" rel="stylesheet" />
+    <!-- стилі -->
+    <link rel="stylesheet" href="./sass/main.scss" />
+    <link rel="icon" href="./images/favicon.ico" type="image/x-icon" />
 
-  <!-- стилі -->
-  <link rel="stylesheet" href="./sass/main.scss" />
-  <link rel="icon" href="./images/favicon.ico" type="image/x-icon" />
+    <title>FILMOTEKA</title>
+  </head>
 
-  <title>FILMOTEKA</title>
-</head>
+  <body>
+    <include src="./partials/header.html"></include>
 
-<body>
-  <include src="./partials/header.html"></include>
+    <main>
+      <include src="./partials/results.html"></include>
+    </main>
 
-  <main>
-    <include src="./partials/results.html"></include>
-  </main>
+    <include src="./partials/footer.html"></include>
 
-  <include src="./partials/footer.html"></include>
+    <!-- <include src="./partials/library-modal.html"></include> -->
 
-  <include src="./partials/library-modal.html"></include>
-
-  <script type="module" src="./index.js"></script>
-</body>
-
+    <script type="module" src="./index.js"></script>
+  </body>
 </html>

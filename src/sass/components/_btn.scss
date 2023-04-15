@@ -1,3 +1,6 @@
+//-------------КНОПКИ-------------//
+
+//Базове налаштування кнопок
 .btn {
   padding: 10px 26px;
   background: #ffffff;
@@ -17,6 +20,7 @@
     transform: scale(1.1);
   }
 
+  // Модифікатори для кнопок (поточної(головна чи бібліотека) + червона і біла для медітеки)
   &--current {
     background: #000000;
     color: #ffffff;
@@ -33,11 +37,13 @@
     padding: 10px 24px;
   }
 
+  // зміна висоти кнопки для планшета і десктопа
   @media screen and (min-width: 768px) {
     height: 38px;
   }
 }
 
+// кнопка пошуку  та яка з лупою
 .form__button {
   position: relative;
   background: transparent;
@@ -62,18 +68,26 @@
     top: -27px;
   }
 }
+
+// дів, який групує дві кнопки навігації Home і My Library
 .button-nav {
   display: flex;
   @media screen and (max-width: 767px) {
     margin-bottom: 8px;
   }
 }
+
+// стиль кнопки моя бібліорека
 .button-nav__library {
   margin-left: 4px;
 }
-.js-library-buttons .is-hiiden {
-  display: none;
-}
+
+// ніби і без цього працює, бо правидо is-hiiden уде прописано раніше
+// .js-library-buttons .is-hiiden {
+//   display: none;
+// }
+
+// стиль, який додається блоку кнопок медіатеки js-library-buttons
 .button-active {
   display: flex;
   justify-content: center;

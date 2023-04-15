@@ -1,5 +1,13 @@
 const main = document.querySelector('main');
+
 export default function markupModal(response) {
+  let tempGenres = [];
+
+  response.genres.forEach(genre => {
+    tempGenres.push(genre.name);
+  });
+  let tempGenresString = tempGenres.join(', ');
+
   modalString = `<div data-modal class="backdrop ">
   <div class="modal-window">
     <div class="modal-close">
@@ -12,11 +20,11 @@ export default function markupModal(response) {
     </div>
     <div class="film-container">
       <div class="cinema-card">
-        <img class="card-photo" src="https://image.tmdb.org/t/p/w500/${response.belongs_to_collection.poster_path}" alt="movie cover" />
+         <img class="card-photo" src="https://image.tmdb.org/t/p/w500/${response.poster_path}" alt="movie cover" />
       </div>
 
       <div class="card-block">
-        <p class="card-title">A FISTFUL OF LEAD</p>
+        <p class="card-title">${response.title}</p>
         <ul class="filter-list list">
           <li class="filter-item">
             <p class="text-description">Vote / Votes</p>
@@ -37,7 +45,7 @@ export default function markupModal(response) {
           </li>
           <li class="filter-item">
             <p class="text-description">Genre</p>
-            <p class="text-field" id="modal-genre"> ${response.genres}</p>
+            <p class="text-field" id="modal-genre">${tempGenresString}</p>
           </li>
         </ul>
         <ul class="card-descriotion list">
@@ -47,7 +55,7 @@ export default function markupModal(response) {
           <li>
             <p class="text-content">
               <span id="modal-content" class="md-modal-content"
-                >{$response.overview}</span
+                >${response.overview}</span
               >
               <!-- ??Добавляємо read-more? -->
               <span class="read-more" id="modal-read-more">Read more</span>

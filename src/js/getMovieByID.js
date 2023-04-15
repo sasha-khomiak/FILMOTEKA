@@ -11,7 +11,7 @@ export default async function getMovieByID(movie_id) {
       `${BASE_URL}3/movie/${movie_id}?api_key=${API_KEY}`
     );
 
-    // console.log(response.data);
+    console.log(response.data);
     return response.data;
   } catch (error) {
     console.log(error);

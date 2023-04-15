@@ -21,18 +21,18 @@ export default function handleClickFilms() {
     // Якщо клікнули по картинці, то беремо з події таргета значення атрибута data-id
     console.log(evt.target.dataset.id);
     // const movie_id = evt.target.dataset.id;
-    //getMovieByID(evt.target.dataset.id).then(response => markupModal(response));
+    getMovieByID(evt.target.dataset.id).then(response => markupModal(response));
 
-    getMovieByID(evt.target.dataset.id).then(response => {
-      //console.log(response);
-      markupModal(response);
-    });
+    // getMovieByID(evt.target.dataset.id).then(response => {      //////////
+    //   //console.log(response);
+    //   markupModal(response);     //////////
+    // });     //////////
 
     // console.log(`movie_id = ${movie_id}`);
     // створюємо обʼєкт бекдропа модалки
-    ////const backdrop = document.querySelector('.backdrop');///
-    // прибираємо клас прихованості, щоб показати модалку
-    ////backdrop.classList.remove('is-hidden');
+    // const backdrop = document.querySelector('.backdrop'); ///
+    // // прибираємо клас прихованості, щоб показати модалку
+    // backdrop.classList.remove('is-hidden');
     // тут може бути функція динамічного підверстування модалки
   }
 }

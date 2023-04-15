@@ -70,8 +70,10 @@ export default async function layOutListOfFilms(arrayOfFilms) {
         </div>
       </a>
       <div class="info">
+        <div class="info-container"> 
         <p class="film-name">${correctFilmName}</p>
         <p class="film-info">${tempGenresString} | ${date}</p>
+        </div>
       </div>
     </div>`;
     })

@@ -90,6 +90,6 @@ function markupModal(response) {
   closeButton.addEventListener('click', onClose);
   function onClose(evt) {
     evt.preventDefault();
-    divModal.innerHTML = '';
+    divModal.remove();
   }
 }

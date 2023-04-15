@@ -1,5 +1,5 @@
 import { getMovieByID } from './getMovieByID';
-import markupModal from './markupModal';
+import { markupModal } from './markupModal';
 export { movie_id, handleClickFilms };
 let movie_id = null;
 //-----ФУНКЦІЯ ОБРОБКИ КЛІКУ ПО ФІЛЬМУ-----//

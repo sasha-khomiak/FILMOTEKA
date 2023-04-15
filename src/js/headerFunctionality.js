@@ -24,7 +24,6 @@ export default async function headerFunctionality() {
     //ховаємо блок кнопок медіатеки
     libraryButtons.classList.add('is-hidden');
     libraryButtons.classList.remove('button-active');
-
   }
 
   // обробники натискання кнопки Library

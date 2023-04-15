@@ -34,6 +34,12 @@
   background-size: cover; //треба?
   padding: 14px 14px 0px 14px;
 
+  @media screen and (min-device-pixel-ratio: 2),
+    (min-resolution: 192dpi),
+    (min-resolution: 2dppx) {
+    background-image: url('../images/bg-mobile@2x.jpg');
+  }
+
   @media screen and (min-width: 768px) {
     height: 222px;
     background-image: linear-gradient(
@@ -46,6 +52,12 @@
     padding: 16px;
     flex-direction: initial;
     margin: 32px;
+
+    @media screen and (min-device-pixel-ratio: 2),
+      (min-resolution: 192dpi),
+      (min-resolution: 2dppx) {
+      background-image: url('../images/bg-tablet@2x.jpg');
+    }
   }
 
   @media screen and (min-width: 1280px) {
@@ -58,6 +70,11 @@
       url('../images/bg-desktop.jpg');
     border-radius: 15px;
     padding: 16px 32px 0px 32px;
+    @media screen and (min-device-pixel-ratio: 2),
+      (min-resolution: 192dpi),
+      (min-resolution: 2dppx) {
+      background-image: url('../images/bg-tablet@2x.jpg');
+    }
   }
 }
 

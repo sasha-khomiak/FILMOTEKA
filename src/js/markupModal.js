@@ -88,8 +88,16 @@ function markupModal(response) {
   //Закрытие модалки
   const closeButton = document.querySelector('.close-button');
   closeButton.addEventListener('click', onClose);
+
+  // тут треба додати слухача на закриття по кліку на бекдроп!!!!
+  // тільки от при натисканні на модалку теж закривається
+  // const backdrop = document.querySelector('.backdrop');
+  // backdrop.addEventListener('click', onClose);
+
   function onClose(evt) {
     evt.preventDefault();
+    divModal.innerHTML = '';
     divModal.remove();
+    //може тут треба зняти слухача натиску кнопки  закриття і еатиску бекдропа????
   }
 }

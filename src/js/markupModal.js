@@ -1,4 +1,4 @@
-const main = document.querySelector('main');
+//const main = document.querySelector('main');
 
 export default function markupModal(response) {
   let tempGenres = [];
@@ -8,7 +8,7 @@ export default function markupModal(response) {
   });
   let tempGenresString = tempGenres.join(', ');
 
-  modalString = `<div data-modal class="backdrop ">
+  modalString = `<div data-modal class="backdrop">
   <div class="modal-window">
     <div class="modal-close">
       <svg class="close-button" width="30" height="30">
@@ -88,5 +88,6 @@ export default function markupModal(response) {
 </div>`;
   const divModal = document.createElement('div');
   divModal.innerHTML = modalString;
+  console.log(divModal.innerHTML);
   document.getElementsByTagName('body')[0].appendChild(divModal);
 }

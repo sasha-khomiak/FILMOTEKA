@@ -23,11 +23,13 @@
 
 .film-card {
   width: 100%;
+  // height: 398px;
   margin-bottom: 20px;
 
   //для планшету 768-1279
   @media screen and (min-width: 768px) {
     // width: 336px;
+    // height: 455px;
     width: calc((100% - 32px) / 2);
     margin-bottom: 0;
   }
@@ -35,6 +37,7 @@
   //для десктопа від 1280
   @media screen and (min-width: 1280px) {
     // width: 395px;
+    // height: 574px;
     width: calc((100% - 32px) / 3);
   }
 }
@@ -52,10 +55,16 @@
 
 .thumb > img {
   display: block;
-  height: 100%;
   width: 100%;
+  height: 400px;
   object-fit: cover;
   transition: transform 500ms cubic-bezier(0.4, 0, 0.2, 1);
+  @media screen and (min-width: 768px) {
+    height: 500px;
+  }
+  @media screen and (min-width: 1280px) {
+    height: 600px;
+  }
 }
 
 .thumb > img:hover {
@@ -84,7 +93,7 @@
   //для десктопа від 1280
   @media screen and (min-width: 1280px) {
     margin-top: 12px;
-    font-size: 20px;
+    font-size: 18px;
     line-height: calc(24 / 20);
   }
 }
@@ -103,5 +112,24 @@
   @media screen and (min-width: 1280px) {
     font-size: 20px;
     line-height: calc(24 / 20);
+  }
+}
+
+.info {
+  // background: rgb(63,3,26);
+  // background: linear-gradient(90deg, rgba(63,3,26,1) 0%, rgba(60,3,8,0.7220939401151085) 35%, rgba(66,3,5,1) 100%);
+  background: rgb(63, 3, 26);
+  background: linear-gradient(
+    90deg,
+    rgba(63, 3, 26, 0.10024520061931019) 0%,
+    rgba(66, 3, 5, 1) 48%
+  );
+  border-radius: 5px;
+  margin-top: 5px;
+  height: 55px;
+  display: flex;
+  align-items: center;
+  @media screen and (min-width: 1280px) {
+    height: 90px;
   }
 }

@@ -3,7 +3,7 @@
     <div class="header">
       
       <div class="header-digression">
-        <nav class="header-nav">
+        <div class="header-block">
           <form class="search-field-js js-input-query form" action="">
             <div class="input-wrap">
               <input
@@ -19,22 +19,24 @@
               </button>
             </div>
           </form>
-          <div class="button-nav">
+          <nav class="button-nav">
             <button type="button" class="btn btn--current js-home">Home</button>
             <button type="button" class="btn js-library button-nav__library">
               My Library
             </button>
-          </div>
-        </nav>
+          </nav>
+        </div>
         
-        <nav class="header-logo">
-          <span
-            ><svg class="header-logo__icon">
+        <div class="header-logo">
+          <span>
+           <a href="#">
+            <svg class="header-logo__icon">
               <use href="/src/images/icons.svg#icon-filmlogo"></use>
             </svg>
+           </a>
           </span>
           <span class="header-logo__text">Filmoteka</span>
-        </nav>
+        </div>
       </div>
       <div class="js-library-buttons  is-hidden ">
         <button type="button" class="btn btn--red-color">Watched</button>

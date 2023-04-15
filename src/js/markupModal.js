@@ -97,6 +97,7 @@ function markupModal(response) {
   function onClose(evt) {
     evt.preventDefault();
     divModal.innerHTML = '';
+    divModal.remove();
     //може тут треба зняти слухача натиску кнопки  закриття і еатиску бекдропа????
   }
 }

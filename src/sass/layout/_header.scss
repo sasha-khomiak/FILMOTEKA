@@ -75,19 +75,33 @@
 
 .form {
   height: 38px;
-  @media screen and(max-width:767px){
+  @media screen and(max-width:767px) {
     height: 34px;
-
   }
   @media screen and(min-width:768px) {
     width: 165px;
-    
   }
   @media screen and(min-width:1280px) {
     width: 187px;
   }
 }
+
+@keyframes logoAnimation {
+  /* Тут будуть описуватися кадри */
+  0% {
+    transform: scale(1);
+  }
+  100% {
+    transform: scale(1.2);
+  }
+}
+
 .header-logo__icon {
+  animation-name: logoAnimation;
+  animation-duration: 500ms;
+  animation-iteration-count: infinite;
+  animation-direction: alternate;
+
   width: 32px;
   height: 32px;
   @media screen and(min-width:768px) {
@@ -133,8 +147,7 @@
   }
 }
 .header-digression {
-  @media  screen and(min-width:768px) {
+  @media screen and(min-width:768px) {
     margin-right: auto;
   }
- 
 }

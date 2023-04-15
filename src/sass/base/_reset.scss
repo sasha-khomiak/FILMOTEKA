@@ -1,6 +1,6 @@
 /*----BODY----*/
 
-//стандартні налаштування body
+//стандартні налаштування body (шрифт, колір тексту і бекграунда)
 body {
   font-family: 'Roboto', sans-serif;
   background: #f0f0f0;
@@ -9,12 +9,12 @@ body {
 
 /*----RESET----*/
 
-// Скасування декорування лінків
+// Скасування декорування лінків, застосується до тегів з таким класом
 .link {
   text-decoration: none;
 }
 
-// скасуванння декорування списків
+// скасуванння декорування списків, застосується до тегів з таким класом
 .list {
   list-style: none;
   padding: 0;
@@ -57,14 +57,19 @@ ul {
   display: none;
 }
 
-
-#particles-js{
+#particles-js {
   position: fixed;
   z-index: -3;
-  left:0;
-  top:0;
+  left: 0;
+  top: 0;
   width: 100vw;
   height: 100vh;
-  background: -webkit-linear-gradient(90deg, #31111c,#e4282a,#d52827,#110a13);
-  background: linear-gradient(90deg, #31111c,#e4282a,#d52827,#110a13);
- }
+  background: -webkit-linear-gradient(
+    90deg,
+    #31111c,
+    #e4282a,
+    #d52827,
+    #110a13
+  );
+  background: linear-gradient(90deg, #31111c, #e4282a, #d52827, #110a13);
+}

@@ -1,8 +1,9 @@
 .query-input {
   width: 252px;
   padding-top: 10px;
-  padding-left: 10px;
+  padding-left: 14px;
   padding-bottom: 10px;
+  padding-right: 35px;
   height: 34px;
   background: #ffffff;
   border-radius: 100px;
@@ -14,8 +15,11 @@
   color: #000000;
 
   &::placeholder {
+    color: #000000;
   }
+
   @media screen and (min-width: 768px) {
+    padding-left: 16px;
     width: 165px;
     height: 38px;
     font-size: 14px;

@@ -1,12 +1,13 @@
+//функція динаічної зміни хедера при натисканні кнопок
 import headerFunctionality from './js/headerFunctionality';
 
-// підключаємо функцію запиту на API трендових фільмів
+//  функція запиту на API трендових фільмів
 import getTrendingFilms from './js/getTrendingFilms';
 
 // функція перевірки натискання по фільму
 import handleClickFilms from './js/handleClickFilms';
 
-// підключаємо функцію формування верстки галереї і вставкв в макет
+//  функція формування верстки галереї і вставки в макет
 import layOutListOfFilms from './js/layOutListOfFilms';
 
 import {
@@ -30,7 +31,7 @@ export async function showTrendingFilms() {
 }
 showTrendingFilms();
 
-//------ПОШУК ФІЛЬМІВ ЗА ПОШУКОВИМ ЗАПИТОМ------//
+//------------//
 async function onScrollDocument() {
   const scroll = document.documentElement.getBoundingClientRect();
   if (scroll.bottom < document.documentElement.clientHeight + 150) {

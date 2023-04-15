@@ -1,14 +1,20 @@
+// функція отримання фільму по id
 import { getMovieByID } from './getMovieByID';
+
+// функція формування модального вікна
 import { markupModal } from './markupModal';
+
+//???? куди експортуємо?
 export { movie_id, handleClickFilms };
 let movie_id = null;
+
 //-----ФУНКЦІЯ ОБРОБКИ КЛІКУ ПО ФІЛЬМУ-----//
 //export let movie_id = null;
 function handleClickFilms() {
   // створюємо обʼєкт ко кліках якого будемо слухати
   const gallery = document.querySelector('.gallery');
 
-  // віщаємо слухача події клік
+  // вішаємо слухача події клік
   gallery.addEventListener('click', onClick);
 
   // функція обробник кліка

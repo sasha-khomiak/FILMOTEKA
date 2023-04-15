@@ -72,7 +72,8 @@
   line-height: calc(14 / 12);
   text-transform: uppercase;
 
-  color: #000000;
+  // color: #000000;
+  color: white;
 
   //для планшету 768-1279
   @media screen and (min-width: 768px) {
@@ -95,7 +96,8 @@
   font-size: 12px;
   line-height: calc(16 / 12);
 
-  color: #b92f2c;
+  // color: #b92f2c;
+  color: navajowhite;
 
   //для десктопа від 1280
   @media screen and (min-width: 1280px) {

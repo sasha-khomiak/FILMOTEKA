@@ -56,3 +56,15 @@ ul {
 .is-hidden {
   display: none;
 }
+
+
+#particles-js{
+  position: fixed;
+  z-index: -3;
+  left:0;
+  top:0;
+  width: 100vw;
+  height: 100vh;
+  background: -webkit-linear-gradient(90deg, #31111c,#e4282a,#d52827,#110a13);
+  background: linear-gradient(90deg, #31111c,#e4282a,#d52827,#110a13);
+ }

@@ -19,7 +19,7 @@ export default function handleClickFilms() {
       return;
     }
     // Якщо клікнули по картинці, то беремо з події таргета значення атрибута data-id
-    console.log(evt.target.dataset.id);
+    //console.log(evt.target.dataset.id);
     // const movie_id = evt.target.dataset.id;
     getMovieByID(evt.target.dataset.id).then(response => markupModal(response));
 

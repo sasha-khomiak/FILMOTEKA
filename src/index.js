@@ -10,13 +10,7 @@ import handleClickFilms from './js/handleClickFilms';
 //  функція формування верстки галереї і вставки в макет
 import layOutListOfFilms from './js/layOutListOfFilms';
 
-import {
-  getDataFromAPI,
-  getMoreDataFromAPI,
-  page,
-} from './js/fetch_by_keyword';
-import { getDataFromAPI } from './js/fetch_by_keyword';
-import { keyword } from './js/fetch_by_keyword';
+import {getMoreDataFromAPI, clearPage, keyword} from './js/fetch_by_keyword';
 
 import debounce from 'lodash.debounce';
 const DEBOUNCE_DELAY = 300;
@@ -31,7 +25,13 @@ export async function showTrendingFilms() {
 }
 showTrendingFilms();
 
-//------------//
+//--------ПОВЕРНЕННЯ НА ГОЛОВНУ СТОРІНКУ----\\
+document.querySelector('.header-link').addEventListener('click', renderMainContent)
+function renderMainContent() {
+  clearPage();
+  showTrendingFilms();
+}
+
 async function onScrollDocument() {
   const scroll = document.documentElement.getBoundingClientRect();
   if (scroll.bottom < document.documentElement.clientHeight + 150) {

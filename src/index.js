@@ -1,10 +1,10 @@
-//функція динаічної зміни хедера при натисканні кнопок
+//функція динамічної зміни хедера при натисканні кнопок
 import headerFunctionality from './js/headerFunctionality';
 
 //  функція запиту на API трендових фільмів
 import getTrendingFilms from './js/getTrendingFilms';
 
-// функція перевірки натискання по фільму
+// функція перевірки натискання по картинці фільму
 import handleClickFilms from './js/handleClickFilms';
 
 //  функція формування верстки галереї і вставки в макет

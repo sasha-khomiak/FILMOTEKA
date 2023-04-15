@@ -22,7 +22,12 @@ function handleClickFilms() {
     // Якщо клікнули по картинці, то беремо з події таргета значення атрибута data-id
     //console.log(evt.target.dataset.id);
     movie_id = evt.target.dataset.id;
-    getMovieByID(evt.target.dataset.id).then(response => markupModal(response));
+    console.log(movie_id);
+    getMovieByID(evt.target.dataset.id)
+      .then(response => markupModal(response))
+      .catch(error => {
+        return;
+      });
 
     // getMovieByID(evt.target.dataset.id).then(response => {      //////////
     //   //console.log(response);

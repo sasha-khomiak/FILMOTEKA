@@ -91,8 +91,8 @@ function markupModal(response) {
 
   // тут треба додати слухача на закриття по кліку на бекдроп!!!!
   // тільки от при натисканні на модалку теж закривається
-  const backdrop = document.querySelector('.backdrop');
-  backdrop.addEventListener('click', onClose);
+  // const backdrop = document.querySelector('.backdrop');
+  // backdrop.addEventListener('click', onClose);
 
   function onClose(evt) {
     evt.preventDefault();

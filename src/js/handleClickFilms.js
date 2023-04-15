@@ -1,9 +1,10 @@
-import getMovieByID from './getMovieByID';
+import { getMovieByID } from './getMovieByID';
 import markupModal from './markupModal';
-///
+export { movie_id, handleClickFilms };
+let movie_id = null;
 //-----ФУНКЦІЯ ОБРОБКИ КЛІКУ ПО ФІЛЬМУ-----//
 //export let movie_id = null;
-export default function handleClickFilms() {
+function handleClickFilms() {
   // створюємо обʼєкт ко кліках якого будемо слухати
   const gallery = document.querySelector('.gallery');
 
@@ -20,7 +21,7 @@ export default function handleClickFilms() {
     }
     // Якщо клікнули по картинці, то беремо з події таргета значення атрибута data-id
     //console.log(evt.target.dataset.id);
-    // const movie_id = evt.target.dataset.id;
+    movie_id = evt.target.dataset.id;
     getMovieByID(evt.target.dataset.id).then(response => markupModal(response));
 
     // getMovieByID(evt.target.dataset.id).then(response => {      //////////

@@ -15,6 +15,7 @@ export default function markupModal(response) {
         <use
           href="/src/images/icons.svg#icon-close"
           class="close-button__icon"
+          width="30" height="30"
         ></use>
       </svg>
     </div>
@@ -57,8 +58,7 @@ export default function markupModal(response) {
               <span id="modal-content" class="md-modal-content"
                 >${response.overview}</span
               >
-              <!-- ??Добавляємо read-more? -->
-              <span class="read-more" id="modal-read-more">Read more</span>
+              
             </p>
           </li>
         </ul>

@@ -9,7 +9,7 @@ function markupModal(response) {
   });
   let tempGenresString = tempGenres.join(', ');
 
-  modalString = `<div data-modal class="backdrop">
+  let modalString = `<div data-modal class="backdrop">
   <div class="modal-window">
     <div class="modal-close">
       //  <svg class="close-button" width="30" height="30">

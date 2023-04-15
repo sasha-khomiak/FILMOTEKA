@@ -28,6 +28,7 @@
     ),
     url('../images/bg-mobile.jpg');
   border-radius: 10px;
+  border-style: none;
   background-repeat: no-repeat;
   background-position: center;
   background-size: cover; //треба?
@@ -128,9 +129,7 @@
   }
 }
 .header-logo {
-  display: flex;
-  gap: 8px;
-  align-items: center;
+
   @media screen and(max-width:767px) {
     width: 190px;
     margin-left: auto;
@@ -150,4 +149,12 @@
   @media screen and(min-width:768px) {
     margin-right: auto;
   }
+}
+
+.header-link {
+  text-decoration: none;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  display: flex;
 }

@@ -1,4 +1,4 @@
-const { height: pageHederHeight } = document
+const { height: pageFooterHeight } = document
   .querySelector('.footer')
   .getBoundingClientRect();
-document.body.style.paddingTop = `${pageHederHeight}px`;
+document.body.style.paddingTop = `${pageFooterHeight}px`;

@@ -12,13 +12,8 @@ function markupModal(response) {
   let modalString = `<div data-modal class="backdrop">
   <div class="modal-window">
     <div class="modal-close">
-      //  <svg class="close-button" width="30" height="30">
-      //   <use
-      //     href="/src/images/icons.svg#icon-close"
-      //     class="close-button__icon"
-      //     width="30" height="30"
-      //   ></use>
-      // </svg>
+    <button type="button" class="close-button">X</button>
+     
     </div>
     <div class="film-container">
       <div class="cinema-card">
@@ -89,6 +84,12 @@ function markupModal(response) {
 </div>`;
   const divModal = document.createElement('div');
   divModal.innerHTML = modalString;
-  console.log(divModal.innerHTML);
   document.getElementsByTagName('body')[0].appendChild(divModal);
+  //Закрытие модалки
+  const closeButton = document.querySelector('.close-button');
+  closeButton.addEventListener('click', onClose);
+  function onClose(evt) {
+    evt.preventDefault();
+    divModal.innerHTML = '';
+  }
 }

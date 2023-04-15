@@ -1,4 +1,14 @@
-<div data-modal class="backdrop is-hidden">
+const main = document.querySelector('main');
+
+export default function markupModal(response) {
+  let tempGenres = [];
+
+  response.genres.forEach(genre => {
+    tempGenres.push(genre.name);
+  });
+  let tempGenresString = tempGenres.join(', ');
+
+  modalString = `<div data-modal class="backdrop ">
   <div class="modal-window">
     <div class="modal-close">
       <svg class="close-button" width="30" height="30">
@@ -10,37 +20,32 @@
     </div>
     <div class="film-container">
       <div class="cinema-card">
-        <img
-          class="card-photo"
-          src="/src/images/film1.jpg"
-          alt="movie cover"
-          width="30"
-        />
+         <img class="card-photo" src="https://image.tmdb.org/t/p/w500/${response.poster_path}" alt="movie cover" />
       </div>
 
       <div class="card-block">
-        <p class="card-title">A FISTFUL OF LEAD</p>
+        <p class="card-title">${response.title}</p>
         <ul class="filter-list list">
           <li class="filter-item">
             <p class="text-description">Vote / Votes</p>
             <p class="text-field">
-              <span class="text-filed-rate" id="modal-vote">7.3</span> /
-              <span class="text-field-total" id="modal-votes">1260</span>
+              <span class="text-filed-rate" id="modal-vote">${response.vote_average}</span> /
+              <span class="text-field-total" id="modal-votes">${response.vote_count}</span>
             </p>
           </li>
           <li class="filter-item">
             <p class="text-description">Popularity</p>
-            <p class="text-field" id="modal-popularity">100.2</p>
+            <p class="text-field" id="modal-popularity">${response.popularity}</p>
           </li>
           <li class="filter-item">
             <p class="text-description">Original Title</p>
             <p class="text-field text-title" id="modal-original">
-              A FISTFUL OF LEAD
+             ${response.original_title}
             </p>
           </li>
           <li class="filter-item">
             <p class="text-description">Genre</p>
-            <p class="text-field" id="modal-genre">Western</p>
+            <p class="text-field" id="modal-genre">${tempGenresString}</p>
           </li>
         </ul>
         <ul class="card-descriotion list">
@@ -50,15 +55,7 @@
           <li>
             <p class="text-content">
               <span id="modal-content" class="md-modal-content"
-                >Four of the West’s most infamous outlaws assemble to steal a
-                huge stash of gold from the most corrupt settlement of the gold
-                rush towns. But not all goes to plan one is killed and the other
-                three escapes with bags of gold hide out in the abandoned gold
-                mine where they happen across another gang of three – who
-                themselves were planning to hit the very same bank! As tensions
-                rise, things go from bad to worse as they realise the bags of
-                gold are filled with lead... they’ve been double crossed – but
-                by who and how?</span
+                >${response.overview}</span
               >
               <!-- ??Добавляємо read-more? -->
               <span class="read-more" id="modal-read-more">Read more</span>
@@ -88,4 +85,8 @@
       </div>
     </div>
   </div>
-</div>
+</div>`;
+  const divModal = document.createElement('div');
+  divModal.innerHTML = modalString;
+  document.getElementsByTagName('body')[0].appendChild(divModal);
+}

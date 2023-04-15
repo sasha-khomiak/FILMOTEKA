@@ -1,6 +1,7 @@
 //const main = document.querySelector('main');
+export { markupModal };
 
-export default function markupModal(response) {
+function markupModal(response) {
   let tempGenres = [];
 
   response.genres.forEach(genre => {
@@ -11,13 +12,13 @@ export default function markupModal(response) {
   modalString = `<div data-modal class="backdrop">
   <div class="modal-window">
     <div class="modal-close">
-      <svg class="close-button" width="30" height="30">
-        <use
-          href="/src/images/icons.svg#icon-close"
-          class="close-button__icon"
-          width="30" height="30"
-        ></use>
-      </svg>
+      //  <svg class="close-button" width="30" height="30">
+      //   <use
+      //     href="/src/images/icons.svg#icon-close"
+      //     class="close-button__icon"
+      //     width="30" height="30"
+      //   ></use>
+      // </svg>
     </div>
     <div class="film-container">
       <div class="cinema-card">

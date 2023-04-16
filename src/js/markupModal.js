@@ -1,16 +1,20 @@
 //const main = document.querySelector('main');
 export { markupModal };
-
+import { keyTrailer } from './handleClickFilms';
 function markupModal(response) {
+  // перевірка наявності даних перед рендером
+  if (keyTrailer === undefined) {
+    keyTrailer = 'ES8uSxB3Tnk';
+  }
+  //
   let tempGenres = [];
-
   response.genres.forEach(genre => {
     tempGenres.push(genre.name);
   });
   let tempGenresString = tempGenres.join(', ');
 
   let modalString = `<div data-modal class="backdrop">
-  <div class="modal-window">
+  <div class="modal-window" > 
     <div class="modal-close">
     <button type="button" class="close-button">X</button>
      
@@ -61,7 +65,7 @@ function markupModal(response) {
         <div class="trailer__container">
           <!-- У лінк додаємо id фільму -->
           <iframe
-            src="https://www.youtube.com/embed/tHjUvdbKKuY"
+            src="https://www.youtube.com/embed/${keyTrailer}"
             title="YouTube video player"
             frameborder="0"
             allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
@@ -96,7 +100,6 @@ function markupModal(response) {
 
   function onClose(evt) {
     evt.preventDefault();
-    divModal.innerHTML = '';
     divModal.remove();
     //може тут треба зняти слухача натиску кнопки  закриття і еатиску бекдропа????
   }

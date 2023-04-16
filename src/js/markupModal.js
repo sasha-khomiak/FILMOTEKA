@@ -1,5 +1,10 @@
 //const main = document.querySelector('main');
 export { markupModal };
+import { movie_id } from "./handleClickFilms";
+
+let arrayQueue = [];
+let arrayWatched = [];
+
 
 function markupModal(response) {
   let tempGenres = [];
@@ -99,5 +104,35 @@ function markupModal(response) {
     divModal.innerHTML = '';
     divModal.remove();
     //може тут треба зняти слухача натиску кнопки  закриття і еатиску бекдропа????
+  }
+
+
+  // додаємо слухачів на кнопки в модалці
+document.querySelector('.btn-add-watched').addEventListener('click', onClickToWatched)
+document.querySelector('.btn-add-queue').addEventListener('click', onClickToQueue)
+// функція кліку 
+
+Array.prototype.remove = function(value) {
+  this.splice(this.indexOf(value), 1);
+}
+
+  function onClickToWatched(e){
+    let btnWatched = e.currentTarget
+    if(arrayWatched.includes(movie_id)){
+      arrayWatched.remove(movie_id);
+    }
+    arrayWatched.push(movie_id);
+    btnWatched.classList.toggle('card-btn-active')
+    console.log(arrayWatched);
+   
+  }
+  function onClickToQueue(e){
+    let btnQueue = e.currentTarget
+    if(arrayQueue.includes(movie_id)){
+      arrayQueue.remove(movie_id)
+    }
+    arrayQueue.push(movie_id); 
+    btnQueue.classList.toggle('card-btn-active')
+    console.log(arrayQueue);
   }
 }

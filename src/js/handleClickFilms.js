@@ -1,4 +1,4 @@
-// функція отримання фільму по id
+// функція отримання з API фільму по id
 import { getMovieByID } from './getMovieByID';
 
 // функція формування модального вікна
@@ -7,7 +7,6 @@ import { markupModal } from './markupModal';
 // функція получения ключа трейлера
 import { getKeyTrailerByID } from './getKeyTrailerByID';
 
-export { keyTrailer };
 export { movie_id, handleClickFilms, keyTrailer };
 let movie_id = null; //  змінна ID фильма
 let keyTrailer = null; // змінна ключа трейлера

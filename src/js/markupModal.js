@@ -1,4 +1,3 @@
-//const main = document.querySelector('main');
 export { markupModal };
 
 import { movie_id } from './handleClickFilms';
@@ -116,6 +115,11 @@ async function markupModal(response) {
   const divModal = document.createElement('div');
   divModal.innerHTML = modalString;
   document.getElementsByTagName('body')[0].appendChild(divModal);
+
+  //прибиоання кнопки вгору
+  const toTopBtn = document.querySelector('.scrollToTopBtn');
+  toTopBtn.classList.add('visually-hidden');
+
   //Закрытие модалки
   const closeButton = document.querySelector('.close-button');
   closeButton.addEventListener('click', onClose);
@@ -128,6 +132,9 @@ async function markupModal(response) {
   function onClose(evt) {
     evt.preventDefault();
     divModal.remove();
+    //показати знову кнопку вгору
+    toTopBtn.classList.remove('visually-hidden');
+
     //може тут треба зняти слухача натиску кнопки  закриття і еатиску бекдропа????
   }
 

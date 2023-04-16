@@ -26,15 +26,24 @@
     color: #ffffff;
     padding: 10px 22px;
   }
-  &--red-color {
+  // &--red-color {
+  //   background: #b92f2c;
+  //   color: #ffffff;
+  //   padding: 10px 23px;
+  // }
+  // &--white-color {
+  //   background: white;
+  //   color: #b92f2c;
+  //   padding: 10px 24px;
+  // }
+  &-nav{
+    background: white;
+    padding: 10px 24px;
+  }
+  &-nav-active{
     background: #b92f2c;
     color: #ffffff;
     padding: 10px 23px;
-  }
-  &--white-color {
-    background: white;
-    color: #b92f2c;
-    padding: 10px 24px;
   }
 
   // зміна висоти кнопки для планшета і десктопа

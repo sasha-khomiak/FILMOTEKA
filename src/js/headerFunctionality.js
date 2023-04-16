@@ -1,4 +1,6 @@
 //-----Ф-ІЯ, ЯКА КЕРУЄ ПОЯВОЮ І ЗНИКАННЯМ КНОПОК І ЕЛЕМЕНТІВ В ХЕДЕРІ-----//
+import { showTrendingFilms } from "../index";
+import { renderMyLib } from "./render-myLibrary";
 
 export default async function headerFunctionality() {
   // створюємо елементи, які в хедері
@@ -6,6 +8,8 @@ export default async function headerFunctionality() {
   const btnLibrary = document.querySelector('.js-library');
   const inputQuery = document.querySelector('.js-input-query');
   const libraryButtons = document.querySelector('.js-library-buttons');
+  
+  const gallery = document.querySelector('.gallery')
 
   // чіпляємо слухачів на кнопки
   btnHome.addEventListener('click', handleClickBtnHome);
@@ -24,6 +28,9 @@ export default async function headerFunctionality() {
     //ховаємо блок кнопок медіатеки
     libraryButtons.classList.add('is-hidden');
     libraryButtons.classList.remove('button-active');
+    if(gallery.innerHTML === ''){
+      showTrendingFilms()
+    }
   }
 
   // обробники натискання кнопки Library
@@ -40,6 +47,9 @@ export default async function headerFunctionality() {
     //ховаємо блок кнопок медіатеки
     libraryButtons.classList.remove('is-hidden');
     libraryButtons.classList.add('button-active');
+
+    gallery.innerHTML = ''
+    renderMyLib()
   }
 }
 

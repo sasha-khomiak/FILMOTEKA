@@ -7,7 +7,7 @@ import { markupModal } from './markupModal';
 // функція получения ключа трейлера
 import { getKeyTrailerByID } from './getKeyTrailerByID';
 
-export { movie_id, handleClickFilms, keyTrailer };
+// export { movie_id, handleClickFilms, keyTrailer };
 let movie_id = null; //  змінна ID фильма
 let keyTrailer = null; // змінна ключа трейлера
 

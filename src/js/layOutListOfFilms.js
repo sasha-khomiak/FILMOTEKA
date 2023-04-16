@@ -1,7 +1,7 @@
 import { genres } from './genres.js';
 export default async function layOutListOfFilms(arrayOfFilms) {
   // console.log('genres', genres);
-  // console.log(arrayOfFilms);
+  console.log("отрм",arrayOfFilms);
   const gallery = document.querySelector('.gallery'); // галерея
 
   let markup = arrayOfFilms

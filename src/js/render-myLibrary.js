@@ -1,6 +1,7 @@
 //? імпорт функцій 
 import { getFromStorage } from "./localStorage";
 import { getMovieByID } from "./getMovieByID";
+// import layOutListOfMyLib from "./layOutListMyLibrary";
 import layOutListOfFilms from "./layOutListOfFilms";
 // // idQueue, idWatched
 // btn-nav-active
@@ -13,6 +14,7 @@ function renderMyLib() {
     const buttonQueue = document.querySelector('#queue');
     // змінна для ід фільмів
     let filmsId = null;
+    let arrMovies = [];
     // вішаємо кліки на кнопки
     buttonWatched.addEventListener('click', clickBtnWatched);
     buttonQueue.addEventListener('click', clickBtnQueue);
@@ -27,17 +29,16 @@ function renderMyLib() {
         buttonWatched.classList.add('btn-nav-active')
         buttonQueue.classList.remove('btn-nav-active')
         // доставання ід масива та їх перебор з локального сховища
+        // console.log(getFromStorage('idWatched'));
         getFromStorage('idWatched').map(id => {
-            filmsId = id;
-            // console.log('watched', filmsId);
-            const arr = []
-            // виклик функції запиту по ід та рендер розмітки
-            getMovieByID(filmsId).then(a => {
-                arr.push(a)
-                console.log(arr);
+            getMovieByID(id).then((movie) => {
+                // console.log(movie);
+                arrMovies.push(movie)
+                
             })
-           
         })
+        layOutListOfFilms(arrMovies)
+        console.log("передаю:",arrMovies);
     }
 
 // ! функція кліку по кнопці черга

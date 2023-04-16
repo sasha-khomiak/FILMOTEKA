@@ -4,9 +4,15 @@ import { getMovieByID } from './getMovieByID';
 // функція формування модального вікна
 import { markupModal } from './markupModal';
 
-//???? куди експортуємо?
-export { movie_id, handleClickFilms };
-let movie_id = null;
+// функція получения ключа трейлера
+import { getKeyTrailerByID } from './getKeyTrailerByID';
+
+
+
+
+export { movie_id, handleClickFilms, keyTrailer };
+let movie_id = null; //  змінна ID фильма
+let keyTrailer = null; // змінна ключа трейлера
 
 //-----ФУНКЦІЯ ОБРОБКИ КЛІКУ ПО ФІЛЬМУ-----//
 //export let movie_id = null;
@@ -16,6 +22,8 @@ function handleClickFilms() {
 
   // вішаємо слухача події клік
   gallery.addEventListener('click', onClick);
+}
+
 
   // функція обробник кліка
   function onClick(evt) {
@@ -26,26 +34,33 @@ function handleClickFilms() {
       return;
     }
     // Якщо клікнули по картинці, то беремо з події таргета значення атрибута data-id
-    //console.log(evt.target.dataset.id);
+
     movie_id = evt.target.dataset.id;
-    console.log(movie_id);
-    getMovieByID(evt.target.dataset.id)
+    // console.log(movie_id);
+    
+    // запрос на сервер для отримання ключа трейлера
+    getKeyTrailerByID(movie_id).then(response => {
+      keyTrailer = response;
+      console.log("clickOnCard:", keyTrailer);
+    }).catch(error => console.log(error));
+
+    // рендер розмітки по ід
+    getMovieByID(movie_id)
       .then(response => markupModal(response))
       .catch(error => {
         return;
       });
+      
+     
 
-    // getMovieByID(evt.target.dataset.id).then(response => {      //////////
-    //   //console.log(response);
-    //   markupModal(response);     //////////
-    // });     //////////
-
-    // console.log(`movie_id = ${movie_id}`);
-    // створюємо обʼєкт бекдропа модалки
-    // const backdrop = document.querySelector('.backdrop'); ///
-    // // прибираємо клас прихованості, щоб показати модалку
-    // backdrop.classList.remove('is-hidden');
-    // тут може бути функція динамічного підверстування модалки
-  }
 }
 handleClickFilms();
+
+
+// async function renderByID(movie_id) {
+//   keyTrailer = await getKeyTrailerByID(movie_id);
+//   const arrayForRenderModal = await getMovieByID(movie_id);
+//   markupModal(arrayForRenderModal);
+
+// }
+// renderByID(movie_id);

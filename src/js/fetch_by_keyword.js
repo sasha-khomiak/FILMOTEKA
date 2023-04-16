@@ -12,7 +12,7 @@ let keyword = ``;
 let page = 1;
 
 
-export { getDataFromAPI, keyword, getMoreDataFromAPI, page };
+export { getDataFromAPI, keyword, getMoreDataFromAPI, page, clearPage};
 
 searchInput.addEventListener('submit', onSubmitGetAndRender);
 
@@ -61,7 +61,7 @@ function onSubmitGetAndRender(evt) {
         'Whoops... We did not found any movie, watch a movie from trends'
       );
       clearPage();
-
+      searchInput.reset();
       myLibraryBg();
       showTrendingFilms();
       return;

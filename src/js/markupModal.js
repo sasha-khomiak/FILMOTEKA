@@ -2,7 +2,11 @@
 export { markupModal };
 import { movie_id } from './handleClickFilms';
 
-import { addToStorage, removeFromStorage, getFromStorage } from './localStorage'
+import {
+  addToStorage,
+  removeFromStorage,
+  getFromStorage,
+} from './localStorage';
 
 let arrayQueue = [];
 let arrayWatched = [];
@@ -14,6 +18,20 @@ function markupModal(response) {
     tempGenres.push(genre.name);
   });
   let tempGenresString = tempGenres.join(', ');
+
+  let textWatch = 'add to Watched';
+  let textQueue = 'add to Queue';
+  let watchClass = 'btn-add-watched card-btn';
+  let queueClass = 'btn-add-queue card-btn';
+
+  if (arrayWatched.includes(movie_id)) {
+    textWatch = 'remove from Watched';
+    watchClass = 'btn-add-watched card-btn card-btn-active';
+  }
+  if (arrayQueue.includes(movie_id)) {
+    textQueue = 'remove from Queue';
+    queueClass = 'btn-add-queue card-btn card-btn-active';
+  }
 
   let modalString = `<div data-modal class="backdrop">
   <div class="modal-window">
@@ -77,11 +95,11 @@ function markupModal(response) {
         </div>
 
         <div class="card-button">
-          <button class="btn-add-watched card-btn" type="submit">
-            add to Watched
+          <button class="${watchClass}" type="submit">
+            ${textWatch}
           </button>
-          <button class="btn-add-queue card-btn" type="submit">
-            add to Queue
+          <button class="${queueClass}" type="submit">
+            ${textQueue}
           </button>
         </div>
       </div>
@@ -107,15 +125,7 @@ function markupModal(response) {
     //може тут треба зняти слухача натиску кнопки  закриття і еатиску бекдропа????
   }
 
-
-
-
-
-
-
-
   //!?-------------------------- ФУНКЦІОНАЛ ЛОКАЛ СТОРЕДЖ----------------------------\\
-
 
   // додаємо слухачів на кнопки в модалці
   document
@@ -125,23 +135,27 @@ function markupModal(response) {
     .querySelector('.btn-add-queue')
     .addEventListener('click', onClickToQueue);
 
-
   //! функція для переглянутих
   function onClickToWatched(e) {
     // змінні
+    var btnWatchedText = document.querySelector('.btn-add-watched');
     let btnWatched = e.currentTarget;
     let keyWatched = 'idWatched';
     // прибирання додавання класса на кнопку
     btnWatched.classList.toggle('card-btn-active');
     // перевірка на знаходження в масиві переглянутих
     if (arrayWatched.includes(movie_id)) {
+      btnWatchedText.innerText = 'add to watch';
+
       arrayWatched.splice(arrayWatched.indexOf(movie_id), 1);
       console.log(arrayWatched);
       return;
     }
-    // додавання до масиву переглянутих та в локал стордж 
+    btnWatchedText.innerText = 'remove from Watched';
+
+    // додавання до масиву переглянутих та в локал стордж
     arrayWatched.push(movie_id);
-    addToStorage(keyWatched, arrayWatched)
+    addToStorage(keyWatched, arrayWatched);
 
     console.log(arrayWatched);
   }
@@ -150,20 +164,26 @@ function markupModal(response) {
 
   function onClickToQueue(e) {
     //змінні
+    var btnQuequeText = document.querySelector('.btn-add-queue');
+    // card-btn-active
     let btnQueue = e.currentTarget;
-    let keyQueue = 'idQueue'
+    let keyQueue = 'idQueue';
     // прибирання додавання класса на кнопку
     btnQueue.classList.toggle('card-btn-active');
     // перевірка на знаходження в масиві черги
     if (arrayQueue.includes(movie_id)) {
+      btnQuequeText.innerText = 'add to Queue';
+
       arrayQueue.splice(arrayQueue.indexOf(movie_id), 1);
       console.log(arrayQueue);
       return;
     }
-    // додавання до масиву черги та в локал стордж 
-    arrayQueue.push(movie_id);
-    addToStorage(keyQueue, arrayQueue)
+    btnQuequeText.innerText = 'remove from Queue';
+    // btnQuequeText.classList.add('card-btn-active')
 
+    // додавання до масиву черги та в локал стордж
+    arrayQueue.push(movie_id);
+    addToStorage(keyQueue, arrayQueue);
 
     console.log(arrayQueue);
   }

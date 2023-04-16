@@ -2,6 +2,8 @@
 export { markupModal };
 import { movie_id } from './handleClickFilms';
 
+import { addToStorage, removeFromStorage, getFromStorage } from './localStorage'
+
 let arrayQueue = [];
 let arrayWatched = [];
 
@@ -105,6 +107,16 @@ function markupModal(response) {
     //може тут треба зняти слухача натиску кнопки  закриття і еатиску бекдропа????
   }
 
+
+
+
+
+
+
+
+  //!?-------------------------- ФУНКЦІОНАЛ ЛОКАЛ СТОРЕДЖ----------------------------\\
+
+
   // додаємо слухачів на кнопки в модалці
   document
     .querySelector('.btn-add-watched')
@@ -112,32 +124,47 @@ function markupModal(response) {
   document
     .querySelector('.btn-add-queue')
     .addEventListener('click', onClickToQueue);
-  // функція кліку
 
-  Array.prototype.remove = function (value) {
-    this.splice(this.indexOf(value), 1);
-  };
 
+  //! функція для переглянутих
   function onClickToWatched(e) {
+    // змінні
     let btnWatched = e.currentTarget;
+    let keyWatched = 'idWatched';
+    // прибирання додавання класса на кнопку
+    btnWatched.classList.toggle('card-btn-active');
+    // перевірка на знаходження в масиві переглянутих
     if (arrayWatched.includes(movie_id)) {
       arrayWatched.splice(arrayWatched.indexOf(movie_id), 1);
       console.log(arrayWatched);
       return;
     }
+    // додавання до масиву переглянутих та в локал стордж 
     arrayWatched.push(movie_id);
-    btnWatched.classList.toggle('card-btn-active');
+    addToStorage(keyWatched, arrayWatched)
+
     console.log(arrayWatched);
   }
+
+  //! функція для черги
+
   function onClickToQueue(e) {
+    //змінні
     let btnQueue = e.currentTarget;
+    let keyQueue = 'idQueue'
+    // прибирання додавання класса на кнопку
+    btnQueue.classList.toggle('card-btn-active');
+    // перевірка на знаходження в масиві черги
     if (arrayQueue.includes(movie_id)) {
       arrayQueue.splice(arrayQueue.indexOf(movie_id), 1);
       console.log(arrayQueue);
       return;
     }
+    // додавання до масиву черги та в локал стордж 
     arrayQueue.push(movie_id);
-    btnQueue.classList.toggle('card-btn-active');
+    addToStorage(keyQueue, arrayQueue)
+
+
     console.log(arrayQueue);
   }
 }

@@ -37,13 +37,21 @@ function handleClickFilms() {
 
     movie_id = evt.target.dataset.id;
     // console.log(movie_id);
-    getMovieByID(evt.target.dataset.id)
+    
+    // запрос на сервер для отримання ключа трейлера
+    getKeyTrailerByID(movie_id).then(response => {
+      keyTrailer = response;
+      console.log("clickOnCard:", keyTrailer);
+    }).catch(error => console.log(error));
+
+    // рендер розмітки по ід
+    getMovieByID(movie_id)
       .then(response => markupModal(response))
       .catch(error => {
         return;
       });
-
-
+      
+     
 
 }
 handleClickFilms();

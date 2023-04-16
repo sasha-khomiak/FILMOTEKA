@@ -11,6 +11,7 @@ let arrayWatched = [];
 
 function markupModal(response) {
   // перевірка наявності даних перед рендером
+  console.log("Rendered:", keyTrailer);
   if (keyTrailer === undefined) {
     keyTrailer = 'ES8uSxB3Tnk';
   }

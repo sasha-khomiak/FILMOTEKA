@@ -2,8 +2,10 @@ export default async function layOutListOfMyLib(arrayFilms){
     const gallery = document.querySelector('.gallery')
     console.log("отримав", arrayFilms);
     let markup = arrayFilms.map(item => {
+        console.log(item);
         const {
             poster_path,
+            backdrop_path,
             id,
             title,
             name,
@@ -21,7 +23,7 @@ export default async function layOutListOfMyLib(arrayFilms){
       <div class="info">
         <div class="info-container"> 
         <p class="film-name">${title}</p>
-        <p class="film-info">${tempGenresString} | ${id}</p>
+        <p class="film-info">${name} | ${id}</p>
         </div>
       </div>
     </div>`;

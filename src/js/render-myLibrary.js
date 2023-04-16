@@ -1,7 +1,7 @@
 //? імпорт функцій 
 import { getFromStorage } from "./localStorage";
 import { getMovieByID } from "./getMovieByID";
-// import layOutListOfMyLib from "./layOutListMyLibrary";
+import layOutListOfMyLib from "./layOutListMyLibrary";
 import layOutListOfFilms from "./layOutListOfFilms";
 // // idQueue, idWatched
 // btn-nav-active
@@ -37,7 +37,7 @@ function renderMyLib() {
                 
             })
         })
-        layOutListOfFilms(arrMovies)
+        layOutListOfMyLib(arrMovies)
         console.log("передаю:",arrMovies);
     }
 

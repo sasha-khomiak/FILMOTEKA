@@ -11,3 +11,4 @@ export default async function myLibraryBg() {
       </div>`;
   movieCardList.classList.add('library');
 }
+

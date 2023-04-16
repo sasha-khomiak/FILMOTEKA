@@ -8,7 +8,7 @@ import { keyTrailer } from './handleClickFilms';
 let arrayQueue = [];
 let arrayWatched = [];
 
-function markupModal(response) {
+async function markupModal(response) {
   // перевірка наявності даних перед рендером
   console.log('Rendered:', keyTrailer);
   if (keyTrailer === undefined) {

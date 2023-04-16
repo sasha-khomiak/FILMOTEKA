@@ -104,21 +104,23 @@
   }
 }
 
-@keyframes logoAnimation {
-  /* Тут будуть описуватися кадри */
-  0% {
-    transform: scale(1);
-  }
-  100% {
-    transform: scale(1.2);
-  }
-}
+// @keyframes logoAnimation {
+//   /* Тут будуть описуватися кадри */
+//   0% {
+//     transform: scale(1);
+//   }
+//   100% {
+//     transform: scale(1.2);
+//   }
+// }
 
 .header-logo__icon {
-  animation-name: logoAnimation;
-  animation-duration: 500ms;
-  animation-iteration-count: infinite;
-  animation-direction: alternate;
+  // animation-name: logoAnimation;
+  // animation-duration: 500ms;
+  // animation-iteration-count: infinite;
+  // animation-direction: alternate;
+
+  animation: fillanimation 5s infinite alternate;
 
   width: 32px;
   height: 32px;
@@ -131,6 +133,22 @@
     height: 59px;
   }
 }
+
+@keyframes fillanimation {
+  0% {
+    stroke-dasharray: 0 50%;
+    stroke-dashoffset: 20%;
+    fill: hsl(189, 68%, 75%)
+  }
+
+  100% {
+    stroke-dasharray: 50% 0;
+    stroke-dashoffstet: -20%;
+    fill: hsla(189, 68%, 75%, 0%)
+  }
+
+}
+
 .header-logo__text {
   color: #fff;
   font-size: 32px;

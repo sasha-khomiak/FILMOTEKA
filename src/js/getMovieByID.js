@@ -10,8 +10,6 @@ async function getMovieByID(movie_id) {
     const response = await axios.get(
       `${BASE_URL}3/movie/${movie_id}?api_key=${API_KEY}`
     );
-    // console.log(`Movie_ID: ${movie_id}`);
-    // console.log(response.data);
     return response.data;
   } catch (error) {
     console.log(error);

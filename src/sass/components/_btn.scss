@@ -72,8 +72,12 @@
 // дів, який групує дві кнопки навігації Home і My Library
 .button-nav {
   display: flex;
+  gap: 4px;
   @media screen and (max-width: 767px) {
     margin-bottom: 8px;
+  }
+  @media screen and (min-width: 768px){
+    margin-left: 4px;
   }
 }
 

@@ -122,6 +122,7 @@ function markupModal(response) {
     let btnWatched = e.currentTarget;
     if (arrayWatched.includes(movie_id)) {
       arrayWatched.splice(arrayWatched.indexOf(movie_id), 1);
+      console.log(arrayWatched);
       return;
     }
     arrayWatched.push(movie_id);
@@ -132,6 +133,7 @@ function markupModal(response) {
     let btnQueue = e.currentTarget;
     if (arrayQueue.includes(movie_id)) {
       arrayQueue.splice(arrayQueue.indexOf(movie_id), 1);
+      console.log(arrayQueue);
       return;
     }
     arrayQueue.push(movie_id);

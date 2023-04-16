@@ -1,3 +1,4 @@
+//функція яка повертає фільм по id
 import axios from 'axios';
 export { getMovieByID };
 const API_KEY = 'f051ac50d3bfe0c3fd75f02c1ff7b688';

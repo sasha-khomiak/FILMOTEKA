@@ -23,20 +23,6 @@ function handleClickFilms() {
   // вішаємо слухача події клік
   gallery.addEventListener('click', onClick);
 }
-// функція обробник кліка
-function onClick(evt) {
-  // скасовуємо за замовчанням (зоб не спрацьовувала подія кліку по лінку)
-  evt.preventDefault();
-  // якщо клікнули деінде крім картинки то виходимо з функції
-  if (evt.target.tagName !== 'IMG') {
-    return;
-  }
-
-  // Якщо клікнули по картинці, то беремо з події таргета значення атрибута data-id
-
-  movie_id = evt.target.dataset.id;
-
-  //функція отримання ключа трейлера в змінну та рендер розмітки після цього
 
 
   // функція обробник кліка
@@ -51,19 +37,30 @@ function onClick(evt) {
 
     movie_id = evt.target.dataset.id;
     // console.log(movie_id);
-    getMovieByID(evt.target.dataset.id)
+    
+    // запрос на сервер для отримання ключа трейлера
+    getKeyTrailerByID(movie_id).then(response => {
+      keyTrailer = response;
+      console.log("clickOnCard:", keyTrailer);
+    }).catch(error => console.log(error));
+
+    // рендер розмітки по ід
+    getMovieByID(movie_id)
       .then(response => markupModal(response))
       .catch(error => {
         return;
       });
+      
+     
 
-
-  async function renderByID(movie_id) {
-    keyTrailer = await getKeyTrailerByID(movie_id);
-    const arrayForRenderModal = await getMovieByID(movie_id);
-    markupModal(arrayForRenderModal);
-
-  }
-  renderByID(movie_id);
 }
 handleClickFilms();
+
+
+// async function renderByID(movie_id) {
+//   keyTrailer = await getKeyTrailerByID(movie_id);
+//   const arrayForRenderModal = await getMovieByID(movie_id);
+//   markupModal(arrayForRenderModal);
+
+// }
+// renderByID(movie_id);

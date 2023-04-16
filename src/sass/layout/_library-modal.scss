@@ -1,6 +1,6 @@
-// body {
-//   overflow: hidden;
-// }
+.fixed-body {
+  overflow: hidden;
+}
 
 //----------------НАЛАШТУВАННЯ БЕКДРОП----------------//
 .backdrop {
@@ -69,7 +69,7 @@
 
 //----------------НАЛАШТУВАННЯ КНОПКИ ЗАКРИТТЯ----------------//
 
-.close-button {
+.close-button-film {
   position: absolute;
   top: 0;
   right: 0;
@@ -83,10 +83,9 @@
   height: 30px;
   margin-top: 8px;
   margin-right: 8px;
-  cursor: pointer;
+  // cursor: pointer;
   border-style: none;
 }
-
 
 .close-button__icon {
   stroke: black;

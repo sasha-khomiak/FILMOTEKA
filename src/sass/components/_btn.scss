@@ -7,7 +7,7 @@
   border-radius: 100px;
   height: 34px;
   border: 0;
-  cursor: pointer;
+  // cursor: pointer;
 
   font-weight: 500;
   font-size: 12px;
@@ -36,11 +36,11 @@
   //   color: #b92f2c;
   //   padding: 10px 24px;
   // }
-  &-nav{
+  &-nav {
     background: white;
     padding: 10px 24px;
   }
-  &-nav-active{
+  &-nav-active {
     background: #b92f2c;
     color: #ffffff;
     padding: 10px 23px;
@@ -62,7 +62,7 @@
   top: -25px;
   left: 224px;
   transition: transform 500ms cubic-bezier(0.4, 0, 0.2, 1);
-  cursor: pointer;
+  // cursor: pointer;
 
   &:hover {
     transform: scale(1.3);

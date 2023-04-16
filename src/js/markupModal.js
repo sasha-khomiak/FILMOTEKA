@@ -1,8 +1,8 @@
 //const main = document.querySelector('main');
 export { markupModal, movieId };
-import {addAndRemoveToLocalStorage} from './localStorage';
-import {onClickToWatched, onClickToQueue} from './onClickToWatch'
-import {getKeyTrailerByID} from './getKeyTrailerByID'
+import { addAndRemoveToLocalStorage } from './localStorage';
+import { onClickToWatched, onClickToQueue } from './onClickToWatch';
+import { getKeyTrailerByID } from './getKeyTrailerByID';
 import { getMovieByID } from './getMovieByID';
 
 // змінні масивів для черги та переглянутих
@@ -10,12 +10,10 @@ let arrayQueue = [];
 let arrayWatched = [];
 let movieId;
 
-
-
 async function markupModal(id) {
   movieId = id;
-   // запрос на сервер для отримання ключа трейлера
-  let trailerId = await getKeyTrailerByID(id)
+  // запрос на сервер для отримання ключа трейлера
+  let trailerId = await getKeyTrailerByID(id);
   // console.log(trailerId);
   // рендер розмітки по ід
   let movieInfo = await getMovieByID(id);
@@ -24,7 +22,6 @@ async function markupModal(id) {
   // перевірка наявності даних перед рендером
   let trailerToLayout = '';
   if (trailerId !== undefined) {
-    
     trailerToLayout = `<div class="trailer__container">
     <!-- У лінк додаємо id фільму -->
     <iframe
@@ -37,7 +34,7 @@ async function markupModal(id) {
     ></iframe>
   </div>`;
   }
-  
+
   //
   let tempGenres = [];
   movieInfo.genres.forEach(genre => {
@@ -62,7 +59,7 @@ async function markupModal(id) {
   let modalString = `<div data-modal class="backdrop">
   <div class="modal-window" > 
     <div class="modal-close">
-    <button type="button" class="close-button">X</button>
+    <button type="button" class="close-button-film">X</button>
      
     </div>
     <div class="film-container">
@@ -124,8 +121,11 @@ async function markupModal(id) {
   const divModal = document.createElement('div');
   divModal.innerHTML = modalString;
   document.getElementsByTagName('body')[0].appendChild(divModal);
+  document.querySelector('body').classList.add('fixed-body');
+  document.querySelector('#scrollToTopBtn').classList.add('visually-hidden');
+
   //Закрытие модалки
-  const closeButton = document.querySelector('.close-button');
+  const closeButton = document.querySelector('.close-button-film');
   closeButton.addEventListener('click', onClose);
 
   // тут треба додати слухача на закриття по кліку на бекдроп!!!!
@@ -135,6 +135,12 @@ async function markupModal(id) {
 
   function onClose(evt) {
     evt.preventDefault();
+    // divModal.innerHTML = '';
+    document.querySelector('body').classList.remove('fixed-body');
+    document
+      .querySelector('#scrollToTopBtn')
+      .classList.remove('visually-hidden');
+
     divModal.remove();
     //може тут треба зняти слухача натиску кнопки  закриття і еатиску бекдропа????
   }
@@ -142,10 +148,10 @@ async function markupModal(id) {
   //!?-------------------------- ФУНКЦІОНАЛ ЛОКАЛ СТОРЕДЖ----------------------------\\
 
   // додаємо слухачів на кнопки в модалці
-  document.querySelector('.btn-add-watched').addEventListener('click', onClickToWatched);
-  document.querySelector('.btn-add-queue').addEventListener('click', onClickToQueue);
-
-  
-
-  
+  document
+    .querySelector('.btn-add-watched')
+    .addEventListener('click', onClickToWatched);
+  document
+    .querySelector('.btn-add-queue')
+    .addEventListener('click', onClickToQueue);
 }

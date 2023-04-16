@@ -60,18 +60,21 @@ ul {
   background: linear-gradient(90deg, #31111c, #e4282a, #d52827, #110a13);
 }
 
+//https://convertio.co/png-cur/
 // налаштування кастомних курсорів
+
 // button,
 // a {
 //   cursor: url('../images/cursor.cur'), auto;
 // }
 
-// button:hover,
-// a:hover {
-//   cursor: url('../images/cursor-hover.cur'), auto;
-// }
+button:hover,
+a:hover {
+  cursor: url('../images/cine.cur'), auto;
+}
 
 // клас приховування, застосується до тегів з таким класом
+// анадог віжуалі-хідден
 .is-hidden {
   display: none;
 }

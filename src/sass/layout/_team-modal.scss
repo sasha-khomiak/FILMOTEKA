@@ -3,6 +3,10 @@
     cursor: pointer;
 }
 
+body {
+  overflow: hidden;
+}
+
 body.show-team-modal .team-backdrop{
     opacity: 1;
     visibility: visible;
@@ -42,4 +46,54 @@ body.show-team-modal .modal{
     box-shadow: 0px 1px 3px 6px rgba(0,8, 0, .2),
     0px 1px 1px rgba(0, 8, 0, .14),
     0px 2px 1px -1px rgba(0, 0, 6, .12);
+
+    position: absolute;
+       
+        max-height: 100%;
+        overflow-y: auto;
+    
+}
+
+
+.close-button {
+    position: absolute;
+    width: 30px;
+    height: 30px;
+    background: white;
+    border: none;
+    cursor: pointer;
+
+    margin-top: 8px;
+    margin-right: 8px;
+}
+
+.leftright,
+.rightleft {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    height: 3px;
+    width: 20px;
+    background-color: black;
+    border-radius: 2px;
+    transition: all .3s ease-in;
+}
+
+.rightleft {
+    transform: translate(-50%, -50%) rotate(-45deg);
+}
+.leftright {
+    transform: translate(-50%, -50%) rotate(45deg);
+}
+
+
+.close-button:hover .leftright {
+    transform: translate(-50%, -50%) rotate(-45deg);
+    background-color: #B92F2C;
+}
+
+.close-button:hover .rightleft {
+    transform: translate(-50%, -50%) rotate(45deg);
+    background-color: #B92F2C;
 }

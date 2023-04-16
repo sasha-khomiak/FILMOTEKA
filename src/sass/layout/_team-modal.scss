@@ -1,99 +1,95 @@
-.open-team-modal{
-    height: 100%;
-    cursor: pointer;
+.open-team-modal {
+  height: 100%;
+  cursor: pointer;
 }
 
 body {
-  overflow: hidden;
+  //   overflow: hidden;
 }
 
-body.show-team-modal .team-backdrop{
-    opacity: 1;
-    visibility: visible;
-    pointer-events: initial;
-    z-index: 1000;
+body.show-team-modal .team-backdrop {
+  opacity: 1;
+  visibility: visible;
+  pointer-events: initial;
+  z-index: 1000;
 }
 
-body.show-team-modal .modal{
-    transition: scale(1);
+body.show-team-modal .modal {
+  transition: scale(1);
 }
 
 .team-backdrop {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    position: fixed;
-    top:0;
-    left: 0;
-    width: 100vw;
-    height: 100vh;
-    background-color: rgb(0, 0, 0, .3);
-    z-index: 950;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background-color: rgb(0, 0, 0, 0.3);
+  z-index: 950;
 
-    pointer-events: none;
-    opacity: 0;
-    visibility: hidden;
-    transition: opacity 250ms ease-in-out, visibility 250ms ease-in-out;
+  pointer-events: none;
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity 250ms ease-in-out, visibility 250ms ease-in-out;
 }
 
 .team-modal {
-    padding: 24px;
-    border-radius: 4px;
-    max-width: 80%;
-    width: 100%;
-    min-height: 80%;
-    background-color: white;
-    box-shadow: 0px 1px 3px 6px rgba(0,8, 0, .2),
-    0px 1px 1px rgba(0, 8, 0, .14),
-    0px 2px 1px -1px rgba(0, 0, 6, .12);
+  padding: 24px;
+  border-radius: 4px;
+  max-width: 80%;
+  width: 100%;
+  min-height: 80%;
+  background-color: white;
+  box-shadow: 0px 1px 3px 6px rgba(0, 8, 0, 0.2),
+    0px 1px 1px rgba(0, 8, 0, 0.14), 0px 2px 1px -1px rgba(0, 0, 6, 0.12);
 
-    position: absolute;
-       
-        max-height: 100%;
-        overflow-y: auto;
-    
+  position: absolute;
+
+  max-height: 100%;
+  overflow-y: auto;
 }
 
-
 .close-button {
-    position: absolute;
-    width: 30px;
-    height: 30px;
-    background: white;
-    border: none;
-    cursor: pointer;
+  position: absolute;
+  width: 30px;
+  height: 30px;
+  background: white;
+  border: none;
+  cursor: pointer;
 
-    margin-top: 8px;
-    margin-right: 8px;
+  margin-top: 8px;
+  margin-right: 8px;
 }
 
 .leftright,
 .rightleft {
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    height: 3px;
-    width: 20px;
-    background-color: black;
-    border-radius: 2px;
-    transition: all .3s ease-in;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  height: 3px;
+  width: 20px;
+  background-color: black;
+  border-radius: 2px;
+  transition: all 0.3s ease-in;
 }
 
 .rightleft {
-    transform: translate(-50%, -50%) rotate(-45deg);
+  transform: translate(-50%, -50%) rotate(-45deg);
 }
 .leftright {
-    transform: translate(-50%, -50%) rotate(45deg);
+  transform: translate(-50%, -50%) rotate(45deg);
 }
 
-
 .close-button:hover .leftright {
-    transform: translate(-50%, -50%) rotate(-45deg);
-    background-color: #B92F2C;
+  transform: translate(-50%, -50%) rotate(-45deg);
+  background-color: #b92f2c;
 }
 
 .close-button:hover .rightleft {
-    transform: translate(-50%, -50%) rotate(45deg);
-    background-color: #B92F2C;
+  transform: translate(-50%, -50%) rotate(45deg);
+  background-color: #b92f2c;
 }

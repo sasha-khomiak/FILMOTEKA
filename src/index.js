@@ -45,3 +45,11 @@ async function onScrollDocument() {
     layOutListOfFilms(response);
   }
 }
+
+//---------
+// import { getFromStorage } from './js/localStorage';
+// function getssd(){
+//   let a = getFromStorage("idQueue")
+//   console.log(a);
+// }
+// getssd()

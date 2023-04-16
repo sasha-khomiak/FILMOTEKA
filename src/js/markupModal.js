@@ -2,16 +2,15 @@
 export { markupModal };
 
 import { movie_id } from './handleClickFilms';
-import {addAndRemoveToLocalStorage} from './localStorage';
+import { addAndRemoveToLocalStorage } from './localStorage';
 import { keyTrailer } from './handleClickFilms';
 // змінні масивів для черги та переглянутих
 let arrayQueue = [];
 let arrayWatched = [];
 
-
 function markupModal(response) {
   // перевірка наявності даних перед рендером
-  console.log("Rendered:", keyTrailer);
+  console.log('Rendered:', keyTrailer);
   if (keyTrailer === undefined) {
     keyTrailer = 'ES8uSxB3Tnk';
   }
@@ -38,10 +37,15 @@ function markupModal(response) {
 
   let modalString = `<div data-modal class="backdrop">
   <div class="modal-window" > 
+        <!-- Кнопка закриття модалки -->
     <div class="modal-close">
-    <button type="button" class="close-button">X</button>
-     
+      <button type="button" class="close-button">
+        <svg class="close-button__icon" width="30" height="30">
+          <use href="./images/icons.svg#icon-close-2"></use>
+        </svg>
+      </button>
     </div>
+
     <div class="film-container">
       <div class="cinema-card">
          <img class="card-photo" src="https://image.tmdb.org/t/p/w500/${response.poster_path}" alt="movie cover" />
@@ -139,7 +143,7 @@ function markupModal(response) {
 
   //! функція для переглянутих
   function onClickToWatched(e) {
-    e.preventDefault()
+    e.preventDefault();
     // змінні
     var btnWatchedText = document.querySelector('.btn-add-watched');
     let btnWatched = e.currentTarget;
@@ -152,7 +156,7 @@ function markupModal(response) {
       // видалення з масиву та видалення з локал стореджу черги
       arrayWatched.splice(arrayWatched.indexOf(movie_id), 1);
       addAndRemoveToLocalStorage(keyWatched, arrayWatched);
-     
+
       // console.log(arrayWatched);
       return;
     }
@@ -168,7 +172,7 @@ function markupModal(response) {
   //! функція для черги
 
   function onClickToQueue(e) {
-    e.preventDefault()
+    e.preventDefault();
     //змінні
     var btnQuequeText = document.querySelector('.btn-add-queue');
     // card-btn-active

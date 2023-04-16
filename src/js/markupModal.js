@@ -2,14 +2,16 @@ export { markupModal };
 
 import { movie_id } from './handleClickFilms';
 import { addAndRemoveToLocalStorage } from './localStorage';
-// import { keyTrailer } from './handleClickFilms';
+import { keyTrailer } from './handleClickFilms';
 // змінні масивів для черги та переглянутих
 let arrayQueue = [];
 let arrayWatched = [];
 
 async function markupModal(response) {
+  console.log('my response', response);
   // перевірка наявності даних перед рендером
   console.log('Rendered:', keyTrailer);
+
   if (keyTrailer === undefined) {
     keyTrailer = 'ES8uSxB3Tnk';
   }

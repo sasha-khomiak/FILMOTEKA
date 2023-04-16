@@ -1,13 +1,8 @@
 //const main = document.querySelector('main');
 export { markupModal };
 import { movie_id } from './handleClickFilms';
-
-import {
-  addToStorage,
-  removeFromStorage,
-  getFromStorage,
-} from './localStorage';
-
+import {addAndRemoveToLocalStorage} from './localStorage';
+// змінні масивів для черги та переглянутих
 let arrayQueue = [];
 let arrayWatched = [];
 
@@ -137,6 +132,7 @@ function markupModal(response) {
 
   //! функція для переглянутих
   function onClickToWatched(e) {
+    e.preventDefault()
     // змінні
     var btnWatchedText = document.querySelector('.btn-add-watched');
     let btnWatched = e.currentTarget;
@@ -146,16 +142,18 @@ function markupModal(response) {
     // перевірка на знаходження в масиві переглянутих
     if (arrayWatched.includes(movie_id)) {
       btnWatchedText.innerText = 'add to watch';
-
+      // видалення з масиву та видалення з локал стореджу черги
       arrayWatched.splice(arrayWatched.indexOf(movie_id), 1);
-      console.log(arrayWatched);
+      addAndRemoveToLocalStorage(keyWatched, arrayWatched);
+     
+      // console.log(arrayWatched);
       return;
     }
     btnWatchedText.innerText = 'remove from Watched';
 
     // додавання до масиву переглянутих та в локал стордж
     arrayWatched.push(movie_id);
-    addToStorage(keyWatched, arrayWatched);
+    addAndRemoveToLocalStorage(keyWatched, arrayWatched);
 
     console.log(arrayWatched);
   }
@@ -163,6 +161,7 @@ function markupModal(response) {
   //! функція для черги
 
   function onClickToQueue(e) {
+    e.preventDefault()
     //змінні
     var btnQuequeText = document.querySelector('.btn-add-queue');
     // card-btn-active
@@ -173,9 +172,10 @@ function markupModal(response) {
     // перевірка на знаходження в масиві черги
     if (arrayQueue.includes(movie_id)) {
       btnQuequeText.innerText = 'add to Queue';
-
+      // видалення з масиву та видалення з локал стореджу переглянутих
       arrayQueue.splice(arrayQueue.indexOf(movie_id), 1);
-      console.log(arrayQueue);
+      addAndRemoveToLocalStorage(keyQueue, arrayQueue);
+      // console.log(arrayQueue);
       return;
     }
     btnQuequeText.innerText = 'remove from Queue';
@@ -183,7 +183,7 @@ function markupModal(response) {
 
     // додавання до масиву черги та в локал стордж
     arrayQueue.push(movie_id);
-    addToStorage(keyQueue, arrayQueue);
+    addAndRemoveToLocalStorage(keyQueue, arrayQueue);
 
     console.log(arrayQueue);
   }

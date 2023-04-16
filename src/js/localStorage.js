@@ -1,4 +1,4 @@
-function addToStorage(key, value){
+function addAndRemoveToLocalStorage(key, value){
 try {
     if (typeof value === 'string') {
       localStorage.setItem(key, value);
@@ -17,12 +17,5 @@ function getFromStorage(key) {
   }
 };
 
-function removeFromStorage(key) {
-  try {
-    localStorage.removeItem(key);
-  } catch (error) {
-    console.error(error);
-  }
-};
 
-export {addToStorage, getFromStorage, removeFromStorage}
+export {addAndRemoveToLocalStorage, getFromStorage}

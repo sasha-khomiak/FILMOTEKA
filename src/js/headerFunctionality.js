@@ -1,8 +1,7 @@
 //-----Ф-ІЯ, ЯКА КЕРУЄ ПОЯВОЮ І ЗНИКАННЯМ КНОПОК І ЕЛЕМЕНТІВ В ХЕДЕРІ-----//
 import { showTrendingFilms } from '../index';
-import { renderMyLib } from './render-myLibrary';
 import { clearPage } from './fetch_by_keyword';
-
+import { clickBtnWatched, clickBtnQueue  } from './render-myLibrary';
 
 
 export default async function headerFunctionality() {
@@ -62,9 +61,12 @@ export default async function headerFunctionality() {
     //показуємо блок кнопок медіатеки і додаємо клас button-active
     libraryButtons.classList.remove('is-hidden');
     libraryButtons.classList.add('button-active');
-
     clearPage();
-    renderMyLib();
+    const buttonQueue = document.querySelector('#queue');
+    const buttonWatched = document.querySelector('#watched');
+    buttonWatched.addEventListener('click', clickBtnWatched);
+    buttonQueue.addEventListener('click', clickBtnQueue);
+  
   }
 }
 

@@ -1,9 +1,8 @@
 export default async function layOutListOfMyLib(arrayFilms) {
   const gallery = document.querySelector('.gallery');
-  // let tempGenresString = tempGenres.join(', ');
 
-  // console.log('отримав', arrayFilms);
   arrayFilms.map(item => {
+    console.log(item);
     const {
       genres,
       poster_path,
@@ -11,21 +10,15 @@ export default async function layOutListOfMyLib(arrayFilms) {
       id,
       title,
       name,
-      first_air_date,
       release_date,
     } = item;
-
-    // console.log(genres);
 
     let genresArray = [];
 
     genres.map(genre => {
       genresArray.push(genre.name);
-      // console.log(genre.name);
-      // console.log(genresString);
     });
     let genresString = genresArray.join(', ');
-    console.log(genresString);
 
     const dataCard = `
       <div class="film-card" >

@@ -1,9 +1,11 @@
 //const main = document.querySelector('main');
 export { markupModal, movieId };
-import {  getFromStorage } from './localStorage';
+import { getFromStorage } from './localStorage';
 import { onClickToWatched, onClickToQueue } from './onClickToWatch';
 import { getKeyTrailerByID } from './getKeyTrailerByID';
 import { getMovieByID } from './getMovieByID';
+
+import posterPlug from '../images/poster-plug.png';
 
 // змінні масивів для черги та переглянутих
 let arrayQueue = [];
@@ -16,7 +18,6 @@ if (localStorage.getItem('idWatched')) {
 if (localStorage.getItem('idQueue')) {
   arrayQueue = getFromStorage('idQueue');
 }
-
 
 async function markupModal(id) {
   movieId = id;
@@ -64,6 +65,11 @@ async function markupModal(id) {
     queueClass = 'btn-add-queue card-btn card-btn-active';
   }
 
+  let image_src = posterPlug;
+  if (movieInfo.poster_path !== null) {
+    image_src = `https://image.tmdb.org/t/p/w500/${movieInfo.poster_path}`;
+  }
+
   let modalString = `<div data-modal class="backdrop">
   <div class="modal-window" > 
     <div class="modal-close">
@@ -75,7 +81,7 @@ async function markupModal(id) {
     </div>
     <div class="film-container">
       <div class="cinema-card">
-         <img class="card-photo" src="https://image.tmdb.org/t/p/w500/${movieInfo.poster_path}" alt="movie cover" />
+         <img class="card-photo" src="${image_src}" alt="movie cover" />
       </div>
 
       <div class="card-block">

@@ -1,4 +1,7 @@
 import { genres } from './genres.js';
+
+import posterPlug from '../images/poster-plug.png';
+
 export default async function layOutListOfFilms(arrayOfFilms) {
   // console.log('genres', genres);
   // console.log("отрм",arrayOfFilms);
@@ -54,9 +57,7 @@ export default async function layOutListOfFilms(arrayOfFilms) {
       if (release_date !== undefined) {
         date = release_date;
       }
-      // let image_src = './images/poster-plug.png'; ////чомусь не працює??????
-      let image_src =
-        'https://cdn.icon-icons.com/icons2/931/PNG/512/empty_file_icon-icons.com_72420.png';
+      let image_src = posterPlug;
       if (poster_path !== null) {
         image_src = `https://image.tmdb.org/t/p/w500/${poster_path}`;
       }

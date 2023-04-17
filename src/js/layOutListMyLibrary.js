@@ -4,7 +4,6 @@ export default async function layOutListOfMyLib(arrayFilms) {
 
   // console.log('отримав', arrayFilms);
   arrayFilms.map(item => {
-    console.log(item);
     const {
       genres,
       poster_path,
@@ -16,17 +15,29 @@ export default async function layOutListOfMyLib(arrayFilms) {
       release_date,
     } = item;
 
+    // console.log(genres);
+
+    let genresArray = [];
+
+    genres.map(genre => {
+      genresArray.push(genre.name);
+      // console.log(genre.name);
+      // console.log(genresString);
+    });
+    let genresString = genresArray.join(', ');
+    console.log(genresString);
+
     const dataCard = `
       <div class="film-card" >
       <a href="#">
         <div class="thumb">
-          <img src="https://image.tmdb.org/t/p/w500/${poster_path}" alt="film1" loading="lazy" data-id="${release_date}" />
+          <img src="https://image.tmdb.org/t/p/w500/${poster_path}" alt="film1" loading="lazy" data-id="${id}" />
         </div>
       </a>
       <div class="info">
         <div class="info-container"> 
         <p class="film-name">${title}</p>
-        <p class="film-info">${name} | ${id}</p>
+        <p class="film-info">${genresString} | ${release_date}</p>
         </div>
       </div>
     </div>`;

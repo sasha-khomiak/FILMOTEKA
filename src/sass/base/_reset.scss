@@ -5,6 +5,7 @@ body {
   font-family: 'Roboto', sans-serif;
   background: #f0f0f0;
   color: black;
+  padding-top: 0 !important; //бо якась фігня цей параетр інлайново змінює
 }
 
 /*----RESET----*/

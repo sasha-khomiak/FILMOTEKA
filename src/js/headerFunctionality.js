@@ -1,6 +1,6 @@
 //-----Ф-ІЯ, ЯКА КЕРУЄ ПОЯВОЮ І ЗНИКАННЯМ КНОПОК І ЕЛЕМЕНТІВ В ХЕДЕРІ-----//
-import { showTrendingFilms } from "../index";
-import { renderMyLib } from "./render-myLibrary";
+import { showTrendingFilms } from '../index';
+import { renderMyLib } from './render-myLibrary';
 
 export default async function headerFunctionality() {
   // створюємо елементи, які в хедері
@@ -12,12 +12,15 @@ export default async function headerFunctionality() {
   const inputQuery = document.querySelector('.js-input-query');
   // блок кнопок бібліотеки
   const libraryButtons = document.querySelector('.js-library-buttons');
-  
-  const gallery = document.querySelector('.gallery')
+
+  const gallery = document.querySelector('.gallery');
 
   // чіпляємо слухачів на кнопки home і library
   btnHome.addEventListener('click', handleClickBtnHome);
   btnLibrary.addEventListener('click', handleClickBtnLibrary);
+  document
+    .querySelector('.header-link')
+    .addEventListener('click', handleClickBtnHome);
 
   // обробники натискання кнопки Home
   function handleClickBtnHome(evt) {
@@ -33,8 +36,8 @@ export default async function headerFunctionality() {
     //ховаємо блок кнопок медіатеки і забираємо клас button-active
     libraryButtons.classList.add('is-hidden');
     libraryButtons.classList.remove('button-active');
-    if(gallery.innerHTML === ''){
-      showTrendingFilms()
+    if (gallery.innerHTML === '') {
+      showTrendingFilms();
     }
   }
 
@@ -54,8 +57,8 @@ export default async function headerFunctionality() {
     libraryButtons.classList.remove('is-hidden');
     libraryButtons.classList.add('button-active');
 
-    gallery.innerHTML = ''
-    renderMyLib()
+    gallery.innerHTML = '';
+    renderMyLib();
   }
 }
 

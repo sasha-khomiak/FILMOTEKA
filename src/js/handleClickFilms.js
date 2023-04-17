@@ -23,7 +23,7 @@ function onClick(evt) {
   // Якщо клікнули по картинці, то беремо з події таргета значення атрибута data-id
 
   let movieId = evt.target.dataset.id;
-  // console.log(movie_id);
+  // (movie_id);
   markupModal(movieId);
 }
 handleClickFilms();

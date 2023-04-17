@@ -3,13 +3,13 @@ import { genres } from './genres.js';
 import posterPlug from '../images/poster-plug.jpg';
 
 export default async function layOutListOfFilms(arrayOfFilms) {
-  // console.log('genres', genres);
-  // console.log("отрм",arrayOfFilms);
+  // ('genres', genres);
+  // ("отрм",arrayOfFilms);
   const gallery = document.querySelector('.gallery'); // галерея
 
   let markup = arrayOfFilms
     .map(item => {
-      // console.log(item);
+      // (item);
       const {
         poster_path,
         id,
@@ -28,7 +28,7 @@ export default async function layOutListOfFilms(arrayOfFilms) {
         genres.forEach(({ id, name }) => {
           if (id === genre) {
             tempGenres.push(name);
-            // console.log(tempGenres);
+            // (tempGenres);
           }
         });
       });
@@ -51,7 +51,7 @@ export default async function layOutListOfFilms(arrayOfFilms) {
       if (first_air_date !== undefined) {
         // checkDate(first_air_date, release_data)
         date = first_air_date;
-        // console.log('f', date);
+        // ('f', date);
       }
 
       if (release_date !== undefined) {

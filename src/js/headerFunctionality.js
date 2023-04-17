@@ -4,6 +4,7 @@ import { renderMyLib } from './render-myLibrary';
 import { clearPage } from './fetch_by_keyword';
 
 
+
 export default async function headerFunctionality() {
   // створюємо елементи, які в хедері
   // кнопка home
@@ -41,15 +42,15 @@ export default async function headerFunctionality() {
     clearPage();
     await clearPageMylib();
     showTrendingFilms(1);
-    // if (gallery.innerHTML === '') {
-    //   showTrendingFilms();
-    // }
+   
   }
 
   // обробники натискання кнопки Library
   function handleClickBtnLibrary(evt) {
     evt.preventDefault();
-
+    if(btnLibrary.classList.contains('btn--current')){
+      return;
+    }
     //робимо Library з активним класом, а Home з неактивним класом
     // зміна виду кнопок
     btnHome.classList.remove('btn--current');

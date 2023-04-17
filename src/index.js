@@ -25,7 +25,7 @@ export async function showTrendingFilms(page) {
   }
 
   let trendingFilms = await getTrendingFilms(currentPage);
-  // console.log(trendingFilms);
+  // (trendingFilms);
   layOutListOfFilms(trendingFilms);
 }
 showTrendingFilms();

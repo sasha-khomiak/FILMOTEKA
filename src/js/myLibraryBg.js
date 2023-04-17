@@ -1,3 +1,5 @@
+// функція створення повідолення у разі віжсутності
+// результатів пошуку
 const movieCardList = document.querySelector('.movie-card__list');
 
 export default async function myLibraryBg() {
@@ -11,4 +13,3 @@ export default async function myLibraryBg() {
       </div>`;
   movieCardList.classList.add('library');
 }
-

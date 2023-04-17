@@ -5,6 +5,7 @@ body {
   font-family: 'Roboto', sans-serif;
   background: #f0f0f0;
   color: black;
+  padding-top: 0 !important; //бо якась фігня цей параетр інлайново змінює
 }
 
 /*----RESET----*/
@@ -60,7 +61,9 @@ ul {
   background: linear-gradient(90deg, #31111c, #e4282a, #d52827, #110a13);
 }
 
+//https://convertio.co/png-cur/
 // налаштування кастомних курсорів
+
 // button,
 // a {
 //   cursor: url('../images/cursor.cur'), auto;
@@ -68,10 +71,11 @@ ul {
 
 // button:hover,
 // a:hover {
-//   cursor: url('../images/cursor-hover.cur'), auto;
+//   cursor: url('../images/cine.cur'), auto;
 // }
 
 // клас приховування, застосується до тегів з таким класом
+// анадог віжуалі-хідден
 .is-hidden {
   display: none;
 }

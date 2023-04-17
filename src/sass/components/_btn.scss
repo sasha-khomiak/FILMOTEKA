@@ -17,7 +17,7 @@
   transition: transform 500ms cubic-bezier(0.4, 0, 0.2, 1);
 
   &:hover {
-    transform: scale(1.1);
+    transform: scale(1.05);
   }
 
   // Модифікатори для кнопок (поточної(головна чи бібліотека) + червона і біла для медітеки)
@@ -36,11 +36,11 @@
   //   color: #b92f2c;
   //   padding: 10px 24px;
   // }
-  &-nav{
+  &-nav {
     background: white;
     padding: 10px 24px;
   }
-  &-nav-active{
+  &-nav-active {
     background: #b92f2c;
     color: #ffffff;
     padding: 10px 23px;
@@ -81,8 +81,12 @@
 // дів, який групує дві кнопки навігації Home і My Library
 .button-nav {
   display: flex;
+  gap: 4px;
   @media screen and (max-width: 767px) {
     margin-bottom: 8px;
+  }
+  @media screen and (min-width: 768px) {
+    margin-left: 4px;
   }
 }
 

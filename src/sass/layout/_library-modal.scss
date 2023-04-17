@@ -1,6 +1,8 @@
-body {
-  // overflow: hidden;
+.fixed-body {
+  overflow: hidden;
 }
+
+//----------------НАЛАШТУВАННЯ БЕКДРОП----------------//
 .backdrop {
   position: fixed;
   top: 0;
@@ -15,21 +17,22 @@ body {
   transition: visibility 250ms cubic-bezier(0.4, 0, 0.2, 1),
     opacity 250ms cubic-bezier(0.4, 0, 0.2, 1);
 
-  @media screen and (min-width: 768px) {
-    align-items: center;
-    padding-left: 32px;
-    padding-right: 32px;
-    display: flex;
-  }
+  // @media screen and (min-width: 768px) {
+  //   align-items: center;
+  //   padding-left: 32px;
+  //   padding-right: 32px;
+  //   display: flex;
+  // }
 }
 
-.backdrop.is-hidden {
-  opacity: 0;
-  pointer-events: none;
-  visibility: hidden;
-  overflow: visible;
-}
+// .backdrop.is-hidden {
+//   opacity: 0;
+//   pointer-events: none;
+//   visibility: hidden;
+//   overflow: visible;
+// }
 
+//----------------НАЛАШТУВАННЯ МОДАЛКИ----------------//
 .modal-window {
   position: absolute;
   top: 50%;
@@ -40,28 +43,33 @@ body {
   padding: 48px 20px 40px;
 
   height: 80%;
+
   overflow-y: auto;
 
   background: #ffffff;
 
   transition: transform 250ms cubic-bezier(0.4, 0, 0.2, 1);
-  @media screen and (max-width: 479px) {
-    width: 100%;
-  }
 
   @media screen and (min-width: 768px) {
-    min-width: 704px;
-    // min-height: 558px;
     padding: 40px 72px 64px 36px;
+
+    width: 704px;
+    max-height: 552px;
+
+    // overflow: hidden;
+    // position: fixed;
   }
 
   @media screen and (min-width: 1280px) {
-    min-width: 806px;
+    width: 806px;
+    max-height: 558px;
     padding: 40px 12px;
   }
 }
 
-.close-button {
+//----------------НАЛАШТУВАННЯ КНОПКИ ЗАКРИТТЯ----------------//
+
+.close-button-film {
   position: absolute;
   top: 0;
   right: 0;
@@ -69,36 +77,40 @@ body {
   display: flex;
   justify-content: center;
   align-items: center;
+  background-color: transparent;
 
   width: 30px;
   height: 30px;
   margin-top: 8px;
   margin-right: 8px;
   cursor: pointer;
-  margin-bottom: 10px;
   border-style: none;
-  border-radius: 50%;
 }
 
 .close-button__icon {
-  fill: #000000;
+  stroke: black;
 
   transition: transform 250ms cubic-bezier(0.4, 0, 0.2, 1);
   &:hover {
-    .close-button__icon {
-      fill: #b92f2c;
-    }
+    stroke: #b92f2c;
   }
 }
+
+//----------------НАЛАШТУВАННЯ ПОВЕДІНКИ БЛОКІВ В МОДАЛЦІ----------------//
+
 .film-container {
   @media screen and (min-width: 768px) {
-    display: flex;
-    gap: 68px;
+    // overflow-y: scroll;
+    // position: fixed;
+    //     display: flex;
+    //     gap: 68px;
   }
-  @media screen and (min-width: 1280px) {
-    gap: 16px;
-  }
+  //   @media screen and (min-width: 1280px) {
+  //     gap: 16px;
+  //   }
 }
+
+//----------------НАЛАШТУВАННЯ ОФОРМЛЕННЯ ПОСТЕРА----------------//
 
 .cinema-card {
   margin-bottom: 20px;
@@ -107,139 +119,188 @@ body {
 
   @media screen and (min-width: 768px) {
     width: 264px;
-    flex-shrink: 0;
-    margin-bottom: 0;
+    position: fixed;
+    //   flex-shrink: 0;
+    //   margin-bottom: 0;
   }
 
   @media screen and (min-width: 1280px) {
     width: 375px;
+    height: 478px;
   }
 }
 
-.card-photo {
-  display: block;
-  width: 100%;
-  height: auto;
-}
+// .card-photo {
+//   display: block;
+//   width: 100%;
+//   height: auto;
+// }
+
+//----------------НАЛАШТУВАННЯ ТЕКСТОВОГО БЛОКУ----------------//
 
 .card-block {
-  flex-direction: column;
-  gap: 20px;
-  display: flex;
+  // flex-direction: column;
+  // gap: 20px;
+  // display: flex;
 
-  font-family: 'Roboto';
-  font-style: normal;
   font-weight: 500;
-  font-size: 12px;
-  line-height: 1.67;
-  color: #000000;
+  // font-size: 12px;
+  // line-height: 1.67;
+  // color: #000000;
 
   @media screen and (min-width: 768px) {
+    margin-left: 368px - 36px;
     width: 264px;
+    overflow-y: scroll;
   }
 
   @media screen and (min-width: 1280px) {
     width: 391px;
+    margin-left: 403px - 12px;
   }
 }
+
+//----------------НАЛАШТУВАННЯ ЗАГОЛОВКУ----------------//
 
 .card-title {
   color: #000;
   text-transform: uppercase;
   font-size: 20px;
   line-height: 1.15;
+  margin-top: 20px;
+  margin-bottom: 20px;
+
+  @media screen and (min-width: 768px) {
+    margin-top: 0;
+  }
 
   @media screen and (min-width: 1280px) {
-    font-size: 31px;
-    line-height: 1.7333;
+    font-size: 30px;
+    line-height: calc(35 / 30);
   }
 }
+
+//----------------НАЛАШТУВАННЯ БЛОКУ ДЕТАЛЕЙ ОПИСУ ПРО ФІЛЬМ----------------//
 
 .filter-list {
   flex-direction: column;
   gap: 8px;
   display: flex;
+  margin-bottom: 20px;
 
-  @media screen and (min-width: 1280px) {
-    max-width: 250px;
-  }
+  //   @media screen and (min-width: 1280px) {
+  //     max-width: 250px;
+  //   }
 }
 
 .filter-item {
   display: flex;
 }
 
+//----------------НАЛАШТУВАННЯ ТЕКСТУ БЛОКУ ДЕТАЛЕЙ ОПИСУ ПРО ФІЛЬМ----------------//
+
 .text-description {
   width: 50%;
+  font-size: 12px;
+  line-height: calc(16 / 12);
+
   color: #8c8c8c;
-  line-height: 1.3;
 }
 
 .text-field {
   width: 50%;
-  line-height: 1.16;
+  font-weight: 500;
+  font-size: 12px;
+  line-height: calc(14 / 12);
+
+  text-transform: uppercase;
+  color: #000000;
 }
 
 .text-filed-rate {
-  color: #fff;
+  font-weight: 500;
+  font-size: 12px;
+  line-height: calc(14 / 12);
+
+  color: #ffffff;
   background-color: #b92f2c;
   border-radius: 5px;
   padding: 1px 10px;
-  line-height: 1.16;
 }
 
 .text-field-total {
+  font-weight: 500;
+  font-size: 12px;
+  line-height: calc(14 / 12);
   background-color: #f7f7f7;
   border-radius: 5px;
   padding: 1px 10px;
-  line-height: 1.16;
 }
 
+//----------------НАЛАШТУВАННЯ ТЕКСТУ ABOUT----------------//
+
 .text-title {
-  text-transform: uppercase;
   font-size: 12px;
-  line-height: 1.33;
+  line-height: calc(16 / 12);
+
+  text-transform: uppercase;
+
+  color: #000000;
+
+  margin-bottom: 8px;
 }
 
 .text-content {
-  line-height: 1.66;
-  overflow: hidden;
+  font-size: 12px;
+  line-height: calc(20 / 12);
 
-  @media screen and (min-width: 768px) {
-    width: 264px;
-    height: 242px;
-  }
-  @media screen and (min-width: 1280px) {
-    width: 391px;
-    height: 184px;
-  }
+  color: #000000;
+  margin-bottom: 20px;
+  // overflow: hidden;
+
+  // @media screen and (min-width: 768px) {
+  //   width: 264px;
+  //   height: 242px;
+  // }
+  // @media screen and (min-width: 1280px) {
+  //   width: 391px;
+  //   height: 184px;
+  // }
 }
 
-.modal-less {
-  display: none;
-}
+//----------------??????????????----------------//
 
-.read-more {
-  color: #b92f2c;
-  cursor: pointer;
-  -webkit-user-select: none;
-  -ms-user-select: none;
-  user-select: none;
-  background-color: #fff;
-}
+// .modal-less {
+//   display: none;
+// }
 
+// .read-more {
+//   color: #b92f2c;
+//   cursor: pointer;
+//   -webkit-user-select: none;
+//   -ms-user-select: none;
+//   user-select: none;
+//   background-color: #fff;
+// }
+
+//----------------НАЛАШТУВАННЯ КНОПОК----------------//
+
+// згрупований дів кнопок
 .card-button {
-  gap: 8px;
+  gap: 4px;
   display: flex;
-  width: 240px;
+  width: 100%;
 
-  @media screen and (min-width: 768px) {
-    width: 270px;
-  }
-  @media screen and (min-width: 1280px) {
-    width: 307px;
-  }
+  // @media screen and (min-width: 768px) {
+  //   width: 270px;
+  // }
+  // @media screen and (min-width: 1280px) {
+  //   width: 307px;
+  // }
 }
+
+// Самі кнопки
+
 .card-btn {
   width: 50%;
   background-color: transparent;
@@ -249,21 +310,31 @@ body {
   text-align: center;
   padding-top: 10px;
   padding-bottom: 10px;
+  // padding-left: 14px;
+  // padding-right: 14px;
 
-  font-family: 'Roboto';
-  font-style: normal;
   font-weight: 500;
   font-size: 12px;
   line-height: 1.67px;
   text-transform: uppercase;
   color: #b92f2c;
-  line-height: 1.667;
+
+  @media screen and (min-width: 768px) {
+    padding-top: 12px;
+    padding-bottom: 12px;
+  }
+  @media screen and (min-width: 1280px) {
+    padding: 14px 32px;
+  }
+
+  &-active {
+    background: #b92f2c;
+    color: #ffffff;
+    border: 1px solid #b92f2c;
+  }
 }
 
-.card-btn-active {
-  background: #b92f2c;
-  color: #ffffff;
-}
+//----------------НАЛАШТУВАННЯ КОНТЕЙНЕРА ТРЕЙЛЕРА----------------//
 
 .trailer__container {
   padding: 10px;

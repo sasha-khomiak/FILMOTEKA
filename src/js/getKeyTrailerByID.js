@@ -1,4 +1,3 @@
-//функція яка повертає трейлер по id фільма
 import axios from 'axios';
 export { getKeyTrailerByID };
 const API_KEY = 'f051ac50d3bfe0c3fd75f02c1ff7b688';

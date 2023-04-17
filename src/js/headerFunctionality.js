@@ -36,9 +36,12 @@ export default async function headerFunctionality() {
     //ховаємо блок кнопок медіатеки і забираємо клас button-active
     libraryButtons.classList.add('is-hidden');
     libraryButtons.classList.remove('button-active');
-    if (gallery.innerHTML === '') {
-      showTrendingFilms();
-    }
+
+    gallery.innerHTML = '';
+    showTrendingFilms(1);
+    // if (gallery.innerHTML === '') {
+    //   showTrendingFilms();
+    // }
   }
 
   // обробники натискання кнопки Library

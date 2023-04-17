@@ -86,6 +86,7 @@ async function markupModal(id) {
 
       <div class="card-block">
         <p class="card-title">${movieInfo.title}</p>
+        <div class="scroll-block">
         <ul class="filter-list list">
           <li class="filter-item">
             <p class="text-description">Vote / Votes</p>
@@ -123,6 +124,7 @@ async function markupModal(id) {
           </li>
         </ul>
         ${trailerToLayout} 
+         </div>
         <div class="card-button">
           <button class="${watchClass}" type="submit">
             ${textWatch}

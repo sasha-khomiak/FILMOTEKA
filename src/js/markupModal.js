@@ -5,7 +5,7 @@ import { onClickToWatched, onClickToQueue } from './onClickToWatch';
 import { getKeyTrailerByID } from './getKeyTrailerByID';
 import { getMovieByID } from './getMovieByID';
 
-import posterPlug from '../images/poster-plug.png';
+import posterPlug from '../images/poster-plug.jpg';
 
 // змінні масивів для черги та переглянутих
 let arrayQueue = [];

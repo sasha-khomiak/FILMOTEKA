@@ -1,6 +1,6 @@
 import { genres } from './genres.js';
 
-import posterPlug from '../images/poster-plug.png';
+import posterPlug from '../images/poster-plug.jpg';
 
 export default async function layOutListOfFilms(arrayOfFilms) {
   // console.log('genres', genres);

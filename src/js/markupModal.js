@@ -1,9 +1,10 @@
-//const main = document.querySelector('main');
 export { markupModal, movieId };
 import { addAndRemoveToLocalStorage } from './localStorage';
 import { onClickToWatched, onClickToQueue } from './onClickToWatch';
 import { getKeyTrailerByID } from './getKeyTrailerByID';
 import { getMovieByID } from './getMovieByID';
+
+//export { backImage };
 
 // змінні масивів для черги та переглянутих
 let arrayQueue = [];
@@ -57,7 +58,9 @@ async function markupModal(id) {
   }
 
   let modalString = `<div data-modal class="backdrop">
+  
   <div class="modal-window" > 
+ 
     <div class="modal-close">
     <button type="button" class="close-button js-close-btn">
     <div class="leftright"></div>
@@ -66,7 +69,7 @@ async function markupModal(id) {
     </div>
     <div class="film-container">
       <div class="cinema-card">
-         <img class="card-photo" src="https://image.tmdb.org/t/p/w500/${movieInfo.poster_path}" alt="movie cover" />
+         <img class="card-photo" src="https://image.tmdb.org/t/p/w500/${movieInfo.poster_path}" alt="${movieInfo.overview}" />
       </div>
 
       <div class="card-block">
@@ -125,6 +128,11 @@ async function markupModal(id) {
   document.getElementsByTagName('body')[0].appendChild(divModal);
   document.querySelector('body').classList.add('fixed-body');
   document.querySelector('#scrollToTopBtn').classList.add('visually-hidden');
+  //вішаємо img backdop_path на backdrop
+  const backdrop = document.querySelector('.backdrop');
+  if (movieInfo.backdrop_path !== null) {
+    backdrop.style.backgroundImage = `url(https://image.tmdb.org/t/p/w500${movieInfo.backdrop_path})`;
+  }
 
   //Закрытие модалки
   const closeButton = document.querySelector('.js-close-btn');
@@ -138,7 +146,7 @@ async function markupModal(id) {
 
   function onClose(evt) {
     evt.preventDefault();
-    // divModal.innerHTML = '';
+
     document.querySelector('body').classList.remove('fixed-body');
     document
       .querySelector('#scrollToTopBtn')

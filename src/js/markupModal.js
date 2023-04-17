@@ -1,6 +1,6 @@
 //const main = document.querySelector('main');
 export { markupModal, movieId };
-import { addAndRemoveToLocalStorage } from './localStorage';
+import {  getFromStorage } from './localStorage';
 import { onClickToWatched, onClickToQueue } from './onClickToWatch';
 import { getKeyTrailerByID } from './getKeyTrailerByID';
 import { getMovieByID } from './getMovieByID';
@@ -9,6 +9,14 @@ import { getMovieByID } from './getMovieByID';
 let arrayQueue = [];
 let arrayWatched = [];
 let movieId;
+
+if (localStorage.getItem('idWatched')) {
+  arrayWatched = getFromStorage('idWatched');
+}
+if (localStorage.getItem('idQueue')) {
+  arrayQueue = getFromStorage('idQueue');
+}
+
 
 async function markupModal(id) {
   movieId = id;

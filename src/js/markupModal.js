@@ -60,8 +60,8 @@ async function markupModal(id) {
   <div class="modal-window" > 
     <div class="modal-close">
     <button type="button" class="close-button js-close-btn">
-    <div class="leftright"></div>
-            <div class="rightleft"></div></button>
+    <span class="leftright"></span>
+            <span class="rightleft"></span>
      
     </div>
     <div class="film-container">

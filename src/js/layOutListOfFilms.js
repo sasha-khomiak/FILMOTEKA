@@ -6,7 +6,6 @@ export default async function layOutListOfFilms(arrayOfFilms) {
   // ('genres', genres);
   // ("отрм",arrayOfFilms);
   const gallery = document.querySelector('.gallery'); // галерея
-
   let markup = arrayOfFilms
     .map(item => {
       // (item);
@@ -18,6 +17,7 @@ export default async function layOutListOfFilms(arrayOfFilms) {
         first_air_date,
         release_date,
         genre_ids,
+        overview,
       } = item;
 
       // -----------------------//
@@ -69,7 +69,7 @@ export default async function layOutListOfFilms(arrayOfFilms) {
       <div class="film-card" >
       <a href="#">
         <div class="thumb">
-          <img src="${image_src}" alt="film1" loading="lazy" data-id="${id}" />
+          <img src="${image_src}" alt="${overview}" loading="lazy" data-id="${id}" />
         </div>
       </a>
       <div class="info">

@@ -1,6 +1,17 @@
 .open-team-modal {
   height: 100%;
   cursor: pointer;
+  font-size: 18px;
+  transform: color;
+
+&:hover,
+&:focus{
+ color: #b92f2c; 
+
+transition: transform 250ms cubic-bezier(0.4, 0, 0.2, 1);
+
+}
+
 }
 
 body.show-team-modal .team-backdrop {
@@ -38,7 +49,6 @@ body.show-team-modal .modal {
   max-width: 80%;
   width: 100%;
   min-height: 80%;
-  background-color: white;
   box-shadow: 0px 1px 3px 6px rgba(0, 8, 0, 0.2),
     0px 1px 1px rgba(0, 8, 0, 0.14), 0px 2px 1px -1px rgba(0, 0, 6, 0.12);
 
@@ -46,16 +56,18 @@ body.show-team-modal .modal {
 
   max-height: 100%;
   overflow-y: auto;
+
+background: radial-gradient(#b92f2c, #1f1013);
 }
 
 .close-button {
   position: absolute;
   width: 30px;
   height: 30px;
-  background: white;
+  background: transparent;
   border: none;
   cursor: pointer;
-
+  
   top: 8px;
   right: 8px;
 }
@@ -89,6 +101,8 @@ body.show-team-modal .modal {
   transform: translate(-50%, -50%) rotate(45deg);
   background-color: #b92f2c;
 }
+
+
 .section-title {
   font-weight: 700;
   font-size: 30px;
@@ -97,7 +111,42 @@ body.show-team-modal .modal {
   text-align: center;
   color: #b92f2c;
   margin-bottom: 30px;
+
+background: 50% 100% / 50% 50% no-repeat radial-gradient(ellipse at bottom, #fff, transparent, transparent);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+  font-size: 30px;
+
+  @media screen and (min-width: 780px) {
+  font-size: 38px;
+    }
+  
+    @media screen and (min-width: 1280px) {
+font-size: 38px;
+    }
+
+
+  animation: reveal 3000ms ease-in-out forwards 200ms,
+    glow 2500ms linear infinite 2000ms;
+
+  @keyframes reveal {
+    80% {
+      letter-spacing: 8px;
+    }
+
+    100% {
+      background-size: 300% 300%;
+    }
+  }
+
+  @keyframes glow {
+    40% {
+      text-shadow: 0 0 8px #fff;
+    }
+  }
 }
+
 
 .modal-team__container {
   display: flex;
@@ -116,12 +165,16 @@ body.show-team-modal .modal {
 
   @media (min-width: 320px) and (max-width: 1279px) {
     display: flex;
+    justify-content: center;
+    align-items: center;
     flex-wrap: wrap;
     margin: -15px;
   }
 
   @media screen and (min-width: 1279px) {
-    display: flex;
+  display: flex;
+    justify-content: center;
+    align-items: center;
     flex-wrap: wrap;
     margin-left: -30px;
   }
@@ -132,7 +185,8 @@ body.show-team-modal .modal {
   width: 240px;
   padding-top: 15px;
   padding-bottom: 15px;
-  background-color: rgb(249, 244, 244);
+  border: 2px solid rgb(168, 113, 113);
+    box-shadow: 0 1rem 2rem hsl(0 0% 0% / 20%);
 
   @media screen and (min-width: 320px) {
     width: 100%;
@@ -152,12 +206,17 @@ body.show-team-modal .modal {
 
   border-radius: 15px;
   cursor: pointer;
+
 }
 .modal-team__item:hover,
 .modal-team__item:focus{
-  box-shadow: 0px 1px 3px rgba(0, 0, 0, 0.12), 0px 1px 1px rgba(0, 0, 0, 0.14),
+  box-shadow: 0px 1px 3px rgba(249, 248, 248, 0.12), 0px 1px 1px rgba(250, 250, 250, 0.14),
     0px 2px 1px rgba(0, 0, 0, 0.2);
+  
+    transform:scale(1.1);
+    background-color: whitesmoke;   
 }
+
 
 .modal-team__img-container {
   overflow: hidden;

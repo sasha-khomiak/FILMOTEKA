@@ -6,29 +6,19 @@ import { Notify } from 'notiflix';
 import { clearPage } from './fetch_by_keyword';
 let arrMoviesQueue = [];
 let arrMoviesWatch = [];
-
+export {clickBtnWatched, clickBtnQueue}
 //! функція рендеру розмітки бібліотеки
-function renderMyLib() {
-    // знаходимо кнопки в хедері
-    const buttonWatched = document.querySelector('#watched');
-    const buttonQueue = document.querySelector('#queue');
-    // змінна для ід фільмів
-    let filmsId = null;
-    //   let arrMovies = [];
-    // вішаємо кліки на кнопки
-    buttonWatched.addEventListener('click', clickBtnWatched);
-    buttonQueue.addEventListener('click', clickBtnQueue);
+
+    // buttonQueue.addEventListener('click', );
   
-    // if(buttonQueue.classList.contains('btn-nav-active') && buttonQueue.classList.contains('btn-nav-active')){
-  
-    // }
     // ! функція кліку по кнопці ватч
-    async function clickBtnWatched(e) {
+ function clickBtnWatched(e) {
       e.preventDefault();
       clearPage();
+      arrMoviesWatch = [];
       // додавання і забирання класів
-      buttonWatched.classList.add('btn-nav-active');
-      buttonQueue.classList.remove('btn-nav-active');
+      document.querySelector('#watched').classList.add('btn-nav-active');
+      document.querySelector('#queue').classList.remove('btn-nav-active');
       // доставання ід масива та їх перебор з локального сховища
       if (localStorage.getItem('idWatched') === null || localStorage.getItem('idWatched').length ===0 ){
        
@@ -38,11 +28,14 @@ function renderMyLib() {
       getFromStorage('idWatched').map(id => {
         getMovieByID(id)
           .then(movie => {
-            arrMoviesWatch = [];
             arrMoviesWatch.push(movie);
+            console.log(arrMoviesWatch);
             return arrMoviesWatch;
           })
-          .then(layOutListOfMyLib);
+          .then(result => {
+            clearPage()
+            layOutListOfMyLib(result)
+          });
       });
     }
   
@@ -51,8 +44,8 @@ function renderMyLib() {
       e.preventDefault();
       clearPage();
       // додавання та забирання класів
-      buttonQueue.classList.add('btn-nav-active');
-      buttonWatched.classList.remove('btn-nav-active');
+      document.querySelector('#queue').classList.add('btn-nav-active');
+      document.querySelector('#watched').classList.remove('btn-nav-active');
   
       if (localStorage.getItem('idQueue') === null) {
         Notify.failure('Sorry... You did not add any movie to your Queue');
@@ -69,7 +62,5 @@ function renderMyLib() {
           .then(layOutListOfMyLib);
       });
     }
-  }
-  // ? експорт функції рендеру
-  export { renderMyLib };
+
   

@@ -1,6 +1,6 @@
 import { clearPage } from "./fetch_by_keyword";
 export default async function layOutListOfMyLib(arrayFilms) {
-  clearPage()
+  // clearPage()
   const gallery = document.querySelector('.gallery');
 
   arrayFilms.map(item => {
@@ -37,8 +37,6 @@ export default async function layOutListOfMyLib(arrayFilms) {
       </div>
     </div>`;
     gallery.insertAdjacentHTML('beforeend', dataCard);
+    
   });
-  // .join(' ');
-
-  // console.log('tut', markup);
 }

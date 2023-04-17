@@ -15,7 +15,7 @@ export default async function getTrendingFilms(page) {
       `${BASE_URL}3/movie/popular?api_key=${API_KEY}&page=${page}`
     );
 
-    // console.log(response.data.results);
+    
     return response.data.results;
   } catch (error) {
     console.log(error);

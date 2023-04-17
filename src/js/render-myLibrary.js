@@ -4,7 +4,8 @@ import { getMovieByID } from "./getMovieByID";
 import layOutListOfMyLib from "./layOutListMyLibrary";
 import { Notify } from 'notiflix';
 import { clearPage } from './fetch_by_keyword';
-
+let arrMoviesQueue = [];
+let arrMoviesWatch = [];
 
 //! функція рендеру розмітки бібліотеки
 function renderMyLib() {
@@ -30,16 +31,16 @@ function renderMyLib() {
       buttonQueue.classList.remove('btn-nav-active');
       // доставання ід масива та їх перебор з локального сховища
       if (localStorage.getItem('idWatched') === null || localStorage.getItem('idWatched').length ===0 ){
-        console.log(2);
+       
         Notify.failure('Sorry... You did not add any movie to your Watchlist');
         return;
       }
       getFromStorage('idWatched').map(id => {
         getMovieByID(id)
           .then(movie => {
-            let arrMovies = [];
-            arrMovies.push(movie);
-            return arrMovies;
+            arrMoviesWatch = [];
+            arrMoviesWatch.push(movie);
+            return arrMoviesWatch;
           })
           .then(layOutListOfMyLib);
       });
@@ -61,9 +62,9 @@ function renderMyLib() {
       getFromStorage('idQueue').map(id => {
         getMovieByID(id)
           .then(movie => {
-            let arrMovies = [];
-            arrMovies.push(movie);
-            return arrMovies;
+            arrMoviesQueue = [];
+            arrMoviesQueue.push(movie);
+            return arrMoviesQueue;
           })
           .then(layOutListOfMyLib);
       });

@@ -6,7 +6,7 @@ import { addAndRemoveToLocalStorage } from './localStorage';
 let arrayWatched = [];
 let arrayQueue = [];
 function onClickToWatched(e) {
-  console.log(movieId);
+  
   e.preventDefault();
   // змінні
   var btnWatchedText = document.querySelector('.btn-add-watched');
@@ -21,7 +21,6 @@ function onClickToWatched(e) {
     arrayWatched.splice(arrayWatched.indexOf(movieId), 1);
     addAndRemoveToLocalStorage(keyWatched, arrayWatched);
 
-    // console.log(arrayWatched);
     return;
   }
   btnWatchedText.innerText = 'remove from Watched';
@@ -29,7 +28,7 @@ function onClickToWatched(e) {
   // додавання до масиву переглянутих та в локал стордж
   arrayWatched.push(movieId);
   addAndRemoveToLocalStorage(keyWatched, arrayWatched);
-  console.log(arrayWatched);
+ 
 }
 
 //! функція для черги
@@ -48,7 +47,7 @@ function onClickToQueue(e) {
     // видалення з масиву та видалення з локал стореджу переглянутих
     arrayQueue.splice(arrayQueue.indexOf(movieId), 1);
     addAndRemoveToLocalStorage(keyQueue, arrayQueue);
-    // console.log(arrayQueue);
+    
     return;
   }
   btnQuequeText.innerText = 'remove from Queue';
@@ -58,7 +57,7 @@ function onClickToQueue(e) {
   arrayQueue.push(movieId);
   addAndRemoveToLocalStorage(keyQueue, arrayQueue);
 
-  console.log(arrayQueue);
+  
 }
 
 export { onClickToWatched, onClickToQueue };

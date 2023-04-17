@@ -26,7 +26,7 @@ async function getDataFromAPI(keyword) {
       .then(response => {
         return response.data;
       });
-    // console.log(data);
+    // (data);
     return data;
   } catch (error) {
     console.log(error);
@@ -43,7 +43,7 @@ async function getMoreDataFromAPI() {
       .then(response => {
         return response.data;
       });
-    // console.log(data);
+    // (data);
     return data;
   } catch (error) {
     console.log(error);
@@ -54,7 +54,7 @@ function onSubmitGetAndRender(evt) {
   evt.preventDefault();
   keyword = evt.currentTarget.elements.query.value;
 
-  // console.log(keyword);
+  // (keyword);
   getDataFromAPI(keyword).then(data => {
     if (data.results.length === 0) {
       Notify.failure(
@@ -69,7 +69,7 @@ function onSubmitGetAndRender(evt) {
     Notify.success(
       `Congrats! We have found ${data.total_results} movies according to your request `
     );
-    // console.log(data);
+    // (data);
     clearPage();
     layOutListOfFilms(data.results);
     searchInput.reset();

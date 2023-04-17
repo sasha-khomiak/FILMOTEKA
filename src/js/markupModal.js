@@ -23,10 +23,10 @@ async function markupModal(id) {
   movieId = id;
   // запрос на сервер для отримання ключа трейлера
   let trailerId = await getKeyTrailerByID(id);
-  // console.log(trailerId);
+  // (trailerId);
   // рендер розмітки по ід
   let movieInfo = await getMovieByID(id);
-  // console.log(movieInfo);
+  // (movieInfo);
 
   // перевірка наявності даних перед рендером
   let trailerToLayout = '';

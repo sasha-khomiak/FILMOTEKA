@@ -1,8 +1,9 @@
+import { clearPage } from "./fetch_by_keyword";
 export default async function layOutListOfMyLib(arrayFilms) {
+  clearPage()
   const gallery = document.querySelector('.gallery');
 
   arrayFilms.map(item => {
-    console.log(item);
     const {
       genres,
       poster_path,
@@ -14,6 +15,7 @@ export default async function layOutListOfMyLib(arrayFilms) {
     } = item;
 
     let genresArray = [];
+    let date = release_date.substring(0, 4);
 
     genres.map(genre => {
       genresArray.push(genre.name);
@@ -30,7 +32,7 @@ export default async function layOutListOfMyLib(arrayFilms) {
       <div class="info">
         <div class="info-container"> 
         <p class="film-name">${title}</p>
-        <p class="film-info">${genresString} | ${release_date}</p>
+        <p class="film-info">${genresString} | ${date}</p>
         </div>
       </div>
     </div>`;

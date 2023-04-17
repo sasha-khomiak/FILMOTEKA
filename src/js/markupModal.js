@@ -59,7 +59,9 @@ async function markupModal(id) {
   let modalString = `<div data-modal class="backdrop">
   <div class="modal-window" > 
     <div class="modal-close">
-    <button type="button" class="close-button-film">X</button>
+    <button type="button" class="close-button js-close-btn">
+    <div class="leftright"></div>
+            <div class="rightleft"></div></button>
      
     </div>
     <div class="film-container">
@@ -125,7 +127,7 @@ async function markupModal(id) {
   document.querySelector('#scrollToTopBtn').classList.add('visually-hidden');
 
   //Закрытие модалки
-  const closeButton = document.querySelector('.close-button-film');
+  const closeButton = document.querySelector('.js-close-btn');
   closeButton.addEventListener('click', onClose);
 
   // тут треба додати слухача на закриття по кліку на бекдроп!!!!

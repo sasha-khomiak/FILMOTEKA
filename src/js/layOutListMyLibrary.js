@@ -1,23 +1,26 @@
-export default async function layOutListOfMyLib(arrayFilms){
-    const gallery = document.querySelector('.gallery')
-    console.log("отримав", arrayFilms);
-    let markup = arrayFilms.map(item => {
-        console.log(item);
-        const {
-            poster_path,
-            backdrop_path,
-            id,
-            title,
-            name,
-            first_air_date,
-            release_date,
-          } = item;
+export default async function layOutListOfMyLib(arrayFilms) {
+  const gallery = document.querySelector('.gallery');
+  // let tempGenresString = tempGenres.join(', ');
 
-          return `
+  // console.log('отримав', arrayFilms);
+  arrayFilms.map(item => {
+    console.log(item);
+    const {
+      genres,
+      poster_path,
+      backdrop_path,
+      id,
+      title,
+      name,
+      first_air_date,
+      release_date,
+    } = item;
+
+    const dataCard = `
       <div class="film-card" >
       <a href="#">
         <div class="thumb">
-          <img src="${poster_path}" alt="film1" loading="lazy" data-id="${release_date}" />
+          <img src="https://image.tmdb.org/t/p/w500/${poster_path}" alt="film1" loading="lazy" data-id="${release_date}" />
         </div>
       </a>
       <div class="info">
@@ -27,11 +30,9 @@ export default async function layOutListOfMyLib(arrayFilms){
         </div>
       </div>
     </div>`;
-    }).join(' ')
+    gallery.insertAdjacentHTML('beforeend', dataCard);
+  });
+  // .join(' ');
 
-
-
-console.log("tut", markup);
-    gallery.insertAdjacentHTML('beforeend', markup);
-
+  // console.log('tut', markup);
 }

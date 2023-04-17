@@ -1,12 +1,11 @@
 import { genres } from './genres.js';
 export default async function layOutListOfFilms(arrayOfFilms) {
   // console.log('genres', genres);
-  // console.log("отрм",arrayOfFilms);
+  console.log('отрм', arrayOfFilms);
   const gallery = document.querySelector('.gallery'); // галерея
 
   let markup = arrayOfFilms
     .map(item => {
-      // console.log(item);
       const {
         poster_path,
         id,
@@ -79,6 +78,7 @@ export default async function layOutListOfFilms(arrayOfFilms) {
     </div>`;
     })
     .join('');
+
   //  Вставляємо в головний блок верстки
   gallery.insertAdjacentHTML('beforeend', markup);
 }

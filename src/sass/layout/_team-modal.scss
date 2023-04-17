@@ -3,10 +3,6 @@
   // cursor: pointer;
 }
 
-body {
-  //   overflow: hidden;
-}
-
 body.show-team-modal .team-backdrop {
   opacity: 1;
   visibility: visible;
@@ -60,8 +56,8 @@ body.show-team-modal .modal {
   border: none;
   // cursor: pointer;
 
-  margin-top: 8px;
-  margin-right: 8px;
+  top: 8px;
+  right: 8px;
 }
 
 .leftright,

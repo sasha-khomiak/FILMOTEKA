@@ -9,6 +9,7 @@ import handleClickFilms from './js/handleClickFilms';
 
 //  функція формування верстки галереї і вставки в макет
 import layOutListOfFilms from './js/layOutListOfFilms';
+const buttonLibrary = document.querySelector('.js-library')
 
 import { getMoreDataFromAPI, clearPage, keyword } from './js/fetch_by_keyword';
 
@@ -48,14 +49,12 @@ async function onScrollDocument() {
       response = await getMoreDataFromAPI().then(data => data.results);
     }
 
+    // перевірка та знімання скролу на сторінці май лайбрарі
+    if(buttonLibrary.classList.contains('btn--current')){
+      return;
+    }
     layOutListOfFilms(response);
   }
 }
 
-//---------
-// import { getFromStorage } from './js/localStorage';
-// function getssd(){
-//   let a = getFromStorage("idQueue")
-//   console.log(a);
-// }
-// getssd()
+

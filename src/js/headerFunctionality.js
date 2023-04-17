@@ -1,6 +1,8 @@
 //-----Ф-ІЯ, ЯКА КЕРУЄ ПОЯВОЮ І ЗНИКАННЯМ КНОПОК І ЕЛЕМЕНТІВ В ХЕДЕРІ-----//
 import { showTrendingFilms } from '../index';
 import { renderMyLib } from './render-myLibrary';
+import { clearPage } from './fetch_by_keyword';
+
 
 export default async function headerFunctionality() {
   // створюємо елементи, які в хедері
@@ -13,7 +15,6 @@ export default async function headerFunctionality() {
   // блок кнопок бібліотеки
   const libraryButtons = document.querySelector('.js-library-buttons');
 
-  const gallery = document.querySelector('.gallery');
 
   // чіпляємо слухачів на кнопки home і library
   btnHome.addEventListener('click', handleClickBtnHome);
@@ -23,7 +24,7 @@ export default async function headerFunctionality() {
     .addEventListener('click', handleClickBtnHome);
 
   // обробники натискання кнопки Home
-  function handleClickBtnHome(evt) {
+  async function handleClickBtnHome(evt) {
     evt.preventDefault();
 
     // робимо Home з активним класом, а Library з неактивним класом
@@ -37,7 +38,8 @@ export default async function headerFunctionality() {
     libraryButtons.classList.add('is-hidden');
     libraryButtons.classList.remove('button-active');
 
-    gallery.innerHTML = '';
+    clearPage();
+    await clearPageMylib();
     showTrendingFilms(1);
     // if (gallery.innerHTML === '') {
     //   showTrendingFilms();
@@ -60,9 +62,27 @@ export default async function headerFunctionality() {
     libraryButtons.classList.remove('is-hidden');
     libraryButtons.classList.add('button-active');
 
-    gallery.innerHTML = '';
+    clearPage();
     renderMyLib();
   }
 }
 
 headerFunctionality();
+
+
+function clearPageMylib() {
+  const buttonLibrary = document.querySelector('.js-library')
+  const btnHome = document.querySelector('.js-home');
+  const buttonWatched = document.querySelector('#watched');
+  const buttonQueue = document.querySelector('#queue');
+
+  if (btnHome.classList.contains('btn--current') && !buttonLibrary.classList.contains('btn--current')) {
+    if (buttonWatched.classList.contains('btn-nav-active')) {
+      buttonWatched.classList.remove('btn-nav-active');
+    }
+    if (buttonQueue.classList.contains('btn-nav-active')) {
+      buttonQueue.classList.remove('btn-nav-active');
+    }
+    clearPage();
+  }
+}

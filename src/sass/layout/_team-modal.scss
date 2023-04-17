@@ -89,3 +89,130 @@ body.show-team-modal .modal {
   transform: translate(-50%, -50%) rotate(45deg);
   background-color: #b92f2c;
 }
+.section-title {
+  font-weight: 700;
+  font-size: 30px;
+  line-height: 1.16;
+  letter-spacing: 0.03em;
+  text-align: center;
+  color: #b92f2c;
+  margin-bottom: 30px;
+}
+
+.modal-team__container {
+  display: flex;
+  justify-content: center;
+  margin-top: 20px;
+
+  @media screen and (min-width: 769px) {
+    margin-top: 30px;
+  }
+}
+
+.modal-team__list {
+  padding: 0;
+  text-decoration: none;
+  list-style: none;
+
+  @media (min-width: 320px) and (max-width: 1279px) {
+    display: flex;
+    flex-wrap: wrap;
+    margin: -15px;
+  }
+
+  @media screen and (min-width: 1279px) {
+    display: flex;
+    flex-wrap: wrap;
+    margin-left: -30px;
+  }
+}
+
+.modal-team__item {
+  position: relative;
+  width: 240px;
+  padding-top: 15px;
+  padding-bottom: 15px;
+  background-color: rgb(249, 244, 244);
+
+  @media screen and (min-width: 320px) {
+    width: 100%;
+    margin-bottom: 15px;
+  }
+
+  @media (min-width: 769px) and (max-width: 1279px) {
+    width: calc((100% - 2 * 30px) / 2);
+    margin: 15px;
+  }
+
+  @media screen and (min-width: 1279px) {
+    flex-basis: calc(100% / 4 - 30px);
+    margin-left: 30px;
+    margin-bottom: 30px;
+  }
+
+  border-radius: 15px;
+  cursor: pointer;
+}
+.modal-team__item:hover,
+.modal-team__item:focus{
+  box-shadow: 0px 1px 3px rgba(0, 0, 0, 0.12), 0px 1px 1px rgba(0, 0, 0, 0.14),
+    0px 2px 1px rgba(0, 0, 0, 0.2);
+}
+
+.modal-team__img-container {
+  overflow: hidden;
+  width: 170px;
+  height: 170px;
+  border-radius: 15px;
+  margin: 0 auto;
+  margin-bottom: 10px;
+  position: relative;
+}
+
+.modal-team__img {
+  margin-top: 5px;
+  width: 100%;
+  height: auto;
+  border-radius: 15px;
+  transition: 1s;
+}
+
+.team__name {
+  font-style: 500;
+  font-size: 18px;
+  line-height: 1.18;
+  letter-spacing: 0.03em;
+  text-align: center;
+  margin-bottom: 5px;
+  border: none;
+  color: #000000;
+}
+
+.team__profession {
+  font-style: 400;
+  font-size: 16px;
+  line-height: 1.18;
+  letter-spacing: 0.03em;
+  text-align: center;
+  margin-bottom: 10px;
+  color: #b92f2c;
+}
+.team__socials {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 15px;
+  justify-content: center;
+}
+.team__social {
+  display: flex;
+  justify-content: center;
+}
+
+.team-icon {
+  border-radius: 50%;
+}
+
+.team-icon:hover,
+.team-icon:focus {
+  background-color: #b92f2c;
+}

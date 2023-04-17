@@ -1,54 +1,53 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-    <!-- підключення шрифтів -->
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link
-      href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500&display=swap"
-      rel="stylesheet"
-    />
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-    <!-- стилі -->
-    <link rel="stylesheet" href="./sass/main.scss" />
-    <link rel="icon" href="./images/favicon.ico" type="image/x-icon" />
+  <!-- підключення шрифтів -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500&display=swap" rel="stylesheet" />
 
-    <title>FILMOTEKA</title>
-  </head>
+  <!-- стилі -->
+  <link rel="stylesheet" href="./sass/main.scss" />
+  <link rel="icon" href="./images/favicon.ico" type="image/x-icon" />
 
-  <body>
-    <!-- рухомий динамічний текграунд -->
-    <div id="particles-js"></div>
+  <title>FILMOTEKA</title>
+</head>
 
-    <!-- хедер -->
-    <include src="./partials/header.html"></include>
+<body>
+  <!-- рухомий динамічний текграунд -->
+  <div id="particles-js"></div>
 
-    <main>
-      <!-- дублювання !!!!!!! -->
-      <!-- <include src="./partials/button-up.html"></include> -->
+  <!-- хедер -->
+  <include src="./partials/header.html"></include>
 
-      <!-- поле результатів -->
-      <include src="./partials/results.html"></include>
-    </main>
+  <main>
+    <!-- дублювання !!!!!!! -->
+    <!-- <include src="./partials/button-up.html"></include> -->
 
-    <!-- футер -->
-    <include src="./partials/footer.html"></include>
+    <!-- поле результатів -->
+    <include src="./partials/results.html"></include>
+  </main>
 
-    <!-- фіксовано кнопка вгору -->
-    <include src="./partials/button-up.html"></include>
+  <!-- футер -->
+  <include src="./partials/footer.html"></include>
 
-    <!-- не використовується -->
-    <!-- <include src="./partials/library-modal.html"></include> -->
-    <include src="./partials/team-modal.html"></include>
-    <!-- js скрипти  -->
-    <script type="module" src="./index.js"></script>
-    <script type="module" src="./js/button-up.js"></script>
-    <script type="module" src="./js/fixed-footer.js"></script>
-    <script type="module" src="./js/team-modal.js"></script>
-    <script src="./particles/particles.min.js"></script>
-    <script src="./particles/custom.js"></script>
-  </body>
+  <!-- фіксовано кнопка вгору -->
+  <include src="./partials/button-up.html"></include>
+
+  <!-- не використовується -->
+  <!-- <include src="./partials/library-modal.html"></include> -->
+  <include src="./partials/team-modal.html"></include>
+  <!-- js скрипти  -->
+  <script type="module" src="./index.js"></script>
+  <script type="module" src="./js/button-up.js"></script>
+  <script type="module" src="./js/fixed-footer.js"></script>
+  <script src="./particles/particles.min.js"></script>
+  <script src="./particles/custom.js"></script>
+  <script type="module" src="./js/team-modal.js"></script>
+</body>
+
 </html>

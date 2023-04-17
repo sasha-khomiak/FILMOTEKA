@@ -132,6 +132,7 @@ async function markupModal(id) {
 
   // тут треба додати слухача на закриття по кліку на бекдроп!!!!
   // тільки от при натисканні на модалку теж закривається
+  // треба виправити і розкоментити
   // const backdrop = document.querySelector('.backdrop');
   // backdrop.addEventListener('click', onClose);
 

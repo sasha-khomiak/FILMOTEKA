@@ -63,6 +63,7 @@ async function markupModal(id) {
     <span class="leftright"></span>
             <span class="rightleft"></span>
      
+            <span class="visually-hidden" aria-hidden="true">Close, button</span>
     </div>
     <div class="film-container">
       <div class="cinema-card">

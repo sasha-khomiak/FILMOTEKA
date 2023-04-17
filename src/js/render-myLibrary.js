@@ -2,7 +2,8 @@
 import { getFromStorage } from './localStorage';
 import { getMovieByID } from './getMovieByID';
 import layOutListOfMyLib from './layOutListMyLibrary';
-import layOutListOfFilms from './layOutListOfFilms';
+import { Notify } from 'notiflix';
+import { clearPage } from './fetch_by_keyword';
 // // idQueue, idWatched
 // btn-nav-active
 
@@ -13,7 +14,7 @@ function renderMyLib() {
   const buttonQueue = document.querySelector('#queue');
   // змінна для ід фільмів
   let filmsId = null;
-  let arrMovies = [];
+  //   let arrMovies = [];
   // вішаємо кліки на кнопки
   buttonWatched.addEventListener('click', clickBtnWatched);
   buttonQueue.addEventListener('click', clickBtnQueue);
@@ -22,35 +23,49 @@ function renderMyLib() {
 
   // }
   // ! функція кліку по кнопці ватч
-  function clickBtnWatched(e) {
+  async function clickBtnWatched(e) {
     e.preventDefault();
+    clearPage();
     // додавання і забирання класів
     buttonWatched.classList.add('btn-nav-active');
     buttonQueue.classList.remove('btn-nav-active');
     // доставання ід масива та їх перебор з локального сховища
-    // console.log(getFromStorage('idWatched'));
+    if (localStorage.getItem('idWatched') === null) {
+      Notify.failure('Sorry... You did not add any movie to your Watchlist');
+      return;
+    }
     getFromStorage('idWatched').map(id => {
-      getMovieByID(id).then(movie => {
-        // console.log(movie);
-        arrMovies.push(movie);
-      });
+      getMovieByID(id)
+        .then(movie => {
+          let arrMovies = [];
+          arrMovies.push(movie);
+          return arrMovies;
+        })
+        .then(layOutListOfMyLib);
     });
-    layOutListOfMyLib(arrMovies);
-    // console.log("передаю:",arrMovies);
   }
 
   // ! функція кліку по кнопці черга
   function clickBtnQueue(e) {
     e.preventDefault();
+    clearPage();
     // додавання та забирання класів
     buttonQueue.classList.add('btn-nav-active');
     buttonWatched.classList.remove('btn-nav-active');
+
+    if (localStorage.getItem('idQueue') === null) {
+      Notify.failure('Sorry... You did not add any movie to your Queue');
+      return;
+    }
     // доставання ід масива та їх перебор з локального сховища
     getFromStorage('idQueue').map(id => {
-      filmsId = id;
-      // console.log('queue', filmsId);
-      // виклик функції запиту по ід та рендер розмітки
-      getMovieByID(filmsId).then(a => console.log(a));
+      getMovieByID(id)
+        .then(movie => {
+          let arrMovies = [];
+          arrMovies.push(movie);
+          return arrMovies;
+        })
+        .then(layOutListOfMyLib);
     });
   }
 }

@@ -11,11 +11,13 @@ refs.backdropTeamModal.addEventListener('click', onBackdropClick);
 function onOpenTeamModal() {
   window.addEventListener('keydown', onEscKeyPress);
   document.body.classList.add('show-team-modal');
+  document.querySelector('body').classList.add('fixed-body');
 }
 
 function onCloseTeamModal() {
   window.removeEventListener('keydown', onEscKeyPress);
   document.body.classList.remove('show-team-modal');
+  document.querySelector('body').classList.remove('fixed-body');
 }
 
 function onBackdropClick(e) {

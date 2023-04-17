@@ -137,30 +137,42 @@ async function markupModal(id) {
 </div>`;
   const divModal = document.createElement('div');
   divModal.innerHTML = modalString;
+  // Це має бути в функції вфдкриття модалки
+  window.addEventListener('keydown', onEscKeyFilmPress);
+  //
   document.getElementsByTagName('body')[0].appendChild(divModal);
   document.querySelector('body').classList.add('fixed-body');
   document.querySelector('#scrollToTopBtn').classList.add('visually-hidden');
 
   //Закрытие модалки
   const closeButton = document.querySelector('.js-close-btn');
-  closeButton.addEventListener('click', onClose);
+  const filmBackdrop = document.querySelector('.backdrop');
 
-  // тут треба додати слухача на закриття по кліку на бекдроп!!!!
-  // тільки от при натисканні на модалку теж закривається
-  // треба виправити і розкоментити ++ плюс кнопка іскейп
-  // const backdrop = document.querySelector('.backdrop');
-  // backdrop.addEventListener('click', onClose);
+  closeButton.addEventListener('click', onClose);
+  filmBackdrop.addEventListener('click', onFilmBackdropClick);
 
   function onClose(evt) {
-    evt.preventDefault();
+    // evt.preventDefault(); ----> так не працює
     // divModal.innerHTML = '';
+    window.removeEventListener('keydown', onEscKeyFilmPress);
     document.querySelector('body').classList.remove('fixed-body');
     document
       .querySelector('#scrollToTopBtn')
       .classList.remove('visually-hidden');
 
     divModal.remove();
-    //може тут треба зняти слухача натиску кнопки  закриття і еатиску бекдропа????
+  }
+
+  function onFilmBackdropClick(e) {
+    if (e.currentTarget === e.target) {
+      onClose();
+    }
+  }
+
+  function onEscKeyFilmPress(e) {
+    if (e.code === 'Escape') {
+      onClose();
+    }
   }
 
   //!?-------------------------- ФУНКЦІОНАЛ ЛОКАЛ СТОРЕДЖ----------------------------\\

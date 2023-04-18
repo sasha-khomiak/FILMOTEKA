@@ -1,3 +1,5 @@
+import { teamCard } from './renderTeamCards';
+
 const refs = {
   openTeamModal: document.querySelector('[data-action="open-team-modal"]'),
   closeTeamModal: document.querySelector('[data-action="close-team-modal"]'),
@@ -12,6 +14,7 @@ function onOpenTeamModal() {
   window.addEventListener('keydown', onEscKeyPress);
   document.body.classList.add('show-team-modal');
   document.querySelector('body').classList.add('fixed-body');
+  teamCard();
 }
 
 function onCloseTeamModal() {

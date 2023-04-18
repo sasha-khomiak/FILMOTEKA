@@ -266,7 +266,11 @@
 // Самі кнопки
 
 .card-btn {
+  height: 50px;
   width: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
   background-color: transparent;
   border: 1px solid #000000;
   border-radius: 100px;
@@ -279,6 +283,11 @@
   font-size: 12px;
   text-transform: uppercase;
   color: #b92f2c;
+  transition: transform 500ms cubic-bezier(0.4, 0, 0.2, 1);
+  &:hover {
+    transform: scale(1.05);
+  }
+
 
   @media screen and (min-width: 768px) {
     padding-top: 12px;
@@ -287,6 +296,7 @@
 
   @media screen and (min-width: 1280px) {
     padding: 14px 32px;
+    width: 48%;
   }
 
   &-active {

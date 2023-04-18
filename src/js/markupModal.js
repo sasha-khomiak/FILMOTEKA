@@ -81,7 +81,8 @@ async function markupModal(id) {
     </div>
     <div class="film-container">
       <div class="cinema-card">
-         <img class="card-photo" src="${image_src}" alt="movie cover" />
+         <img class="card-photo" src="${image_src}" alt="${movieInfo.tagline}" />
+
       </div>
 
       <div class="card-block">

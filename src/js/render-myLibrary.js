@@ -2,6 +2,8 @@
 import { Notify } from 'notiflix';
 import { clearPage } from './fetch_by_keyword';
 import { getFromStorageAndRender } from "./getFromStorageAndRender";
+import { warnMessageOnQueue, warnMessageOnWatched } from './myLibraryBg';
+import {getFromStorage} from './localStorage'
 
 export {clickBtnWatched, clickBtnQueue}
 
@@ -13,9 +15,10 @@ export {clickBtnWatched, clickBtnQueue}
       document.querySelector('#watched').classList.add('btn-nav-active');
       document.querySelector('#queue').classList.remove('btn-nav-active');
       // доставання ід масива та їх перебор з локального сховища
-      if (localStorage.getItem('idWatched') === null || localStorage.getItem('idWatched').length ===0 ){
-       
+      if (getFromStorage('idWatched').length < 1){
+        console.log(1);
         Notify.failure('Sorry... You did not add any movie to your Watchlist');
+        warnMessageOnWatched()
         return;
       }
       getFromStorageAndRender();
@@ -29,8 +32,9 @@ export {clickBtnWatched, clickBtnQueue}
       document.querySelector('#queue').classList.add('btn-nav-active');
       document.querySelector('#watched').classList.remove('btn-nav-active');
   
-      if (localStorage.getItem('idQueue') === null) {
+      if (getFromStorage('idQueue').length < 1) {
         Notify.failure('Sorry... You did not add any movie to your Queue');
+        warnMessageOnQueue()
         return;
       }
       // доставання ід масива та їх перебор з локального сховища

@@ -2,6 +2,7 @@
 import { showTrendingFilms } from '../index';
 import { clearPage } from './fetch_by_keyword';
 import { clickBtnWatched, clickBtnQueue  } from './render-myLibrary';
+import { warnMessageOnMyLib } from './myLibraryBg';
 
 
 export default async function headerFunctionality() {
@@ -64,6 +65,9 @@ export default async function headerFunctionality() {
     clearPage();
     const buttonQueue = document.querySelector('#queue');
     const buttonWatched = document.querySelector('#watched');
+    if(!buttonQueue.classList.contains('btn-nav-active') && !buttonWatched.classList.contains('btn-nav-active')){
+      warnMessageOnMyLib()
+    }
     buttonWatched.addEventListener('click', clickBtnWatched);
     buttonQueue.addEventListener('click', clickBtnQueue);
   

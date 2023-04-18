@@ -1,10 +1,9 @@
+// імпорт жарнів
 import { genres } from './genres.js';
-
+// імпорт заглушки постеру
 import posterPlug from '../images/poster-plug.jpg';
-
+// ф-ція рендеру фільмів на головній сторінці
 export default async function layOutListOfFilms(arrayOfFilms) {
-  // ('genres', genres);
-  // ("отрм",arrayOfFilms);
   const gallery = document.querySelector('.gallery'); // галерея
   let markup = arrayOfFilms
     .map(item => {
@@ -18,9 +17,8 @@ export default async function layOutListOfFilms(arrayOfFilms) {
         release_date,
         genre_ids,
         overview,
-      } = item;
+      } = item; // деструктуризація елементів масиву після перебору мапом
 
-      // -----------------------//
       // із нумерованого масиву жанрів отримуємо масив назв жанрів і формуємо стрінг
       let tempGenres = [];
 
@@ -35,7 +33,6 @@ export default async function layOutListOfFilms(arrayOfFilms) {
       let tempGenresString = tempGenres.join(', ');
 
       // визначаємо назву нашого фільма і вносимо змінну
-      // --------------///
 
       let correctFilmName = '';
       if (title !== undefined) {
@@ -49,9 +46,7 @@ export default async function layOutListOfFilms(arrayOfFilms) {
       let date = '';
 
       if (first_air_date !== undefined) {
-        // checkDate(first_air_date, release_data)
         date = first_air_date;
-        // ('f', date);
       }
 
       if (release_date !== undefined) {

@@ -1,8 +1,14 @@
 // функція створення повідолення у разі віжсутності
 // результатів пошуку
 const movieCardList = document.querySelector('.movie-card__list');
-export {warnMessage, warnMessageOnMyLib, warnMessageOnWatched, warnMessageOnQueue}
+export {
+  warnMessage,
+  warnMessageOnMyLib,
+  warnMessageOnWatched,
+  warnMessageOnQueue,
+};
 
+// варнмеседж для головної сторінки
 function warnMessage() {
   movieCardList.innerHTML = `<div class="library">
        <div class="library-bg">
@@ -15,8 +21,8 @@ function warnMessage() {
   movieCardList.classList.add('library');
 }
 
-
-function warnMessageOnMyLib(){
+// варнмеседж для сторінки my library
+function warnMessageOnMyLib() {
   movieCardList.innerHTML = `<div class="library">
        <div class="library-bg">
         <div class="library-bg__image"></div>
@@ -27,8 +33,8 @@ function warnMessageOnMyLib(){
       </div>`;
   movieCardList.classList.add('library');
 }
-
-function warnMessageOnWatched(){
+// варнмеседж для сторінки переглядів
+function warnMessageOnWatched() {
   movieCardList.innerHTML = `<div class="library">
        <div class="library-bg">
         <div class="library-bg__image"></div>
@@ -39,8 +45,8 @@ function warnMessageOnWatched(){
       </div>`;
   movieCardList.classList.add('library');
 }
-
-function warnMessageOnQueue(){
+// варнмеседж для сторінки черги
+function warnMessageOnQueue() {
   movieCardList.innerHTML = `<div class="library">
        <div class="library-bg">
         <div class="library-bg__image"></div>

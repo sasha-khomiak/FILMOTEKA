@@ -1,4 +1,3 @@
-//const main = document.querySelector('main');
 export { markupModal, movieId };
 import { getFromStorage } from './localStorage';
 import { onClickToWatched, onClickToQueue } from './onClickToWatch';
@@ -12,7 +11,6 @@ import { renderBeforeCloseModalOnMyLib } from './renderMyLibBeforeClose';
 let movieId;
 let arrayWatched;
 let arrayQueue;
-
 
 if (localStorage.getItem('idWatched')) {
   arrayWatched = getFromStorage('idWatched');
@@ -174,7 +172,7 @@ async function markupModal(id) {
     document
       .querySelector('#scrollToTopBtn')
       .classList.remove('visually-hidden');
-    renderBeforeCloseModalOnMyLib()
+    renderBeforeCloseModalOnMyLib();
 
     divModal.remove();
   }
@@ -201,4 +199,3 @@ async function markupModal(id) {
     .querySelector('.btn-add-queue')
     .addEventListener('click', onClickToQueue);
 }
-

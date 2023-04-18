@@ -1,9 +1,8 @@
 //-----Ф-ІЯ, ЯКА КЕРУЄ ПОЯВОЮ І ЗНИКАННЯМ КНОПОК І ЕЛЕМЕНТІВ В ХЕДЕРІ-----//
 import { showTrendingFilms } from '../index';
 import { clearPage } from './fetch_by_keyword';
-import { clickBtnWatched, clickBtnQueue  } from './render-myLibrary';
+import { clickBtnWatched, clickBtnQueue } from './render-myLibrary';
 import { warnMessageOnMyLib } from './myLibraryBg';
-
 
 export default async function headerFunctionality() {
   // створюємо елементи, які в хедері
@@ -15,7 +14,6 @@ export default async function headerFunctionality() {
   const inputQuery = document.querySelector('.js-input-query');
   // блок кнопок бібліотеки
   const libraryButtons = document.querySelector('.js-library-buttons');
-
 
   // чіпляємо слухачів на кнопки home і library
   btnHome.addEventListener('click', handleClickBtnHome);
@@ -42,13 +40,12 @@ export default async function headerFunctionality() {
     clearPage();
     await clearPageMylib();
     showTrendingFilms(1);
-   
   }
 
   // обробники натискання кнопки Library
   function handleClickBtnLibrary(evt) {
     evt.preventDefault();
-    if(btnLibrary.classList.contains('btn--current')){
+    if (btnLibrary.classList.contains('btn--current')) {
       return;
     }
     //робимо Library з активним класом, а Home з неактивним класом
@@ -63,33 +60,43 @@ export default async function headerFunctionality() {
     libraryButtons.classList.remove('is-hidden');
     libraryButtons.classList.add('button-active');
     clearPage();
+
+    // пошук кнопок черги та перегляду та перевірка на активний клас
     const buttonQueue = document.querySelector('#queue');
     const buttonWatched = document.querySelector('#watched');
-    if(!buttonQueue.classList.contains('btn-nav-active') && !buttonWatched.classList.contains('btn-nav-active')){
-      warnMessageOnMyLib()
+    if (
+      !buttonQueue.classList.contains('btn-nav-active') &&
+      !buttonWatched.classList.contains('btn-nav-active')
+    ) {
+      warnMessageOnMyLib(); // виклик ф-ції в варнінгу при порожній сторінці
     }
+    // додавання слухачів на кнопки черги та перегляду
     buttonWatched.addEventListener('click', clickBtnWatched);
     buttonQueue.addEventListener('click', clickBtnQueue);
-  
   }
 }
 
 headerFunctionality();
 
-
+// ф-ція очистки сторінки My Library
 function clearPageMylib() {
-  const buttonLibrary = document.querySelector('.js-library')
+  // пошук кнопок home, my library, watched, queue
+  const buttonLibrary = document.querySelector('.js-library');
   const btnHome = document.querySelector('.js-home');
   const buttonWatched = document.querySelector('#watched');
   const buttonQueue = document.querySelector('#queue');
 
-  if (btnHome.classList.contains('btn--current') && !buttonLibrary.classList.contains('btn--current')) {
+  // перевірка на активні класи
+  if (
+    btnHome.classList.contains('btn--current') &&
+    !buttonLibrary.classList.contains('btn--current')
+  ) {
     if (buttonWatched.classList.contains('btn-nav-active')) {
       buttonWatched.classList.remove('btn-nav-active');
     }
     if (buttonQueue.classList.contains('btn-nav-active')) {
       buttonQueue.classList.remove('btn-nav-active');
     }
-    clearPage();
+    clearPage(); // виклик ф-ції очистки сторінки
   }
 }

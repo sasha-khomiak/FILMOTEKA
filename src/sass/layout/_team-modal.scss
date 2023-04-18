@@ -263,8 +263,19 @@ body.show-team-modal .modal {
   background-color: transparent;
   transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
 
+  animation: rotateIcons 8s ease-in-out infinite ;
   .modal-team__item:hover & {
-    fill: whitesmoke;
+    fill: white;
+  }
+}
+
+@keyframes rotateIcons {
+  0% {
+    transform: rotateY(0deg);
+  }
+
+  100% {
+    transform: rotateY(360deg);
   }
 }
 

@@ -1,10 +1,5 @@
 import { teamInfo } from './team-info';
 
-// console.log('Hi from render', teamInfo);
-
-// console.log('mob', teamInfo[0].photo);
-// console.log('tabl', teamInfo[0].photo170x2);
-
 const teamCardContainer = document.querySelector('.modal-team__list');
 const teamCard = createTeamCardItems(teamInfo);
 teamCardContainer.insertAdjacentHTML('beforeend', teamCard);
@@ -27,7 +22,7 @@ export function createTeamCardItems(teamInfo) {
             <div class="modal-team__img-container">
               <img class="modal-team__img"
                 srcset="${photo170x1} 1x, ${photo170x2} 2x"
-                ${photo}" alt="${nameDev}" width="200" height="150" />
+                src='${photo}' alt='${nameDev}' width="200" height="150" />
             </div>
             <h2 class="team__name">${nameDev}</h2>
             <p class="team__profession">${position}</p>

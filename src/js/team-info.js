@@ -3,7 +3,7 @@ import tabletKhomiak from '../images/team/oleksandr_team1_170_170.jpg';
 import desktopKhomiak from '../images/team/oleksandr_team1_170_170@2x.jpg';
 
 import mobileMikhnievych from '../images/team/daniil-team2-170-170.jpg';
-import tabletKhomiak from '../images/team/daniil-team2-170-170.jpg';
+import tabletMikhnievych from '../images/team/daniil-team2-170-170.jpg';
 import descktopMikhnievych from '../images/team/daniil-team2-170-170@2x.jpg';
 
 import mobileHrynenko from '../images/team/oleksandr-h-team3-170-170.jpg';
@@ -58,7 +58,7 @@ export const teamInfo = [
     nameDev: 'Daniil Mikhnievych',
     position: 'Scrum-master',
     photo: mobileMikhnievych,
-    photo170x1: mobileMikhnievych,
+    photo170x1: tabletMikhnievych,
     photo170x2: descktopMikhnievych,
     ldLink: 'https://www.linkedin.com/in/daniil-mikhnievych-6448a0270/',
     ghLink: 'https://github.com/Furcreator',

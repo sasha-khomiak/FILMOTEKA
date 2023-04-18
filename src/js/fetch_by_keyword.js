@@ -2,7 +2,7 @@ import axios from 'axios';
 import { Notify } from 'notiflix';
 import layOutListOfFilms from './layOutListOfFilms';
 import { showTrendingFilms } from '../index';
-import myLibraryBg from './myLibraryBg';
+import {warnMessage} from './myLibraryBg';
 
 const API_KEY = 'f051ac50d3bfe0c3fd75f02c1ff7b688';
 const BASE_URL = 'https://api.themoviedb.org/';
@@ -62,7 +62,7 @@ function onSubmitGetAndRender(evt) {
       );
       clearPage();
       searchInput.reset();
-      myLibraryBg();
+      warnMessage();
       showTrendingFilms();
       return;
     }

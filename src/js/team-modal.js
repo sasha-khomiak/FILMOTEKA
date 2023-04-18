@@ -14,7 +14,7 @@ function onOpenTeamModal() {
   window.addEventListener('keydown', onEscKeyPress);
   document.body.classList.add('show-team-modal');
   document.querySelector('body').classList.add('fixed-body');
-  teamCard();
+  // teamCard();
 }
 
 function onCloseTeamModal() {

@@ -10,6 +10,8 @@ import posterPlug from '../images/poster-plug.jpg';
 // змінні масивів для черги та переглянутих
 
 let movieId;
+let arrayWatched;
+let arrayQueue;
 
 if (localStorage.getItem('idWatched')) {
   arrayWatched = getFromStorage('idWatched');
@@ -58,12 +60,12 @@ async function markupModal(id) {
   // let arrayWatched = [];
   // let arrayQueue = [];
 
-  let arrayWatched = getFromStorage('idWatched');
+  arrayWatched = getFromStorage('idWatched');
   if (arrayWatched === null) {
     arrayWatched = [];
   }
 
-  let arrayQueue = getFromStorage('idQueue');
+  arrayQueue = getFromStorage('idQueue');
   if (arrayQueue === null) {
     arrayQueue = [];
   }

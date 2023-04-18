@@ -18,7 +18,6 @@ function onClickToWatched(e) {
   if (arrayWatched === null) {
     arrayWatched = [];
   }
-  console.log(keyWatched);
 
   // прибирання додавання класса на кнопку
   btnWatchedText.classList.toggle('card-btn-active');

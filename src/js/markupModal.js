@@ -8,8 +8,7 @@ import { getMovieByID } from './getMovieByID';
 import posterPlug from '../images/poster-plug.jpg';
 
 // змінні масивів для черги та переглянутих
-let arrayQueue = [];
-let arrayWatched = [];
+
 let movieId;
 
 if (localStorage.getItem('idWatched')) {
@@ -55,6 +54,19 @@ async function markupModal(id) {
   let textQueue = 'add to Queue';
   let watchClass = 'btn-add-watched card-btn';
   let queueClass = 'btn-add-queue card-btn';
+
+  // let arrayWatched = [];
+  // let arrayQueue = [];
+
+  let arrayWatched = getFromStorage('idWatched');
+  if (arrayWatched === null) {
+    arrayWatched = [];
+  }
+
+  let arrayQueue = getFromStorage('idQueue');
+  if (arrayQueue === null) {
+    arrayQueue = [];
+  }
 
   if (arrayWatched.includes(movieId)) {
     textWatch = 'remove from Watched';
@@ -140,7 +152,7 @@ async function markupModal(id) {
 </div>`;
   const divModal = document.createElement('div');
   divModal.innerHTML = modalString;
-  // Це має бути в функції вфдкриття модалки
+  //
   window.addEventListener('keydown', onEscKeyFilmPress);
   //
   document.getElementsByTagName('body')[0].appendChild(divModal);

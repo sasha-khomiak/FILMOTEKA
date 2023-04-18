@@ -73,9 +73,9 @@ async function markupModal(id) {
   let modalString = `<div data-modal class="backdrop">
   <div class="modal-window" > 
     <div class="modal-close">
-    <button type="button" class="close-button js-close-btn">
-    <span class="leftright"></span>
-            <span class="rightleft"></span>
+    <button type="button" class="close-button-movie-btn js-close-btn">
+    <span class="leftright-movie-btn"></span>
+            <span class="rightleft-movie-btn"></span>
      
             <span class="visually-hidden" aria-hidden="true">Close, button</span>
     </div>

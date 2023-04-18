@@ -11,11 +11,14 @@ let btnQueueText = document.querySelector('.btn-add-queue');
 let keyWatched = 'idWatched';
 let keyQueue = 'idQueue';
 
-
 function onClickToWatched(e) {
   e.preventDefault();
-  btnWatchedText = e.currentTarget
-  arrayWatched = getFromStorage(keyWatched)
+  btnWatchedText = e.currentTarget;
+  arrayWatched = getFromStorage(keyWatched);
+  if (arrayWatched === null) {
+    arrayWatched = [];
+  }
+  console.log(keyWatched);
 
   // прибирання додавання класса на кнопку
   btnWatchedText.classList.toggle('card-btn-active');
@@ -33,14 +36,17 @@ function onClickToWatched(e) {
   // додавання до масиву переглянутих та в локал стордж
   arrayWatched.push(movieId);
   addAndRemoveToLocalStorage(keyWatched, arrayWatched);
- 
 }
 
 //! функція для черги
 function onClickToQueue(e) {
   e.preventDefault();
-  btnQueueText = e.currentTarget
-  arrayQueue = getFromStorage(keyQueue)
+  btnQueueText = e.currentTarget;
+  arrayQueue = getFromStorage(keyQueue);
+  if (arrayQueue === null) {
+    arrayQueue = [];
+  }
+  console.log(keyQueue);
 
   // прибирання додавання класса на кнопку
   btnQueueText.classList.toggle('card-btn-active');
@@ -54,13 +60,8 @@ function onClickToQueue(e) {
     return;
   }
 
-
   btnQueueText.innerText = 'remove from Queue';
   // додавання до масиву черги та в локал стордж
   arrayQueue.push(movieId);
   addAndRemoveToLocalStorage(keyQueue, arrayQueue);
-
-  
 }
-
-

@@ -5,7 +5,7 @@ import { getKeyTrailerByID } from './getKeyTrailerByID';
 import { getMovieByID } from './getMovieByID';
 import posterPlug from '../images/poster-plug.jpg';
 import { renderBeforeCloseModalOnMyLib } from './renderMyLibBeforeClose';
-
+import { warnMessageOnWatched, warnMessageOnQueue } from './myLibraryBg';
 // змінні масивів для черги та переглянутих
 
 let movieId;
@@ -173,8 +173,25 @@ async function markupModal(id) {
       .querySelector('#scrollToTopBtn')
       .classList.remove('visually-hidden');
     renderBeforeCloseModalOnMyLib();
-
     divModal.remove();
+
+    // Якщо ми на сторінці вотчет і в стореджі порожній масив ту вотчт
+    // то після закриття модального вікна показуємо заглушку
+    if (
+      document.querySelector('#watched').classList.contains('btn-nav-active') &&
+      getFromStorage('idWatched').length === 0
+    ) {
+      warnMessageOnWatched();
+    }
+
+    // Якщо ми на сторінці queue і в стореджі порожній масив ту queue
+    // то після закриття модального вікна показуємо заглушку
+    if (
+      document.querySelector('#queue').classList.contains('btn-nav-active') &&
+      getFromStorage('idQueue').length === 0
+    ) {
+      warnMessageOnQueue();
+    }
   }
 
   function onFilmBackdropClick(e) {

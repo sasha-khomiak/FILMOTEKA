@@ -5,6 +5,7 @@ import { onClickToWatched, onClickToQueue } from './onClickToWatch';
 import { getKeyTrailerByID } from './getKeyTrailerByID';
 import { getMovieByID } from './getMovieByID';
 import posterPlug from '../images/poster-plug.jpg';
+import { renderBeforeCloseModalOnMyLib } from './renderMyLibBeforeClose';
 
 // змінні масивів для черги та переглянутих
 
@@ -173,7 +174,7 @@ async function markupModal(id) {
     document
       .querySelector('#scrollToTopBtn')
       .classList.remove('visually-hidden');
-    // renderBeforeCloseModalOnMyLib()
+    renderBeforeCloseModalOnMyLib()
 
     divModal.remove();
   }

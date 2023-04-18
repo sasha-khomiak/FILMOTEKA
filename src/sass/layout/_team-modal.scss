@@ -274,8 +274,13 @@ body.show-team-modal .modal {
 
 .team-icon {
   border-radius: 50%;
-  background-color: white;
+  fill: white;
+  background-color: transparent;
   transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
+
+  .modal-team__item:hover & {
+    fill: black;
+  }
 }
 
 .team-icon:hover,

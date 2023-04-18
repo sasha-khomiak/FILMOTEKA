@@ -31,3 +31,4 @@ function onEscKeyPress(e) {
     onCloseTeamModal();
   }
 }
+

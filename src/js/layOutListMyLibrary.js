@@ -1,4 +1,4 @@
-import { clearPage } from './fetch_by_keyword';
+
 import posterPlug from '../images/poster-plug.jpg';
 
 export default async function layOutListOfMyLib(arrayFilms) {

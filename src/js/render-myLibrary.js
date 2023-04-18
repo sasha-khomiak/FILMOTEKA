@@ -29,7 +29,6 @@ export {clickBtnWatched, clickBtnQueue}
         getMovieByID(id)
           .then(movie => {
             arrMoviesWatch.push(movie);
-            console.log(arrMoviesWatch);
             return arrMoviesWatch;
           })
           .then(result => {

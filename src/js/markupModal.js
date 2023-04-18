@@ -4,7 +4,6 @@ import { getFromStorage } from './localStorage';
 import { onClickToWatched, onClickToQueue } from './onClickToWatch';
 import { getKeyTrailerByID } from './getKeyTrailerByID';
 import { getMovieByID } from './getMovieByID';
-
 import posterPlug from '../images/poster-plug.jpg';
 
 // змінні масивів для черги та переглянутих
@@ -12,6 +11,7 @@ import posterPlug from '../images/poster-plug.jpg';
 let movieId;
 let arrayWatched;
 let arrayQueue;
+
 
 if (localStorage.getItem('idWatched')) {
   arrayWatched = getFromStorage('idWatched');
@@ -56,9 +56,6 @@ async function markupModal(id) {
   let textQueue = 'add to Queue';
   let watchClass = 'btn-add-watched card-btn';
   let queueClass = 'btn-add-queue card-btn';
-
-  // let arrayWatched = [];
-  // let arrayQueue = [];
 
   arrayWatched = getFromStorage('idWatched');
   if (arrayWatched === null) {
@@ -176,6 +173,7 @@ async function markupModal(id) {
     document
       .querySelector('#scrollToTopBtn')
       .classList.remove('visually-hidden');
+    // renderBeforeCloseModalOnMyLib()
 
     divModal.remove();
   }
@@ -202,3 +200,4 @@ async function markupModal(id) {
     .querySelector('.btn-add-queue')
     .addEventListener('click', onClickToQueue);
 }
+

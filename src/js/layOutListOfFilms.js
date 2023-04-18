@@ -69,7 +69,7 @@ export default async function layOutListOfFilms(arrayOfFilms) {
       <div class="film-card" >
       <a href="#">
         <div class="thumb">
-          <img src="${image_src}" alt="${overview}" loading="lazy" data-id="${id}" />
+           <img src="${image_src}" alt="${correctFilmName}" loading="lazy" data-id="${id}" />
         </div>
       </a>
       <div class="info">

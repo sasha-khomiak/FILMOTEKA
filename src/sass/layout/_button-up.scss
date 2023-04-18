@@ -7,7 +7,7 @@ html {
   position: fixed;
   width: 40px;
   height: 40px;
-  bottom: 32px;
+  bottom: 40px;
   right: 28px;
   z-index: 99;
   font-size: 24px;
@@ -19,7 +19,6 @@ html {
   border-color: #b92f2c;
   cursor: pointer;
   border-radius: 50%;
-  overflow: hidden;
 
   animation: wiggle 3s linear infinite;
 

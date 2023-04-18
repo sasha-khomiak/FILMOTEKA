@@ -5,8 +5,17 @@
   //   //для мобіли 320-767
   width: 100%;
   // background-color: yellow;
-  
 }
+
+// @keyframes animateBg {
+//   0% {
+//     scale: 1;
+//   }
+
+//   100% {
+//     scale: 1.05;
+//   }
+// }
 
 .header {
   margin: 20px;
@@ -34,6 +43,8 @@
     (min-resolution: 2dppx) {
     background-image: url('../images/bg-mobile@2x.jpg');
   }
+
+  // animation: animateBg 3s infinite alternate;
 
   @media screen and (min-width: 768px) {
     height: 222px;
@@ -133,15 +144,14 @@
   0% {
     stroke-dasharray: 0 50%;
     stroke-dashoffset: 20%;
-    fill: hsl(189, 68%, 75%)
+    fill: hsl(189, 68%, 75%);
   }
 
   100% {
     stroke-dasharray: 50% 0;
     stroke-dashoffstet: -20%;
-    fill: hsla(189, 68%, 75%, 0%)
+    fill: hsla(189, 68%, 75%, 0%);
   }
-
 }
 
 .header-logo__text {
@@ -159,7 +169,6 @@
   }
 }
 .header-logo {
-
   @media screen and(max-width:767px) {
     width: 190px;
     margin-left: auto;

@@ -10,7 +10,8 @@ refs.openTeamModal.addEventListener('click', onOpenTeamModal);
 refs.closeTeamModal.addEventListener('click', onCloseTeamModal);
 refs.backdropTeamModal.addEventListener('click', onBackdropClick);
 
-function onOpenTeamModal() {
+function onOpenTeamModal(evt) {
+  evt.preventDefault();
   window.addEventListener('keydown', onEscKeyPress);
   document.body.classList.add('show-team-modal');
   document.querySelector('body').classList.add('fixed-body');

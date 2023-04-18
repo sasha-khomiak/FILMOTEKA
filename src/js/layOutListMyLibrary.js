@@ -2,6 +2,7 @@
 import posterPlug from '../images/poster-plug.jpg';
 
 export default async function layOutListOfMyLib(arrayFilms) {
+  
   const gallery = document.querySelector('.gallery');
   arrayFilms.map(item => {
     const {

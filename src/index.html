@@ -1,72 +1,63 @@
 <!DOCTYPE html>
 <html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+      name="description"
+      content="This website made for people who love movies"
+    />
+    <meta
+      name="keywords"
+      content="movies, film, find, library, personal, cinema, watch, new releases, watchlist"
+    />
 
-  <meta name="description" content="This website made for people who love movies" />
-  <meta name="keywords" content="movies, film, find, library, personal, cinema, watch, new releases, watchlist" />
-
-  <!-- підключення шрифтів -->
-  <!-- <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <!-- підключення шрифтів -->
+    <!-- <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
       href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500&display=swap"
       rel="stylesheet"
     /> -->
 
-  <!-- стилі -->
-  <link rel="stylesheet" href="./sass/main.scss" />
-  <link rel="icon" href="./images/favicon.ico" type="image/x-icon" />
+    <!-- стилі -->
+    <link rel="stylesheet" href="./sass/main.scss" />
+    <link rel="icon" href="./images/favicon.ico" type="image/x-icon" />
 
-  <title>FILMOTEKA</title>
-</head>
+    <title>FILMOTEKA</title>
+  </head>
 
-<body>
-  <div id="preloader" class="preloader">
-    <div class="preloader__loader">
-        <div class="loadingio-spinner-rolling-wopxwk46ahe">
-            <div class="ldio-zgxx64th47">
-                <div></div>
-            </div>
-        </div>
+  <body>
+    <!-- прелоадер -->
+    <include src="./partials/preloader.html"></include>
 
-        <span class="preloader__percents">
-            <span id="percents">0</span>%
-        </span>
-    </div>
-    <!-- /.preloader__loader -->
-</div>
-  <!-- рухомий динамічний текграунд -->
-  <div id="particles-js"></div>
+    <!-- рухомий динамічний бекграунд -->
+    <div id="particles-js"></div>
 
-  <!-- хедер -->
-  <include src="./partials/header.html"></include>
+    <!-- хедер -->
+    <include src="./partials/header.html"></include>
 
-  <main>
-    <!-- дублювання !!!!!!! -->
-    <!-- <include src="./partials/button-up.html"></include> -->
+    <main>
+      <!-- поле результатів -->
+      <include src="./partials/results.html"></include>
+    </main>
 
-    <!-- поле результатів -->
-    <include src="./partials/results.html"></include>
-  </main>
+    <!-- футер -->
+    <include src="./partials/footer.html"></include>
 
-  <!-- футер -->
-  <include src="./partials/footer.html"></include>
+    <!-- фіксовано кнопка вгору -->
+    <include src="./partials/button-up.html"></include>
 
-  <!-- фіксовано кнопка вгору -->
-  <include src="./partials/button-up.html"></include>
+    <include src="./partials/team-modal.html"></include>
 
-  <include src="./partials/team-modal.html"></include>
-  <!-- js скрипти  -->
-  <script src="./js/preloader.js"></script>
-  <script type="module" src="./index.js"></script>
-  <script type="module" src="./js/button-up.js"></script>
-  <script type="module" src="./js/fixed-footer.js"></script>
-  <script src="./particles/particles.min.js"></script>
-  <script src="./particles/custom.js"></script>
-  <script type="module" src="./js/team-modal.js"></script>
-</body>
-
+    <!-- js скрипти  -->
+    <script src="./js/preloader.js"></script>
+    <script type="module" src="./index.js"></script>
+    <script type="module" src="./js/button-up.js"></script>
+    <script type="module" src="./js/fixed-footer.js"></script>
+    <script src="./particles/particles.min.js"></script>
+    <script src="./particles/custom.js"></script>
+    <script type="module" src="./js/team-modal.js"></script>
+  </body>
 </html>

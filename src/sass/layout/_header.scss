@@ -4,7 +4,6 @@
 .section-header {
   //   //для мобіли 320-767
   width: 100%;
-  // background-color: yellow;
 }
 
 .header {
@@ -32,34 +31,6 @@
     (min-resolution: 192dpi),
     (min-resolution: 2dppx) {
     background-image: url('../images/bg-mobile@2x.jpg');
-  }
-
-  animation: animateBg 3s cubic-bezier(0.4, 0, 0.2, 1) 500ms infinite;
-
-  @keyframes animateBg {
-    0% {
-      animation-timing-function: ease-out;
-      // transform: scale(1);
-      transform-origin: center center;
-    }
-    10% {
-      animation-timing-function: ease-in;
-      // transform: scale(0.91);
-    }
-    17% {
-      animation-timing-function: ease-out;
-      // transform: scale(0.98);
-    }
-    33% {
-      animation-timing-function: ease-in;
-      // transform: scale(0.87);
-      box-shadow: 0px 0px 20px 3px #f5e0e0;
-    }
-    45% {
-      animation-timing-function: ease-out;
-      // transform: scale(1);
-      box-shadow: 0px 0px 20px 3px #f5e0e0;
-    }
   }
 
   @media screen and (min-width: 768px) {
@@ -126,22 +97,26 @@
   }
 }
 
-// @keyframes logoAnimation {
-//   /* Тут будуть описуватися кадри */
-//   0% {
-//     transform: scale(1);
-//   }
-//   100% {
-//     transform: scale(1.2);
-//   }
-// }
+.form__button:hover,
+.form__button:focus .form__icon{
+  animation: fillIconAnimation 5s ease-in-out alternate infinite;
+}
+
+@keyframes fillIconAnimation {
+  from {
+    fill: hsl(0, 100%, 38%);
+  }
+
+  40% {
+    fill: hsl(50, 100%, 50%);
+  }
+
+  to {
+    fill: hsla(270, 100%, 89%, 0.6);
+  }
+}
 
 .header-logo__icon {
-  // animation-name: logoAnimation;
-  // animation-duration: 500ms;
-  // animation-iteration-count: infinite;
-  // animation-direction: alternate;
-
   animation: fillanimation 5s infinite alternate;
 
   width: 32px;

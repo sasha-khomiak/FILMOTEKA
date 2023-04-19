@@ -138,8 +138,12 @@
 
   @media screen and (min-width: 1280px) {
     width: 375px;
-    height: 478px;
+    // height: 478px;
   }
+}
+
+.card-photo {
+  margin-bottom: 20px;
 }
 
 //----------------НАЛАШТУВАННЯ ТЕКСТОВОГО БЛОКУ----------------//

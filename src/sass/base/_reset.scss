@@ -86,10 +86,9 @@ ul {
 //https://convertio.co/png-cur/
 // налаштування кастомних курсорів
 
-// button,
-// a {
-//   cursor: url('../images/cursor.cur'), auto;
-// }
+body {
+  cursor: url('../images/cine-arrow-02.cur'), auto;
+}
 
 button:hover,
 a:hover {

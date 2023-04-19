@@ -1,5 +1,4 @@
 .footer {
-  // background-color: #b92f2c;
   background-color: rgb(245, 245, 245, .7);
   position: fixed;
   padding: 3px;
@@ -12,17 +11,6 @@
 
 .heart-container {
   text-align: center;
-}
-@keyframes lheartAnimation {
-
-  /* Тут будуть описуватися кадри */
-  0% {
-    transform: scale(1);
-  }
-
-  100% {
-    transform: scale(1.2);
-  }
 }
 
 .heart-icon{
